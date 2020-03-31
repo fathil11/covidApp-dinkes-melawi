@@ -15,6 +15,12 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->tinyInteger('age');
+            $table->enum('gender', ['m', 'f']);
+            $table->enum('district', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+            $table->string('address');
+            $table->enum('status', [0, 1, 2, 3, 4, 5, 6, 7]);
             $table->timestamps();
         });
     }
