@@ -10,8 +10,8 @@ $factory->define(Person::class, function (Faker $faker) {
         'name' => $faker->name,
         'age' => $faker->numberBetween(5, 90),
         'gender' => $faker->randomElement(['m', 'f']),
-        'district' => $faker->numberBetween(0, 10),
+        'district' => (string)($faker->numberBetween(0, 10)),
         'address' => $faker->address(),
-        'status' => 0,
+        'status' => '0',
     ];
 });

@@ -15,12 +15,11 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('person_id')
+            $table->unsignedBigInteger('person_id');
+            $table->foreign('person_id')
             ->references('id')
             ->on('people')
-            ->onDelete('casecade');
-            // $table->foreign('person_id')
-
+            ->onDelete('cascade');
             $table->smallInteger('status');
             $table->timestamps();
         });
