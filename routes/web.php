@@ -15,18 +15,28 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-//     Route::get('/', 'AdminController@index');
-//     // Person Index
-//     Route::get('/orang/{status}', 'PersonController@index');
-//     // Person Create
-//     Route::get('/orang/tambah', 'PersonController@create');
-//     Route::post('/orang', 'PersonController@store');
-//     // Person Edit
-//     Route::get('/orang/{id}/edit', 'PersonController@edit');
-//     Route::patch('/orang/{id}', 'PersonController@update');
-//     Route::delete('/orang/{id}', 'PersonController@destroy');
-// });
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::get('/', 'AdminController@index');
+    // Person Index
+    Route::get('/orang', 'AdminController@showAllPerson');
+    Route::get('/orang/odp', 'AdminController@showOdpPerson');
+    Route::get('/orang/pdp', 'AdminController@showPdpPerson');
+    // Person Create
+    Route::get('/orang/tambah', 'AdminController@showCreatePerson');
+    Route::post('/orang', 'PersonController@storePerson');
+    // Person Edit
+    Route::get('/orang/{id}/edit', 'PersonController@showEditPerson');
+    Route::patch('/orang/{id}', 'PersonController@updatePerson');
+    // Person Delete
+    Route::get('/orang/{id}', 'PersonController@deletePerson');
+    // Person Change Status
+    Route::get('/orang/{id}/pdp', 'PersonController@pdpPerson');
+    Route::get('/orang/{id}/pulang', 'PersonController@clearPerson');
+    Route::get('/orang/{id}/odp', 'PersonController@odpPerson');
+    Route::get('/orang/{id}/positif', 'PersonController@positivePerson');
+    Route::get('/orang/{id}/negatif', 'PersonController@negativePerson');
+    Route::get('/orang/{id}/meninggal', 'PersonController@diedPerson');
+});
 
 Auth::routes();
 // Route::get('/login', 'PublicController');
