@@ -1,0 +1,11 @@
+.is-focused .form-control {
+    background-image: linear-gradient(to top, #11B8CC 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px) !important;
+}
+
+.form-check .form-check-label .circle .check {
+    background-color: #11B8CC !important;
+}
+
+.form-check .form-check-input:checked~.circle {
+    border-color: #11B8CC !important;
+}

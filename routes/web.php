@@ -34,17 +34,20 @@ Auth::routes();
 
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/admin', function () {
-    return view('layouts.admin');
+    return view('admin.dashboard');
 });
 Route::get('/admin/orang/tambah', function () {
-    return view('layouts.admin');
+    return view('admin.addPerson');
 });
 Route::get('/admin/orang', function () {
-    return view('layouts.admin');
+    return view('admin.allPerson');
+});
+Route::get('/admin/orang/edit', function () {
+    return view('admin.editPerson');
 });
 Route::get('/admin/odp', function () {
-    return view('layouts.admin');
+    return view('admin.odpPerson');
 });
 Route::get('/admin/pdp', function () {
-    return view('layouts.admin');
+    return view('admin.pdpPerson');
 });

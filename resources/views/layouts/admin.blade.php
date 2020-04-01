@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
     <link rel="icon" type="image/png" href="{{ asset('img/logoMelawi.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Admin Dashboard
+        Covid Admin Panel
     </title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -29,11 +29,12 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="{{ asset('css/admin/material-dashboard.css') }}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/admin/demo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
     <div class="wrapper ">
-        <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="azure" data-background-color="white">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -44,31 +45,31 @@ The above copyright notice and this permission notice shall be included in all c
                 </a></div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="/admin/dashboard">
+                    <li class="nav-item @if(request()->is('admin')) active @endif">
+                        <a class="nav-link" href="/admin">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if(request()->is('admin/orang/tambah')) active @endif">
                         <a class="nav-link" href="/admin/orang/tambah">
                             <i class="material-icons">person_add</i>
                             <p>Tambah Orang</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if(request()->is('admin/orang')) active @endif">
                         <a class="nav-link" href="/admin/orang">
                             <i class="material-icons">people</i>
                             <p>Lihat Seluruh Orang</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if(request()->is('admin/odp')) active @endif">
                         <a class="nav-link" href="/admin/odp">
                             <i class="material-icons">search</i>
                             <p>Kelola ODP</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item @if(request()->is('admin/pdp')) active @endif">
                         <a class="nav-link" href="/admin/pdp">
                             <i class="material-icons">local_convenience_store</i>
                             <p>Kelola PDP</p>
@@ -88,7 +89,7 @@ The above copyright notice and this permission notice shall be included in all c
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:;">Dashboard</a>
+                        <a class="navbar-brand" href="#">@yield('title')</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -109,8 +110,6 @@ The above copyright notice and this permission notice shall be included in all c
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Log out</a>
                                 </div>
                             </li>
@@ -119,188 +118,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-danger card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">add</i>
-                                    </div>
-                                    <p class="card-category">Positif</p>
-                                    <h3 class="card-title">0</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-success card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">check</i>
-                                    </div>
-                                    <p class="card-category">Sembuh</p>
-                                    <h3 class="card-title">0</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-dark card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">airline_seat_flat</i>
-                                    </div>
-                                    <p class="card-category">Meninggal</p>
-                                    <h3 class="card-title">0</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-info card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">search</i>
-                                    </div>
-                                    <p class="card-category">Orang Dalam Pengawasan</p>
-                                    <h3 class="card-title">251</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header card-header-warning card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">location_city</i>
-                                    </div>
-                                    <p class="card-category">Pasien Dalam Pengawasan</p>
-                                    <h3 class="card-title">87</h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card card-chart">
-                                <div class="card-header card-header-success">
-                                    <div class="ct-chart" id="dailySalesChart"></div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">Statistik ODP Perhari</h4>
-                                    <p class="card-category">Data dalam seminggu</p>
-                                    <p class="card-category">
-                                        <span class="text-danger"><i class="fa fa-long-arrow-up"></i> 55% </span>
-                                        kenaikan hari ini.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="card card-chart">
-                                <div class="card-header card-header-warning">
-                                    <div class="ct-chart" id="completedTasksChart"></div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">Statistik PDP Perhari</h4>
-                                    <p class="card-category">Data dalam seminggu</p>
-                                    <p class="card-category">
-                                        <span class="text-danger"><i class="fa fa-long-arrow-up"></i> 35% </span>
-                                        kenaikan hari ini.
-                                    </p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card">
-                                <div class="card-header card-header-info">
-                                    <h4 class="card-title">Statistik per Kecamatan</h4>
-                                    <p class="card-category">Kabupaten Melawi</p>
-                                </div>
-                                <div class="card-body table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-info">
-                                            <th>No</th>
-                                            <th>Kecamatan</th>
-                                            <th>Positif</th>
-                                            <th>PDP</th>
-                                            <th>ODP</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Nanga Pinoh</td>
-                                                <td>2</td>
-                                                <td>400</td>
-                                                <td>302</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Sokan</td>
-                                                <td>0</td>
-                                                <td>50</td>
-                                                <td>30</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Belimbing</td>
-                                                <td>0</td>
-                                                <td>30</td>
-                                                <td>15</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Ella Hilir</td>
-                                                <td>0</td>
-                                                <td>24</td>
-                                                <td>10</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @yield('content')
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="copyright float-right">
@@ -315,25 +133,23 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
 
     <!--   Core JS Files   -->
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
     <script src="{{ asset('js/admin/jquery.min.js') }}"></script>
     <script src="{{ asset('js/admin/popper.min.js') }}"></script>
     <script src="{{ asset('js/admin/bootstrap-material-design.min.js') }}"></script>
     <script src="{{ asset('js/admin/perfect-scrollbar.jquery.min.js') }}"></script>
-    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-    <!-- Library for adding dinamically elements -->
+    <script src="{{ asset('js/admin/bootstrap-selectpicker.js') }}"></script>
     <script src="{{ asset('js/admin/arrive.min.js') }}"></script>
-    <!-- Chartist JS -->
     <script src="{{ asset('js/admin/chartist.min.js') }}"></script>
-    <!--  Notifications Plugin    -->
     <script src="{{ asset('js/admin/bootstrap-notify.js') }}"></script>
-    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('js/admin/material-dashboard.js') }}"></script>
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js"></script> --}}
     <script src="{{ asset('js/admin/demo.js') }}"></script>
     <script>
         $(document).ready(function () {
-      $().ready(function () {
+        $().ready(function () {
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
