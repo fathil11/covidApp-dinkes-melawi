@@ -22,8 +22,12 @@ class PublicController extends Controller
         $stat['died?'] = Person::where('status', '4')->get()->count();
         $stat['negative'] = Person::where('status', '3')->get()->count();
         $stat['pdp'] = $stat['treated'] + $stat['negative'] + $stat['died?'] + $stat['positive'];
-        $stat['updated'] = Log::latest()->first()->created_at->toDateTimeString();
-        $stat['updated'] = Carbon::create($stat['updated'])->locale('id')->diffForHumans();
+        if (Log::all()->count() != 0) {
+            $stat['updated'] = Log::latest()->first()->created_at->toDateTimeString();
+            $stat['updated'] = Carbon::create($stat['updated'])->locale('id')->diffForHumans();
+        } else {
+            $stat['updated'] = '-';
+        }
 
         return view('public.home', compact('stat'));
     }

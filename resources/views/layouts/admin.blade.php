@@ -20,7 +20,6 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/admin/demo.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet" />
-
 </head>
 
 <body class="">
@@ -134,6 +133,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
     <script src="{{ asset('js/admin/material-dashboard.js') }}"></script>
     @yield('js')
+
 </body>
 
 </html>

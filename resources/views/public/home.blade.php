@@ -102,7 +102,8 @@
                 <div class="col-md-6 col-sm-12 align-self-end">
                     <div class="card bg-dark w-100 w-md-50 float-right">
                         <div class="card-body m-n2 text-center">
-                            <p class="text-white-sem d-inline">Diupdate {{ $stat['updated'] }}</p>
+                            <p class="text-white-sem d-inline">Diupdate {{ $stat['updated'] }}
+                            </p>
                         </div>
                     </div>
                 </div>
