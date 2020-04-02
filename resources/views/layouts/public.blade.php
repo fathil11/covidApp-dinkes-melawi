@@ -100,32 +100,7 @@
         </button>
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script>
-        const divInstall = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
 
-/* Put code here */
-
-
-
-/* Only register a service worker if it's supported */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js');
-}
-
-/**
- * Warn the page must be served over HTTPS
- * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
- * Installability requires a service worker with a fetch event handler, and
- * if the page isn't served over HTTPS, the service worker won't load.
- */
-if (window.location.protocol === 'http:') {
-  const requireHTTPS = document.getElementById('requireHTTPS');
-  const link = requireHTTPS.querySelector('a');
-  link.href = window.location.href.replace('http://', 'https://');
-  requireHTTPS.classList.remove('hidden');
-}
-    </script>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     <script src="{{ asset('js/jquery.min.js') }}">
@@ -136,19 +111,43 @@ if (window.location.protocol === 'http:') {
     </script>
     @yield('js')
     <script>
+        const divInstall = document.getElementById('installContainer');
+        const butInstall = document.getElementById('butInstall');
+
+        /* Put code here */
+
+
+        /* Only register a service worker if it's supported */
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js');
+        }
+
+        /**
+         * Warn the page must be served over HTTPS
+         * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
+         * Installability requires a service worker with a fetch event handler, and
+         * if the page isn't served over HTTPS, the service worker won't load.
+         */
+        if (window.location.protocol === 'http:') {
+        const requireHTTPS = document.getElementById('requireHTTPS');
+        const link = requireHTTPS.querySelector('a');
+        link.href = window.location.href.replace('http://', 'https://');
+        requireHTTPS.classList.remove('hidden');
+        }
+
         buttonInstall.addEventListener('click', (e) => {
-        // Hide the app provided install promotion
-        hideMyInstallPromotion();
-        // Show the install prompt
-        deferredPrompt.prompt();
-        // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the install prompt');
-            } else {
-            console.log('User dismissed the install prompt');
-            }
-        })
+            // Hide the app provided install promotion
+            hideMyInstallPromotion();
+            // Show the install prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+                } else {
+                console.log('User dismissed the install prompt');
+                }
+            })
         });
     </script>
 </body>
