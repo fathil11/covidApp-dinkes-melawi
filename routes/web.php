@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PublicController@index');
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'AdminController@index');
     // Person Index
     Route::get('/orang', 'AdminController@showAllPerson');
@@ -39,8 +39,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/orang/{id}/meninggal', 'AdminController@diedPerson');
 });
 
-// Auth::routes();
-// Route::get('/login', 'PublicController');
+Auth::routes();
+Route::get('/logout', 'PublicController@logout');
 
 
 // Route::get('/', 'HomeController@index')->name('home');

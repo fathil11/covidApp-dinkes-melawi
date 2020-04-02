@@ -40,7 +40,8 @@ body {
 }
 
 .bg-main {
-    background: #00989b !important;
+    background: rgb(0, 152, 155);
+    background: linear-gradient(152deg, rgba(0, 152, 155, 1) 0%, rgba(95, 213, 215, 1) 100%);
 }
 
 @keyframes float {
@@ -95,7 +96,7 @@ body {
 
 .card {
     border: 0;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25) !important;
 }
 
@@ -112,7 +113,7 @@ body {
 }
 
 .bg-blue {
-    background: #0351B5;
+    background: rgb(3, 81, 181);
 }
 
 .bg-yellow {
@@ -139,11 +140,11 @@ body {
     right: 0;
 }
 
-/* .footer-cp {
+.footer-cp {
     position: absolute;
     bottom: 0;
     right: 0;
-} */
+}
 
 @media (max-width: 576px) {
     .mt-n6 {
@@ -154,8 +155,8 @@ body {
         margin-top: 5rem;
     }
 
-    /* .footer-cp {
+    .footer-cp {
         position: relative !important;
         text-align: center !important;
-    } */
+    }
 }

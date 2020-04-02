@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-info">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
@@ -240,7 +240,7 @@
 <script>
     $(document).ready(function () {
 
-md.initDashboardPageCharts();
+// md.initDashboardPageCharts();
 
 });
 </script>

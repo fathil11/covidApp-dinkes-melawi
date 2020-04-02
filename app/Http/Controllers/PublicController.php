@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Person;
 use App\Log;
 use Carbon\Carbon;
@@ -23,6 +24,22 @@ class PublicController extends Controller
         $stat['pdp'] = $stat['treated'] + $stat['negative'] + $stat['died?'] + $stat['positive'];
         $stat['updated'] = Log::latest()->first()->created_at->toDateTimeString();
         $stat['updated'] = Carbon::create($stat['updated'])->locale('id')->diffForHumans();
+
         return view('public.home', compact('stat'));
+    }
+
+    public function showLogin()
+    {
+        return view('public.login');
+    }
+
+    public function logout()
+    {
+        if (Auth::check()) {
+            request()->session()->flush();
+            return redirect('/');
+        } else {
+            return abort(404);
+        }
     }
 }

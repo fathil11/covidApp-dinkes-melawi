@@ -190,7 +190,7 @@ md = {
             dataDailySalesChart = {
                 labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
                 series: [
-                    [12, 17, 7, 17, 23, 18, 38]
+                    [0, 0, 0, 0, 0, 0, 0]
                 ]
             };
 
@@ -313,7 +313,7 @@ md = {
             dataDailySalesChart = {
                 labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
                 series: [
-                    [12, 17, 7, 17, 23, 18, 38]
+                    [0, 0, 0, 0, 0, 0, 0]
                 ]
             };
 
@@ -340,9 +340,9 @@ md = {
             /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
             dataCompletedTasksChart = {
-                labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
                 series: [
-                    [230, 750, 450, 300, 280, 240, 200, 190]
+                    [0, 0, 0, 0, 0, 0, 0]
                 ]
             };
 

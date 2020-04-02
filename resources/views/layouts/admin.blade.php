@@ -1,14 +1,3 @@
-<!--
-=========================================================
-Material Dashboard - v2.1.2
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
-
-=========================================================
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,7 +101,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="#">Log out</a>
+                                    <a class="dropdown-item" href="/logout">Log out</a>
                                 </div>
                             </li>
                         </ul>
@@ -127,7 +116,7 @@ The above copyright notice and this permission notice shall be included in all c
                         &copy;
                         <script>
                             document.write(new Date().getFullYear())
-                        </script>, Dinkes Melawi
+                        </script> - Dinkes Melawi & Melawi Software Production
                     </div>
                 </div>
             </footer>
@@ -135,7 +124,6 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
 
     <!--   Core JS Files   -->
-
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/admin/bootstrap-material-design.min.js') }}"></script>

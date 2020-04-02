@@ -1,0 +1,39 @@
+body {
+    /* width: 100%;
+    height: 100%; */
+    background: #36D1DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #5B86E5, #36D1DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #5B86E5, #36D1DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.card {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25) !important;
+}
+
+.text-main {
+    color: #00989b !important;
+}
+
+.btn-main {
+    color: #fff;
+    border-radius: 25px;
+    background-color: #11B8CC;
+    border-color: #11B8CC;
+}
+
+.btn-main:hover {
+    color: #fff;
+    background-color: rgb(79, 207, 221);
+    border-color: rgb(79, 207, 221);
+}
+
+.form-control {
+    border-radius: 25px;
+}
