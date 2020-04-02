@@ -8,7 +8,7 @@
                 <h3 class="font-weight-light">Kabupaten Melawi</h3>
             </div>
             <div class="col-md-6 col-sm-12 d-none d-md-block">
-                <img src="{{ asset('img/corona.png') }}" width="130%" class="banner-img" alt="">
+                <img data-src="{{ asset('img/corona.png') }}" width="130%" class="lazyload banner-img" alt="">
             </div>
         </div>
     </div>
@@ -161,15 +161,18 @@
                             <h3 class="text-center text-white font-weight-bold">Gejala COVID-19</h3>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12 text-center">
-                                    <img class="img-fluid" src="{{ asset('img/1.png') }}">
+                                    <img class="img-fluid lazyload" data-src="{{ asset('img/1.png') }}"
+                                        alt="Gejala Korona">
                                     <p class="text-white">Batuk dan Nyeri Tenggorok</p>
                                 </div>
                                 <div class="col-md-4 col-sm-12 text-center">
-                                    <img class="img-fluid" src="{{ asset('img/2.png') }}">
+                                    <img class="img-fluid lazyload" data-src="{{ asset('img/2.png') }}"
+                                        alt="Gejala Korona">
                                     <p class="text-white">Demam suhu tinggi / Ada riwayat demam</p>
                                 </div>
                                 <div class="col-md-4 col-sm-12 text-center">
-                                    <img class="img-fluid" src="{{ asset('img/3.png') }}">
+                                    <img class="img-fluid lazyload" data-src="{{ asset('img/3.png') }}"
+                                        alt="Gejala Korona">
                                     <p class="text-white">Sesak napas</p>
                                 </div>
                             </div>
@@ -180,7 +183,8 @@
                     <div class="card bg-yellow">
                         <div class="card-body text-center">
                             <h3 class="text-white font-weight-bold">Mengalami Gejala Tersebut ?</h3>
-                            <img class="img-fluid mt-3" src="{{ asset('img/dokter.png') }}" alt="" srcset="">
+                            <img class="lazyload img-fluid mt-3" data-src="{{ asset('img/dokter.png') }}"
+                                alt="Gambar Dokter" srcset="">
                             <a class="mt-3 btn btn-rounded btn-warning" href="tel:12345">
                                 <h4 class="px-3 mb-0">Hubungi 12345</h4>
                             </a>

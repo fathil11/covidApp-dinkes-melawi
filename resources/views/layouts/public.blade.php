@@ -102,8 +102,11 @@
     </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
 
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
+    {{-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script> --}}
+
+    <script src="{{ asset('js/lazysizes.min.js') }}">
+    </script>
     <script src="{{ asset('js/jquery.min.js') }}">
     </script>
     <script src="{{ asset('js/popper.min.js') }}">
