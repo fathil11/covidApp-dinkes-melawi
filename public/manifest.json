@@ -1,79 +1,84 @@
 {
     "short_name": "Dinkes Melawi",
-    "name": "Aplikasi COVID-19 Dinkes Melawi",
-    "lang": "id,in",
+    "name": "Dinkes Melawi",
+    "lang": "en",
     "description": "Dinkes Melawi app for Siaga COVID-19",
     "start_url": "/",
-    "background_color": "#00989b",
-    "theme_color": "#00989b",
+    "background_color": "#00aae7",
+    "theme_color": "#00aae7",
     "dir": "ltr",
     "display": "fullscreen",
     "orientation": "any",
     "icons": [
         {
-            "src": "/android-icon-192x192-dunplab-manifest-602.png",
+            "src": "img/icon/favicon-512x512-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "192x269"
+            "sizes": "512x512"
         },
         {
-            "src": "/apple-icon-180x180-dunplab-manifest-602.png",
+            "src": "img/icon/android-icon-192x192-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "180x253"
+            "sizes": "192x192"
         },
         {
-            "src": "/apple-icon-152x152-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-180x180-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "152x213"
+            "sizes": "180x180"
         },
         {
-            "src": "/apple-icon-144x144-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-152x152-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "144x160"
+            "sizes": "152x152"
         },
         {
-            "src": "/apple-icon-120x120-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-144x144-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "120x168"
+            "sizes": "144x144"
         },
         {
-            "src": "/apple-icon-114x114-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-120x120-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "114x160"
+            "sizes": "120x120"
         },
         {
-            "src": "/favicon-96x96-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-114x114-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "96x135"
+            "sizes": "114x114"
         },
         {
-            "src": "/apple-icon-76x76-dunplab-manifest-602.png",
+            "src": "img/icon/favicon-96x96-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "76x107"
+            "sizes": "96x96"
         },
         {
-            "src": "/apple-icon-72x72-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-76x76-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "72x101"
+            "sizes": "76x76"
         },
         {
-            "src": "/apple-icon-60x60-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-72x72-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "60x84"
+            "sizes": "72x72"
         },
         {
-            "src": "/apple-icon-57x57-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-60x60-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "57x80"
+            "sizes": "60x60"
         },
         {
-            "src": "/favicon-32x32-dunplab-manifest-602.png",
+            "src": "img/icon/apple-icon-57x57-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "32x45"
+            "sizes": "57x57"
         },
         {
-            "src": "/favicon-16x16-dunplab-manifest-602.png",
+            "src": "img/icon/favicon-32x32-dunplab-manifest-702.png",
             "type": "image/png",
-            "sizes": "16x22"
+            "sizes": "32x32"
+        },
+        {
+            "src": "img/icon/favicon-16x16-dunplab-manifest-702.png",
+            "type": "image/png",
+            "sizes": "16x16"
         }
     ],
     "prefer_related_applications": false
