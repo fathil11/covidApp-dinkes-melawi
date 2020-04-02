@@ -135,7 +135,7 @@
         requireHTTPS.classList.remove('hidden');
         }
 
-        buttonInstall.addEventListener('click', (e) => {
+        butInstall.addEventListener('click', (e) => {
             // Hide the app provided install promotion
             hideMyInstallPromotion();
             // Show the install prompt
