@@ -141,8 +141,8 @@ if (window.location.protocol === 'http:') {
         deferredPrompt = e;
         // Update UI notify the user they can add to home screen
         showInstallPromotion();
-        ...
-        });
+
+        })
 
         window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent Chrome 67 and earlier from automatically showing the prompt
