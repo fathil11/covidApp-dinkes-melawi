@@ -16981,7 +16981,7 @@ thead.thead-inverse th,
 .dataTable>thead>tr>td,
 .dataTable>tbody>tr>td,
 .dataTable>tfoot>tr>td {
-    padding: 5px !important;
+    padding: 0.75rem !important;
 }
 
 body {
@@ -19195,7 +19195,7 @@ Copyright (c) 2015 Daniel Eden
         height: 100%;
         width: 100%;
         position: absolute;
-        background-color: #282828;
+        background-color: #ffffff;
         display: block;
         content: "";
         z-index: 1;

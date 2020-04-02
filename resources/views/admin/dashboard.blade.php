@@ -11,7 +11,7 @@
                             <i class="material-icons">add</i>
                         </div>
                         <p class="card-category">Positif</p>
-                        <h3 class="card-title">0</h3>
+                        <h3 class="card-title">{{ $stat['positive'] }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -27,7 +27,7 @@
                             <i class="material-icons">check</i>
                         </div>
                         <p class="card-category">Sembuh</p>
-                        <h3 class="card-title">0</h3>
+                        <h3 class="card-title">{{ $stat['recovered'] }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -43,7 +43,7 @@
                             <i class="material-icons">airline_seat_flat</i>
                         </div>
                         <p class="card-category">Meninggal</p>
-                        <h3 class="card-title">0</h3>
+                        <h3 class="card-title">{{ $stat['died'] }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -61,7 +61,7 @@
                             <i class="material-icons">search</i>
                         </div>
                         <p class="card-category">Orang Dalam Pengawasan</p>
-                        <h3 class="card-title">251</h3>
+                        <h3 class="card-title">{{ $stat['odp'] }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -77,7 +77,7 @@
                             <i class="material-icons">location_city</i>
                         </div>
                         <p class="card-category">Pasien Dalam Pengawasan</p>
-                        <h3 class="card-title">87</h3>
+                        <h3 class="card-title">{{ $stat['pdp'] }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-chart">
-                    <div class="card-header card-header-success">
+                    <div class="card-header card-header-info">
                         <div class="ct-chart" id="dailySalesChart"></div>
                     </div>
                     <div class="card-body">
@@ -148,32 +148,84 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    @php
+                                    use \App\Http\Controllers\AdminController;
+                                    @endphp
                                     <td>1</td>
-                                    <td>Nanga Pinoh</td>
-                                    <td>2</td>
-                                    <td>400</td>
-                                    <td>302</td>
+                                    <td>Sokan</td>
+                                    <td>{{ AdminController::getDistrictStat('0', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('0', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('0', '2') }}</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Sokan</td>
-                                    <td>0</td>
-                                    <td>50</td>
-                                    <td>30</td>
+                                    <td>Tanah Pinoh Barat</td>
+                                    <td>{{ AdminController::getDistrictStat('1', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('1', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('1', '2') }}</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Belimbing</td>
-                                    <td>0</td>
-                                    <td>30</td>
-                                    <td>15</td>
+                                    <td>Tanah Pinoh</td>
+                                    <td>{{ AdminController::getDistrictStat('2', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('2', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('2', '2') }}</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Ella Hilir</td>
-                                    <td>0</td>
-                                    <td>24</td>
+                                    <td>Sayan</td>
+                                    <td>{{ AdminController::getDistrictStat('3', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('3', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('3', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Belimbing Hulu</td>
+                                    <td>{{ AdminController::getDistrictStat('4', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('4', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('4', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Belimbing</td>
+                                    <td>{{ AdminController::getDistrictStat('5', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('5', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('5', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Pinoh Selatan</td>
+                                    <td>{{ AdminController::getDistrictStat('6', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('6', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('6', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Nanga Pinoh</td>
+                                    <td>{{ AdminController::getDistrictStat('7', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('7', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('7', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Pinoh Utara</td>
+                                    <td>{{ AdminController::getDistrictStat('8', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('8', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('8', '2') }}</td>
+                                </tr>
+                                <tr>
                                     <td>10</td>
+                                    <td>Ella Hilir</td>
+                                    <td>{{ AdminController::getDistrictStat('9', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('9', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('9', '2') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Menukung</td>
+                                    <td>{{ AdminController::getDistrictStat('10', '5') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('10', '0') }}</td>
+                                    <td>{{ AdminController::getDistrictStat('10', '2') }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -183,4 +235,13 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    $(document).ready(function () {
+
+md.initDashboardPageCharts();
+
+});
+</script>
 @endsection

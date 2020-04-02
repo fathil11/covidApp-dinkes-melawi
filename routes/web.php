@@ -14,50 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', 'PublicController@index');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
     // Person Index
     Route::get('/orang', 'AdminController@showAllPerson');
-    Route::get('/orang/odp', 'AdminController@showOdpPerson');
-    Route::get('/orang/pdp', 'AdminController@showPdpPerson');
+    Route::get('/orang/odp', 'AdminController@showOdpPeople');
+    Route::get('/orang/pdp', 'AdminController@showPdpPeople');
     // Person Create
     Route::get('/orang/tambah', 'AdminController@showCreatePerson');
-    Route::post('/orang', 'PersonController@storePerson');
+    Route::post('/orang', 'AdminController@storePerson');
     // Person Edit
-    Route::get('/orang/{id}/edit', 'PersonController@showEditPerson');
-    Route::patch('/orang/{id}', 'PersonController@updatePerson');
+    Route::get('/orang/{id}/edit', 'AdminController@showEditPerson');
+    Route::patch('/orang/{id}', 'AdminController@updatePerson');
     // Person Delete
-    Route::get('/orang/{id}', 'PersonController@deletePerson');
+    Route::get('/orang/{id}/delete', 'AdminController@deletePerson');
     // Person Change Status
-    Route::get('/orang/{id}/pdp', 'PersonController@pdpPerson');
-    Route::get('/orang/{id}/pulang', 'PersonController@clearPerson');
-    Route::get('/orang/{id}/odp', 'PersonController@odpPerson');
-    Route::get('/orang/{id}/positif', 'PersonController@positivePerson');
-    Route::get('/orang/{id}/negatif', 'PersonController@negativePerson');
-    Route::get('/orang/{id}/meninggal', 'PersonController@diedPerson');
+    Route::get('/orang/{id}/pdp', 'AdminController@pdpPerson');
+    Route::get('/orang/{id}/pulang', 'AdminController@clearPerson');
+    Route::get('/orang/{id}/odp', 'AdminController@odpPerson');
+    Route::get('/orang/{id}/positif', 'AdminController@positivePerson');
+    Route::get('/orang/{id}/negatif', 'AdminController@negativePerson');
+    Route::get('/orang/{id}/meninggal', 'AdminController@diedPerson');
 });
 
-Auth::routes();
+// Auth::routes();
 // Route::get('/login', 'PublicController');
 
 
 // Route::get('/', 'HomeController@index')->name('home');
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
-Route::get('/admin/orang/tambah', function () {
-    return view('admin.addPerson');
-});
-Route::get('/admin/orang', function () {
-    return view('admin.allPerson');
-});
-Route::get('/admin/orang/edit', function () {
-    return view('admin.editPerson');
-});
-Route::get('/admin/odp', function () {
-    return view('admin.odpPerson');
-});
-Route::get('/admin/pdp', function () {
-    return view('admin.pdpPerson');
-});

@@ -42,11 +42,15 @@ class Person extends Model
             3 => 'Negatif',
             4 => 'Meninggal ?',
             5 => 'Positif',
-            6 => 'Meninggal Positif',
-            7 => 'Sembuh'
+            6 => 'Meninggal +',
+            7 => 'Sembuh',
+            8 => 'Meninggal -'
         ][$attribute];
     }
-
+    public function getActualAttribute($field)
+    {
+        return $this->attributes[$field];
+    }
     public function logs()
     {
         return $this->hasMany('App\Log', 'person_id', 'id');

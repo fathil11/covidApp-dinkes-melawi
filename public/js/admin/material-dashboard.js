@@ -209,8 +209,6 @@ md = {
             }
 
             var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-            var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
         }
     },
 
@@ -309,7 +307,7 @@ md = {
 
     initDashboardPageCharts: function () {
 
-        if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
+        if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0) {
             /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
             dataDailySalesChart = {
@@ -370,26 +368,6 @@ md = {
 
             /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
-            var dataWebsiteViewsChart = {
-                labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-                series: [
-                    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-                ]
-            };
-            var optionsWebsiteViewsChart = {
-                axisX: {
-                    showGrid: false
-                },
-                low: 0,
-                high: 1000,
-                chartPadding: {
-                    top: 0,
-                    right: 5,
-                    bottom: 0,
-                    left: 0
-                }
-            };
             var responsiveOptions = [
                 ['screen and (max-width: 640px)', {
                     seriesBarDistance: 5,
@@ -400,10 +378,6 @@ md = {
                     }
                 }]
             ];
-            var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
-
-            //start animation for the Emails Subscription Chart
-            md.startAnimationForBarChart(websiteViewsChart);
         }
     },
 
@@ -459,15 +433,15 @@ md = {
 
             nav_content = '<ul class="nav navbar-nav nav-mobile-menu">' + nav_content + '</ul>';
 
-            navbar_form = $('nav').find('.navbar-form').get(0).outerHTML;
+            // navbar_form = $('nav').find('.navbar-form').get(0).outerHTML;
 
             $sidebar_nav = $sidebar_wrapper.find(' > .nav');
 
             // insert the navbar form before the sidebar list
             $nav_content = $(nav_content);
-            $navbar_form = $(navbar_form);
+            // $navbar_form = $(navbar_form);
             $nav_content.insertBefore($sidebar_nav);
-            $navbar_form.insertBefore($nav_content);
+            // $navbar_form.insertBefore($nav_content);
 
             $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function (event) {
                 event.stopPropagation();
