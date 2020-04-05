@@ -85,21 +85,7 @@
             </div>
         </div>
     </footer>
-    <p id="requireHTTPS" class="hidden">
-        <b>STOP!</b> This page <b>must</b> be served over HTTPS.
-        Please <a>reload this page via HTTPS</a>.
-    </p>
 
-    <p>
-        Make me installable, follow the
-        <a href="https://web.dev/installable/discover-installable/codelab-make-installable">instructions</a> here.
-    </p>
-    <!-- Install button, hidden by default -->
-    <div id="installContainer" class="hidden">
-        <button id="butInstall" type="button">
-            Install
-        </button>
-    </div>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
 
     {{-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
