@@ -186,8 +186,12 @@
                             <h3 class="text-white font-weight-bold">Mengalami Gejala Tersebut ?</h3>
                             <img class="lazyload img-fluid mt-3" data-src="{{ asset('img/dokter.png') }}"
                                 alt="Gambar Dokter" srcset="">
-                            <a class="mt-3 btn btn-rounded btn-warning" href="tel:12345">
-                                <h4 class="px-3 mb-0">Hubungi 12345</h4>
+                            <a class="mt-3 btn btn-rounded btn-warning" href="tel:085350411537">
+                                <h4 class="px-3 mb-0">Hubungi Hariyanto (085350411537)</h4>
+                            </a>
+                            <h4 class="text-white">atau</h4>
+                            <a class="btn btn-rounded btn-warning" href="tel:082148659000">
+                                <h4 class="px-3 mb-0">Hubungi Puspa (082148659000)</h4>
                             </a>
                         </div>
                     </div>
