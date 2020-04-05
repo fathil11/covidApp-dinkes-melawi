@@ -18,32 +18,6 @@
     <div class="card mt-n6">
         <div class="card-body my-2">
             <div class="row mx-0 mx-md-1">
-                <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                    <div class="card bg-red">
-                        <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Positif</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['positive'] }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                    <div class="card bg-green">
-                        <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Sembuh</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['recovered'] }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="card bg-gray">
-                        <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Meninggal</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['died+'] }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mx-0 mx-md-1 mt-4">
                 <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
                     <div class="card bg-blue">
                         <div class="card-body text-center">
@@ -86,11 +60,38 @@
                                     <h1 class="font-weight-bold text-white">{{ $stat['negative'] }}</h1>
                                 </div>
                             </div>
-                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row mx-0 mx-md-1 mt-4">
+                <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                    <div class="card bg-red">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Positif</h1>
+                                <h1 class="font-weight-bold text-white">{{ $stat['positive'] }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                    <div class="card bg-green">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Sembuh</h1>
+                                <h1 class="font-weight-bold text-white">{{ $stat['recovered'] }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card bg-gray">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Meninggal</h1>
+                                <h1 class="font-weight-bold text-white">{{ $stat['died+'] }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row mx-0 mx-md-2 mt-3">
                 <div class="col-md-6 col-sm-12 mb-2 mb-md-0">
                     <h4 class="">Keterangan</h4>

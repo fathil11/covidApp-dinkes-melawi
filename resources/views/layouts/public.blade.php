@@ -101,24 +101,24 @@
     </script>
     @yield('js')
     <script>
-        const divInstall = document.getElementById('installContainer');
-        const butInstall = document.getElementById('butInstall');
+        // const divInstall = document.getElementById('installContainer');
+        // const butInstall = document.getElementById('butInstall');
 
-        /* Put code here */
-        butInstall.addEventListener('click', (e) => {
-            // Hide the app provided install promotion
-            hideMyInstallPromotion();
-            // Show the install prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
-                } else {
-                console.log('User dismissed the install prompt');
-                }
-            })
-        });
+        // /* Put code here */
+        // butInstall.addEventListener('click', (e) => {
+        //     // Hide the app provided install promotion
+        //     hideMyInstallPromotion();
+        //     // Show the install prompt
+        //     deferredPrompt.prompt();
+        //     // Wait for the user to respond to the prompt
+        //     deferredPrompt.userChoice.then((choiceResult) => {
+        //         if (choiceResult.outcome === 'accepted') {
+        //         console.log('User accepted the install prompt');
+        //         } else {
+        //         console.log('User dismissed the install prompt');
+        //         }
+        //     })
+        // });
 
         /* Only register a service worker if it's supported */
         if ('serviceWorker' in navigator) {
@@ -131,12 +131,12 @@
          * Installability requires a service worker with a fetch event handler, and
          * if the page isn't served over HTTPS, the service worker won't load.
          */
-        if (window.location.protocol === 'http:') {
-            const requireHTTPS = document.getElementById('requireHTTPS');
-            const link = requireHTTPS.querySelector('a');
-            link.href = window.location.href.replace('http://', 'https://');
-            requireHTTPS.classList.remove('hidden');
-        }
+        // if (window.location.protocol === 'http:') {
+        //     const requireHTTPS = document.getElementById('requireHTTPS');
+        //     const link = requireHTTPS.querySelector('a');
+        //     link.href = window.location.href.replace('http://', 'https://');
+        //     requireHTTPS.classList.remove('hidden');
+        // }
 
 
     </script>
