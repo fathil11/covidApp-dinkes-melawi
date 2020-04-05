@@ -140,7 +140,7 @@
                     <div class="card-body table-responsive">
                         <table class="table table-hover">
                             <thead class="text-info">
-                                <th>No</th>
+                                <th>#</th>
                                 <th>Kecamatan</th>
                                 <th>Positif</th>
                                 <th>PDP</th>

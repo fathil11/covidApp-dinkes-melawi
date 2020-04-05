@@ -111,6 +111,113 @@
             </div>
         </div>
     </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h1 class="text-center font-weight-bold mb-4">Tabel Kecamatan</h1>
+        </div>
+        <div class="col-md-12">
+            <div class="card bg-white">
+                <div class="card-body">
+                    <table class="table table-hover table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Kecamatan</th>
+                                <th scope="col">ODP</th>
+                                <th scope="col">PDP</th>
+                                <th scope="col">Positif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tbody>
+                            <tr>
+                                @php
+                                use \App\Http\Controllers\PublicController;
+                                @endphp
+                                <td>1</td>
+                                <td>Sokan</td>
+                                <td>{{ PublicController::getDistrictStat('0', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('0', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('0', '5') }}</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Tanah Pinoh Barat</td>
+                                <td>{{ PublicController::getDistrictStat('1', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('1', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('1', '5') }}</td>
+                            </tr>
+                            <tr class="bg-warning">
+                                <td>3</td>
+                                <td>Tanah Pinoh</td>
+                                <td>{{ PublicController::getDistrictStat('2', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('2', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('2', '5') }}</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sayan</td>
+                                <td>{{ PublicController::getDistrictStat('3', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('3', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('3', '5') }}</td>
+                            </tr>
+                            <tr class="bg-warning">
+                                <td>5</td>
+                                <td>Belimbing Hulu</td>
+                                <td>{{ PublicController::getDistrictStat('4', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('4', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('4', '5') }}</td>
+                            </tr>
+                            <tr class="bg-warning">
+                                <td>6</td>
+                                <td>Belimbing</td>
+                                <td>{{ PublicController::getDistrictStat('5', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('5', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('5', '5') }}</td>
+                            </tr>
+                            <tr class="bg-warning">
+                                <td>7</td>
+                                <td>Pinoh Selatan</td>
+                                <td>{{ PublicController::getDistrictStat('6', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('6', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('6', '5') }}</td>
+                            </tr>
+                            <tr class="bg-danger">
+                                <td>8</td>
+                                <td>Nanga Pinoh</td>
+                                <td>{{ PublicController::getDistrictStat('7', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('7', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('7', '5') }}</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Pinoh Utara</td>
+                                <td>{{ PublicController::getDistrictStat('8', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('8', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('8', '5') }}</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Ella Hilir</td>
+                                <td>{{ PublicController::getDistrictStat('9', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('9', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('9', '5') }}</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Menukung</td>
+                                <td>{{ PublicController::getDistrictStat('10', '0') }}</td>
+                                <td>{{ PublicController::getDistrictStat('10', '2') }}</td>
+                                <td>{{ PublicController::getDistrictStat('10', '5') }}</td>
+                            </tr>
+                        </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="row mt-7">
         <div class="col-md-12 mb-3">
             <h1 class="text-center font-weight-bold mb-4">Tentang COVID-19</h1>

@@ -50,6 +50,11 @@ class PublicController extends Controller
         }
     }
 
+    public static function getDistrictStat($dis, $stat)
+    {
+        return Person::where([['district', $dis], ['status', $stat]])->get()->count();
+    }
+
     public function pushStat()
     {
         $client_ip = $this->getUserIpAddr();
