@@ -12,9 +12,20 @@ class AdminSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('123123'),
+            'name' => 'Admin 1',
+            'email' => 'admin1@dinkesmelawi.com',
+            'password' => Hash::make('melawicovid19'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Admin 2',
+            'email' => 'admin2@dinkesmelawi.com',
+            'password' => Hash::make('melawicovid19'),
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Admin 3',
+            'email' => 'admin3@dinkesmelawi.com',
+            'password' => Hash::make('melawicovid19'),
         ]);
     }
 }

@@ -13,7 +13,7 @@ class CreateStatisticsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Statistics', function (Blueprint $table) {
+        Schema::create('statistics', function (Blueprint $table) {
             $table->id();
             $table->string('viewer_ip');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateStatisticsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Statistics');
+        Schema::dropIfExists('statistics');
     }
 }
