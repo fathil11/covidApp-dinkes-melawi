@@ -27,5 +27,11 @@ class AdminSeeder extends Seeder
             'email' => 'admin3@dinkesmelawi.com',
             'password' => Hash::make('melawicovid19'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Admin Post',
+            'email' => 'post@dinkesmelawi.com',
+            'password' => Hash::make('melawicovid19'),
+        ]);
     }
 }

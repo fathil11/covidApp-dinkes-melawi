@@ -39,6 +39,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/orang/{id}/meninggal', 'AdminController@diedPerson');
 });
 
+Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], function () {
+    Route::get('/', 'ContentAdminController@index');
+
+    Route::get('/post', 'ContentAdminController@showAllPost');
+
+    Route::get('/post/tambah', 'ContentAdminController@showCreatePost');
+    Route::post('/post', 'ContentAdminController@storePost');
+});
+
 Auth::routes();
 Route::get('/logout', 'PublicController@logout');
 

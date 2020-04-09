@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -41,5 +42,18 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('public.login');
+    }
+
+    public function redirectTo()
+    {
+        $email = Auth::user()->email;
+        switch ($email) {
+            case 'post@dinkesmelawi.com':
+                    return '/admin/content';
+                break;
+            default:
+                    return '/admin';
+                break;
+        }
     }
 }
