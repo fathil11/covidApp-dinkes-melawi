@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Statistic;
 use App\Person;
+use App\Post;
 use App\Log;
 use Carbon\Carbon;
 
@@ -38,6 +39,12 @@ class PublicController extends Controller
     public function showLogin()
     {
         return view('public.login');
+    }
+
+    public function showAllPost()
+    {
+        $posts = Post::all();
+        return view('public.allPost', compact('posts'));
     }
 
     public function logout()

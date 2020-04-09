@@ -176,3 +176,11 @@ body {
     font-size: 1em;
     padding: 0.75em;
 }
+
+.tgl{
+    background-color: #00c5c9;
+    color: white;
+    border-radius: 10px;
+    top: 10px;
+    left: 10px;
+}

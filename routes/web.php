@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'PublicController@index');
+Route::get('/berita', 'PublicController@showAllPost');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'AdminController@index');
