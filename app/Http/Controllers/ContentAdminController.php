@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Post;
 use voku\Html2Text\Html2Text;
+use Intervention\Image\Facades\Image;
 
 class ContentAdminController extends Controller
 {
@@ -28,7 +29,7 @@ class ContentAdminController extends Controller
     public function storePost(Request $request)
     {
         $request->validate([
-            'title' => 'required|min:5|max:50',
+            'title' => 'required|min:5|max:100',
             'image' => 'required|file|image|max:3000',
             'content' => 'required|min:40|max:65000'
         ]);
@@ -38,6 +39,11 @@ class ContentAdminController extends Controller
         $post->slug = Str::slug($request->title);
         $post->banner = $request->image->store('blog-banners', 'public');
         $post->content = $request->content;
+
+        // Img Resize
+        $resize = Image::make(public_path('storage/' . $post->banner))->fit(750, 500);
+        $resize->save();
+
         if($post->save()){
             return redirect('/admin/content/post/tambah')->with('success', 'Berhasil menambahkan postingan');
         }
@@ -52,7 +58,7 @@ class ContentAdminController extends Controller
     public function updatePost(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|min:5|max:50',
+            'title' => 'required|min:5|max:100',
             'image' => 'nullable|file|image|max:3000',
             'content' => 'required|min:40|max:65000'
         ]);
@@ -62,6 +68,9 @@ class ContentAdminController extends Controller
         $post->slug = Str::slug($request->title);
         if($request->hasFile('image')){
             $post->banner = $request->image->store('blog-banners', 'public');
+            // Img Resize
+            $resize = Image::make(public_path('storage/' . $post->banner))->fit(750, 500);
+            $resize->save();
         }
         $post->content = $request->content;
         if($post->save()){

@@ -8,11 +8,11 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/logoMelawi.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('img/logoMelawi.png') }}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/public/custom.css') }}">
     <title>Covid Melawi</title>
-    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    @yield('manifest')
     <style>
         .hidden {
             display: none !important;
@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-white">
+    <header class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand font-weight-reguler" href="/">
                 <img src="{{ asset('img/logoMelawi.png') }}" width="30px" class="mr-lg-2" alt="">
@@ -49,11 +49,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto text-main">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#hubungikami">Hubungi Kami</a>
+                    <li class="nav-item {{ Request::is('berita') || Request::is('berita/*') ? 'active' : '' }}">
+                        <a class="nav-link" href="/berita">Berita</a>
+                    </li>
+                    <li class="nav-item {{ Request::is('hubungi-kami') ? 'active' : '' }}">
+                        <a class="nav-link" href="/hubungi-kami">Hubungi Kami</a>
                     </li>
                 </ul>
             </div>
@@ -97,49 +100,9 @@
     </script>
     <script src="{{ asset('js/popper.min.js') }}">
     </script>
-    <script src="{{ asset('js/bootstrap.js') }}">
+    <script src="{{ asset('js/bootstrap.min.js') }}">
     </script>
     @yield('js')
-    <script>
-        // const divInstall = document.getElementById('installContainer');
-        // const butInstall = document.getElementById('butInstall');
-
-        // /* Put code here */
-        // butInstall.addEventListener('click', (e) => {
-        //     // Hide the app provided install promotion
-        //     hideMyInstallPromotion();
-        //     // Show the install prompt
-        //     deferredPrompt.prompt();
-        //     // Wait for the user to respond to the prompt
-        //     deferredPrompt.userChoice.then((choiceResult) => {
-        //         if (choiceResult.outcome === 'accepted') {
-        //         console.log('User accepted the install prompt');
-        //         } else {
-        //         console.log('User dismissed the install prompt');
-        //         }
-        //     })
-        // });
-
-        /* Only register a service worker if it's supported */
-        if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js');
-        }
-
-        /**
-         * Warn the page must be served over HTTPS
-         * The `beforeinstallprompt` event won't fire if the page is served over HTTP.
-         * Installability requires a service worker with a fetch event handler, and
-         * if the page isn't served over HTTPS, the service worker won't load.
-         */
-        // if (window.location.protocol === 'http:') {
-        //     const requireHTTPS = document.getElementById('requireHTTPS');
-        //     const link = requireHTTPS.querySelector('a');
-        //     link.href = window.location.href.replace('http://', 'https://');
-        //     requireHTTPS.classList.remove('hidden');
-        // }
-
-
-    </script>
 </body>
 
 </html>

@@ -46,12 +46,12 @@
                     </thead>
                     <tbody>
                         @forelse ($posts as $key=>$post)
-                        <tr class="text-center">
-                            <td class="font-weight-bold">{{ ($key+1) }}</td>
+                        <tr>
+                            <td class="font-weight-bold text-center">{{ ($key+1) }}</td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->created_at }}</td>
-                            <td>{{ $post->updated_at }}</td>
-                            <td>
+                            <td class="text-center">{{ $post->created_at }}</td>
+                            <td class="text-center">{{ $post->updated_at }}</td>
+                            <td class="text-center">
                                 <form action="/admin/content/post/{{ $post->id }}/edit" method="GET">
                                     <button type="submit" class="btn btn-gradient-warning btn-rounded btn-icon">
                                         <i class="mdi mdi-lead-pencil"></i>

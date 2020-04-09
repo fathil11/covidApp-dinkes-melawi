@@ -16,24 +16,38 @@
 
 <div class="container">
     <div class="col-md-12 mt-5">
-        <h1 class="display-4 text-center">Berita</h1>
+        <h1 class="display-4 text-center mb-5">Berita</h1>
     </div>
     <div class="row">
+        @forelse ($posts as $post)
         <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-            <div class="card">
-                <div class="position-relative">
-                    <div class="tgl py-2 px-4 position-absolute">
-                        <h5 class="text-center">21</h5>
-                        <h6 class="text-center">Okt</h6>
+            <a class="no-style" href="{{ url('/berita/lihat') .'/'. $post->slug }}">
+                <div class="card">
+                    <div class="position-relative">
+                        <div class="tgl py-2 px-4 position-absolute">
+                            <h5 class="text-center">{{ date('d', strtotime($post->created_at)) }}</h5>
+                            <h6 class="text-center">{{ substr(date('F', strtotime($post->created_at)), 0, 3) }}</h6>
+                        </div>
+                    </div>
+                    <img src="{{ asset('storage/'.$post->banner)}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ $post->title }}</h4>
+                        <p class="card-text">
+                            @php
+                            $content = new HtmlToText($post->content);
+                            $content = $content->getText();
+                            @endphp
+                            {{ Str::limit($content,100) }}
+                        </p>
                     </div>
                 </div>
-                <img src="{{ asset('storage/blog-banners/9mJNHqz1enDpojLHDFBjV5I9ws39E7uOMJIBHwcj.jpeg') }}"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">Hari ini telah terjadi di Posko 2010</h4>
-                </div>
-            </div>
+            </a>
         </div>
+        @empty
+        <div class="col-md-12 text-center">
+            <h2 class="mt-5">Mohon maaf, belum ada berita.</h2>
+        </div>
+        @endforelse
     </div>
 </div>
 @endsection

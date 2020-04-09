@@ -1,4 +1,7 @@
 @extends('layouts.public')
+@section('manifest')
+<link rel="manifest" href="{{ asset('manifest.json') }}">
+@endsection
 @section('content')
 <div class="bg-main">
     <div class="container">
@@ -147,7 +150,7 @@
                                 <td>{{ PublicController::getDistrictStat('1', '2') }}</td>
                                 <td>{{ PublicController::getDistrictStat('1', '5') }}</td>
                             </tr>
-                            <tr class="bg-warning">
+                            <tr class="">
                                 <td>3</td>
                                 <td>Tanah Pinoh</td>
                                 <td>{{ PublicController::getDistrictStat('2', '0') }}</td>
@@ -161,28 +164,28 @@
                                 <td>{{ PublicController::getDistrictStat('3', '2') }}</td>
                                 <td>{{ PublicController::getDistrictStat('3', '5') }}</td>
                             </tr>
-                            <tr class="bg-warning">
+                            <tr class="">
                                 <td>5</td>
                                 <td>Belimbing Hulu</td>
                                 <td>{{ PublicController::getDistrictStat('4', '0') }}</td>
                                 <td>{{ PublicController::getDistrictStat('4', '2') }}</td>
                                 <td>{{ PublicController::getDistrictStat('4', '5') }}</td>
                             </tr>
-                            <tr class="bg-warning">
+                            <tr class="">
                                 <td>6</td>
                                 <td>Belimbing</td>
                                 <td>{{ PublicController::getDistrictStat('5', '0') }}</td>
                                 <td>{{ PublicController::getDistrictStat('5', '2') }}</td>
                                 <td>{{ PublicController::getDistrictStat('5', '5') }}</td>
                             </tr>
-                            <tr class="bg-warning">
+                            <tr class="">
                                 <td>7</td>
                                 <td>Pinoh Selatan</td>
                                 <td>{{ PublicController::getDistrictStat('6', '0') }}</td>
                                 <td>{{ PublicController::getDistrictStat('6', '2') }}</td>
                                 <td>{{ PublicController::getDistrictStat('6', '5') }}</td>
                             </tr>
-                            <tr class="bg-danger">
+                            <tr class="">
                                 <td>8</td>
                                 <td>Nanga Pinoh</td>
                                 <td>{{ PublicController::getDistrictStat('7', '0') }}</td>
@@ -223,6 +226,11 @@
             <h1 class="text-center font-weight-bold mb-4">Tentang COVID-19</h1>
         </div>
         <div class="col-md-6">
+            <video class="img-fluid" autoplay>
+                <source src="{{ asset('video/covid.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0 align-self-center">
             <div class="card bg-white">
                 <div class="card-body">
                     <h2 class="font-weight-bold">Apa Itu COVID-19</h2>
@@ -238,7 +246,9 @@
                     </p>
                 </div>
             </div>
-            <div class="card bg-white mt-5">
+        </div>
+        <div class="col-md-12">
+            <div class="card bg-white mt-4">
                 <div class="card-body">
                     <h2 class="font-weight-bold">Bagaimana COVID-19 Menular ?</h2>
                     <p class="text-justify">COVID-19 adalah penyakit baru dan para peneliti masih mempelajari bagaimana
@@ -261,9 +271,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6  mt-4">
             <div class="row">
-                <div class="col-md-12 mt-4 mt-md-0">
+                <div class="col-md-12 mt-md-0">
                     <div class="card bg-blue">
                         <div class="card-body">
                             <h3 class="text-center text-white font-weight-bold">Gejala COVID-19</h3>
@@ -287,24 +297,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 mt-4" id="hubungikami">
-                    <div class="card bg-yellow">
-                        <div class="card-body text-center">
-                            <h3 class="text-white font-weight-bold">Mengalami Gejala Tersebut ?</h3>
-                            <img class="lazyload img-fluid mt-3" data-src="{{ asset('img/dokter.png') }}"
-                                alt="Gambar Dokter" srcset="">
-                            <a class="mt-3 btn btn-rounded btn-warning" href="tel:085350411537">
-                                <h4 class="px-3 mb-0">Hubungi Hariyanto (085350411537)</h4>
-                            </a>
-                            <h4 class="text-white">atau</h4>
-                            <a class="btn btn-rounded btn-warning" href="tel:082148659000">
-                                <h4 class="px-3 mb-0">Hubungi Puspa (082148659000)</h4>
-                            </a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4" id="hubungikami">
+            <div class="card bg-yellow">
+                <div class="card-body text-center">
+                    <h3 class="text-white font-weight-bold">Mengalami Gejala Tersebut ?</h3>
+                    <img class="lazyload img-fluid mt-3" data-src="{{ asset('img/dokter.png') }}" alt="Gambar Dokter"
+                        srcset="">
+                    <a class="mt-3 btn btn-rounded btn-warning" href="tel:085350411537">
+                        <h4 class="px-3 mb-0">Hubungi Hariyanto (085350411537)</h4>
+                    </a>
+                    <h4 class="text-white">atau</h4>
+                    <a class="btn btn-rounded btn-warning" href="tel:082148659000">
+                        <h4 class="px-3 mb-0">Hubungi Puspa (082148659000)</h4>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js');
+    }
+</script>
 @endsection

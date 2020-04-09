@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/public/login-custom.css') }}">
     <title>Covid Melawi</title>
@@ -69,7 +69,7 @@
     </script>
     <script src="{{ asset('js/popper.min.js') }}">
     </script>
-    <script src="{{ asset('js/bootstrap.js') }}">
+    <script src="{{ asset('js/bootstrap.min.js') }}">
     </script>
     @yield('js')
 </body>

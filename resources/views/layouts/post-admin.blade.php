@@ -72,7 +72,8 @@
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
-                    <li class="nav-item {{ Request::is('admin/content/post') ? 'active' : '' }}">
+                    <li
+                        class="nav-item {{ Request::is('admin/content/post') || Request::is('admin/content/post/*') ? 'active' : '' }}">
                         <a class="nav-link" href="/admin/content/post">
                             <span class="menu-title">Kelola Post</span>
                             <i class="mdi mdi-view-list menu-icon"></i>
@@ -100,9 +101,9 @@
                             @php
                             if(Request::is('admin/content')){
                             $icon = 'mdi-home';
-                            }elseif((Request::is('admin/content/post'))){
+                            }elseif(Request::is('admin/content/post') || Request::is('admin/content/post/*')){
                             $icon = 'mdi-view-list';
-                            }elseif((Request::is('admin/content/post/tambah'))){
+                            }elseif(Request::is('admin/content/post/tambah')){
                             $icon = 'mdi-pencil';
                             }
                             @endphp

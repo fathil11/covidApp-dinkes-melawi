@@ -19,7 +19,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+            if(Auth::user()->email != 'post@dinkesmelawi.com'){
+                return redirect(RouteServiceProvider::HOME);
+            }else{
+                return redirect('/admin/content');
+            }
         }
 
         return $next($request);

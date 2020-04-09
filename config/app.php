@@ -226,6 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Carbon' => Carbon\Carbon::class,
         'HtmlToText' => voku\Html2Text\Html2Text::class,
     ],
 

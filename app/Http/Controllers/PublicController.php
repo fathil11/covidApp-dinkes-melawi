@@ -47,6 +47,17 @@ class PublicController extends Controller
         return view('public.allPost', compact('posts'));
     }
 
+    public function openPost($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('public.openPost', compact('post'));
+    }
+
+    public function showCotactUs()
+    {
+        return view('public.contactUs');
+    }
+
     public function logout()
     {
         if (Auth::check()) {
