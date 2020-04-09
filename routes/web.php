@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'PublicController@index');
+Route::get('/', 'PublicController@index')->name('home');
 Route::get('/berita', 'PublicController@showAllPost');
 Route::get('/berita/lihat/{slug}', 'PublicController@openPost');
 Route::get('/hubungi-kami', 'PublicController@showCotactUs');
