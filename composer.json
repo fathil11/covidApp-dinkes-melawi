@@ -15,7 +15,7 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "silviolleite/laravelpwa": "^1.0"
+        "voku/html2text": "^5.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/post-admin/vendor.bundle.base.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/post-admin/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/post-admin/ckstyle.css') }}"> --}}
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('img/icon/apple-icon-144x144-dunplab-manifest-702.png') }}" />
 </head>
@@ -78,13 +79,13 @@
                         </a>
                     </li>
                     <li class="nav-item {{ Request::is('admin/content/post/tambah') ? 'active' : '' }}">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
+                        <a class="nav-link" href="/admin/content/post/tambah">
                             <span class="menu-title">Buat Post</span>
                             <i class="mdi mdi-pencil menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartjs.html">
+                        <a class="nav-link" href="/logout">
                             <span class="menu-title">Logout</span>
                             <i class="mdi mdi-logout-variant menu-icon"></i>
                         </a>
@@ -96,8 +97,17 @@
                 <div class="content-wrapper">
                     <div class="page-header">
                         <h3 class="page-title">
+                            @php
+                            if(Request::is('admin/content')){
+                            $icon = 'mdi-home';
+                            }elseif((Request::is('admin/content/post'))){
+                            $icon = 'mdi-view-list';
+                            }elseif((Request::is('admin/content/post/tambah'))){
+                            $icon = 'mdi-pencil';
+                            }
+                            @endphp
                             <span class="page-title-icon bg-gradient-primary text-white mr-2">
-                                <i class="mdi mdi-home"></i>
+                                <i class="mdi {{ $icon }}"></i>
                             </span> @yield('title') </h3>
                     </div>
                     @yield('content')

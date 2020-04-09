@@ -46,6 +46,11 @@ Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], fun
 
     Route::get('/post/tambah', 'ContentAdminController@showCreatePost');
     Route::post('/post', 'ContentAdminController@storePost');
+
+    Route::get('/post/{id}/edit', 'ContentAdminController@showEditPost');
+    Route::patch('/post/{id}', 'ContentAdminController@updatePost');
+
+    Route::get('/post/{id}/delete', 'ContentAdminController@deletePost');
 });
 
 Auth::routes();

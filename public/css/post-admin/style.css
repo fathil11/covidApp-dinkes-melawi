@@ -13376,3 +13376,6 @@ dl {
   flex-grow: 1; }
 
 /*# sourceMappingURL=style.css.map */
+form{
+    display: inline;
+}
