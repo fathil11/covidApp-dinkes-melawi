@@ -227,7 +227,7 @@
         </div>
         <div class="col-md-6">
             <video class="img-fluid" autoplay controls>
-                <source src="{{ asset('video/covid-2.mp4') }}" type="video/mp4">
+                <source src="{{ asset('video/covid-3.mp4') }}" type="video/mp4">
             </video>
         </div>
         <div class="col-md-6 mt-4 mt-md-0 align-self-center">
