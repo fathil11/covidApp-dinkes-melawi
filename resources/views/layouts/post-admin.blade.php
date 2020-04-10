@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li
-                        class="nav-item {{ Request::is('admin/content/post') || Request::is('admin/content/post/*') ? 'active' : '' }}">
+                        class="nav-item {{ Request::is('admin/content/post') || Request::is('admin/content/post/*/edit') ? 'active' : '' }}">
                         <a class="nav-link" href="/admin/content/post">
                             <span class="menu-title">Kelola Post</span>
                             <i class="mdi mdi-view-list menu-icon"></i>
