@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="col-6">
                                         <a target="_blank" class="btn btn-success btn-block btn-rounded"
-                                            href="https://wa.me/085350411537">
+                                            href="https://wa.me/+6285350411537">
                                             Whatsapp
                                         </a>
                                     </div>
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="col-6">
                                         <a target="_blank" class="btn btn-success btn-block btn-rounded"
-                                            href="https://wa.me/082148659000">
+                                            href="https://wa.me/+6282148659000">
                                             Whatsapp
                                         </a>
                                     </div>
