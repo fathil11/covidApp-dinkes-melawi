@@ -109,7 +109,7 @@
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio1" value="0"
                                                             {{ old('status') == "0" ? 'checked' : '' }}>
-                                                        PDP
+                                                        ODP
                                                         <span class="circle">
                                                             <span class="check"></span>
                                                         </span>
@@ -120,7 +120,7 @@
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio2" value="2"
                                                             {{ old('status') == "2" ? 'checked' : '' }}>
-                                                        ODP
+                                                        PDP
                                                         <span class="circle">
                                                             <span class="check"></span>
                                                         </span>
