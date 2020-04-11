@@ -108,7 +108,7 @@
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio1" value="0"
-                                                            {{ old('status') == "0" ? 'checked' : '' }}>
+                                                            {{ old('status') == "0" ? 'checked' : '' }} checked>
                                                         ODP
                                                         <span class="circle">
                                                             <span class="check"></span>
