@@ -79,7 +79,6 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
-                plugins: [MediaEmbed],
                 mediaEmbed: {
                     previewsInData: true,
                     providers:
