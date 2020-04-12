@@ -324,7 +324,7 @@
         navigator.serviceWorker.register('./service-worker.js');
     }
     $('#tes').click(function () {
-        hideMyInstallPromotion();
+        // hideMyInstallPromotion();
   // Show the install prompt
   deferredPrompt.prompt();
   // Wait for the user to respond to the prompt
