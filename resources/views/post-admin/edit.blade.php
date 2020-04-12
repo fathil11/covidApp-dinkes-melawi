@@ -112,17 +112,24 @@
                     providers: [
                         {
                             name: 'youtube',
-                            // A URL regexp or an array of URL regexps:
-                            url: /^youtube\.com\/watch?v=\/(\w+)/,
+                            url: [
+                                /^(?:m\.)?youtube\.com\/watch\?v=([\w-]+)/,
+                                /^(?:m\.)?youtube\.com\/v\/([\w-]+)/,
+                                /^youtube\.com\/embed\/([\w-]+)/,
+                                /^youtu\.be\/([\w-]+)/
+                            ],
+                            html: match => {
+                                const id = match[ 1 ];
 
-                            // To be defined only if the media are previewable:
-                            html: id =>
-                            '<div style="position: relative; padding-bottom: 100%; height: 0; ">' +
-                                `<iframe src="https://www.dailymotion.com/embed/video/${ id }" ` +
-                                    'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
-                                    'frameborder="0" width="480" height="270" allowfullscreen allow="autoplay">' +
-                                '</iframe>' +
-                            '</div>'
+                                return (
+                                    '<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;">' +
+                                        `<iframe src="https://www.youtube.com/embed/${ id }" ` +
+                                            'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
+                                            'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>' +
+                                        '</iframe>' +
+                                    '</div>'
+                                );
+                            }
                         }
                     ]
                 },
