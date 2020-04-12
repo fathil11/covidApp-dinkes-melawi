@@ -1,4 +1,3 @@
-const Swal = require('sweetalert2');
 
 // Service Woorker Init
 if ('serviceWorker' in navigator) {
@@ -14,9 +13,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
+
     var addBtn = butInstall;
-    // Update UI to notify the user they can add to home screen
-    addBtn.style.display = 'block';
+    addBtn.style.visibilty = 'visible';
 
     addBtn.addEventListener('click', (e) => {
         // Show the prompt

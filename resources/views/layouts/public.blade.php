@@ -56,7 +56,7 @@
                         <a class="nav-link" href="/berita">Berita</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#download" id="butInstall">Download Aplikasi</a>
+                        <a class="nav-link" href="#download" id="butInstall" hidden>Download Aplikasi</a>
                     </li>
                     <li class="nav-item {{ Request::is('hubungi-kami') ? 'active' : '' }}">
                         <a class="nav-link" href="/hubungi-kami">Hubungi Kami</a>
