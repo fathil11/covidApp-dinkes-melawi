@@ -79,7 +79,6 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
-                plugins: [ MediaEmbed, ],
                 toolbar: {
 					items: [
 						'heading',
@@ -108,6 +107,23 @@
 						'undo',
 						'redo'
 					]
+                },
+                mediaEmbed: {
+                    providers: [
+                        {
+                            // A URL regexp or an array of URL regexps:
+                            url: /^youtube\.com\/watch?v=\/(\w+)/,
+
+                            // To be defined only if the media are previewable:
+                            html: id =>
+                            '<div style="position: relative; padding-bottom: 100%; height: 0; ">' +
+                                `<iframe src="https://www.dailymotion.com/embed/video/${ id }" ` +
+                                    'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
+                                    'frameborder="0" width="480" height="270" allowfullscreen allow="autoplay">' +
+                                '</iframe>' +
+                            '</div>'
+                        }
+                    ]
                 },
                 simpleUpload: {
                     // The URL that the images are uploaded to.
