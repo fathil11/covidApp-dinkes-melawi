@@ -30,7 +30,7 @@
                         <p class="card-category">Total : {{ $people->count() }} Orang</p>
                     </div>
                     <div class="card-body">
-                        <table class="table table-responsive" id="all_table">
+                        <table class="table" id="all_table">
                             <thead class=" text-info">
                                 <th class="text-center">
                                     ID
