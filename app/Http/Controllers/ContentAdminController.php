@@ -17,7 +17,7 @@ class ContentAdminController extends Controller
 
     public function showAllPost()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc');
         return view('post-admin.posts', compact('posts'));
     }
 
