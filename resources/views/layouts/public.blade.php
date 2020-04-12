@@ -55,6 +55,9 @@
                     <li class="nav-item {{ Request::is('berita') || Request::is('berita/*') ? 'active' : '' }}">
                         <a class="nav-link" href="/berita">Berita</a>
                     </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="#download" id="download">Download Aplikasi</a>
+                    </li> --}}
                     <li class="nav-item {{ Request::is('hubungi-kami') ? 'active' : '' }}">
                         <a class="nav-link" href="/hubungi-kami">Hubungi Kami</a>
                     </li>
@@ -88,7 +91,7 @@
             </div>
         </div>
     </footer>
-
+    <button id="tes">-</button>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
 
     {{-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
