@@ -55,9 +55,9 @@
                     <li class="nav-item {{ Request::is('berita') || Request::is('berita/*') ? 'active' : '' }}">
                         <a class="nav-link" href="/berita">Berita</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="#download" id="download">Download Aplikasi</a>
-                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download" id="butInstall">Download Aplikasi</a>
+                    </li>
                     <li class="nav-item {{ Request::is('hubungi-kami') ? 'active' : '' }}">
                         <a class="nav-link" href="/hubungi-kami">Hubungi Kami</a>
                     </li>
@@ -91,13 +91,7 @@
             </div>
         </div>
     </footer>
-    <button id="butInstall" type="button">
-        Install
-    </button>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-
-    {{-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script> --}}
 
     <script src="{{ asset('js/lazysizes.min.js') }}">
     </script>
@@ -107,6 +101,7 @@
     </script>
     <script src="{{ asset('js/bootstrap.min.js') }}">
     </script>
+    <script src="{{ asset('js/pwa.js') }}"></script>
     @yield('js')
 </body>
 

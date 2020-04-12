@@ -1,28 +1,12 @@
-// const divInstall = document.getElementById('installContainer');
-// const but = document.getElementById('installContainer');
-const butInstall = document.getElementById('butInstall');
+// Service Woorker Init
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js');
 }
-// butInstall.addEventListener('click', () => {
-//     console.log('👍', 'butInstall-clicked');
-//     const promptEvent = window.deferredPrompt;
-//     if (!promptEvent) {
-//         // The deferred prompt isn't available.
-//         return;
-//     }
-//     // Show the install prompt.
-//     promptEvent.prompt();
-//     // Log the result
-//     promptEvent.userChoice.then((result) => {
-//         console.log('👍', 'userChoice', result);
-//         // Reset the deferred prompt variable, since
-//         // prompt() can only be called once.
-//         window.deferredPrompt = null;
-//         // Hide the install button.
-//         divInstall.classList.toggle('hidden', true);
-//     });
-// });
+
+// Install Button
+const butInstall = document.getElementById('butInstall');
+
+// Show Install Prompt
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
@@ -48,6 +32,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     });
 });
+
 window.addEventListener('appinstalled', (event) => {
     console.log('👍', 'appinstalled', event);
 });

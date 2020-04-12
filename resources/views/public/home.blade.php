@@ -318,11 +318,3 @@
     </div>
 </div>
 @endsection
-@section('js')
-{{-- <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js');
-    }
-</script> --}}
-<script src="js/pwa.js"></script>
-@endsection
