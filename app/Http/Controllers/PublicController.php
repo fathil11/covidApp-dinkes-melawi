@@ -43,7 +43,7 @@ class PublicController extends Controller
 
     public function showAllPost()
     {
-        $posts = Post::all()->orderBy('created_at', 'desc');
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return view('public.allPost', compact('posts'));
     }
 
