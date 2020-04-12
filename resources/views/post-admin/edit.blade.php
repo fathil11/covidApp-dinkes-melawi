@@ -110,7 +110,7 @@
                 },
                 simpleUpload: {
                     // The URL that the images are uploaded to.
-                    uploadUrl: 'https://covid.dinkesmelawi.com/api/upload-image',
+                    uploadUrl: 'https://www.covid.dinkesmelawi.com/api/upload-image',
 
                     // Headers sent along with the XMLHttpRequest to the upload server.
                     headers: {
