@@ -15,7 +15,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
 
     var addBtn = butInstall;
-    addBtn.style.visibilty = 'visible';
+    addBtn.removeAttribute('hidden');
 
     addBtn.addEventListener('click', (e) => {
         // Show the prompt
