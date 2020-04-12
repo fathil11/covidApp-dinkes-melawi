@@ -79,7 +79,6 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
-                extraPlugins : 'youtube',
                 toolbar: {
 					items: [
 						'heading',
