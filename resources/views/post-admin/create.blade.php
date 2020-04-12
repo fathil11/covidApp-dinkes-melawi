@@ -79,20 +79,6 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
-                mediaEmbed: {
-                    previewsInData: true,
-                    providers:
-                    {
-                        name: 'Youtube',
-                        url: /^youtube\.com\/watch?v=\/(\w+)/,
-                        html: match =>
-                        '<div style="position:relative; padding-bottom:100%; height:0">' +
-                            '<iframe src="'+ String.prototype.match() +'" frameborder="0" ' +
-                                'style="position:absolute; width:100%; height:100%; top:0; left:0">' +
-                            '</iframe>' +
-                        '</div>'
-                    },
-                },
                 toolbar: {
 					items: [
 						'heading',
