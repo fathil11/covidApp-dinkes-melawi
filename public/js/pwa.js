@@ -1,3 +1,5 @@
+const Swal = require('sweetalert2');
+
 // Service Woorker Init
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js');
@@ -32,7 +34,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 window.addEventListener('appinstalled', (event) => {
-    import Swal from 'sweetalert2'
     Swal.fire({
         icon: 'success',
         title: 'Aplikasi berhasil di download.',
