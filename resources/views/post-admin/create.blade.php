@@ -80,6 +80,9 @@
     ClassicEditor
 			.create(document.querySelector('#editor'), {
                 plugins: [MediaEmbed],
+                mediaEmbed: {
+                    previewsInData: true
+                },
                 toolbar: {
 					items: [
 						'heading',
