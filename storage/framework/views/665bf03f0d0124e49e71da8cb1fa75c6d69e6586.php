@@ -1,33 +1,33 @@
-@extends('layouts.admin')
-@section('title', 'Daftar Orang')
-@section('content')
+<?php $__env->startSection('title', 'Daftar Orang'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @if ($errors->any())
+                <?php if($errors->any()): ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @elseif (session('success'))
+                <?php elseif(session('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                    <?php echo e(session('success')); ?>
+
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @endif
+                <?php endif; ?>
                 <div class="card">
                     <div class="card-header card-header-info">
                         <h4 class="card-title ">Daftar Orang</h4>
-                        <p class="card-category">Total : {{ $people->count() }} Orang</p>
+                        <p class="card-category">Total : <?php echo e($people->count()); ?> Orang</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -59,41 +59,47 @@
                                     </th>
                                 </thead>
                                 <tbody>
-                                    @foreach ($people as $key=>$person)
-                                    <tr class="{{ $person->getActualAttribute('status') == 6 ? 'bg-danger' : '' }}">
+                                    <?php $__currentLoopData = $people; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$person): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr class="<?php echo e($person->getActualAttribute('status') == 6 ? 'bg-danger' : ''); ?>">
                                         <td class="text-center">
-                                            {{ $key + 1 }}
+                                            <?php echo e($key + 1); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            {{ $person->name }}
+                                            <?php echo e($person->name); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            {{ $person->age }}
+                                            <?php echo e($person->age); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            {{ $person->gender }}
+                                            <?php echo e($person->gender); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            {{ $person->district }}
+                                            <?php echo e($person->district); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            {{ Str::limit($person->address, 10)  }}
+                                            <?php echo e(Str::limit($person->address, 10)); ?>
+
                                         </td>
                                         <td class="text-center">
-                                            <div class="font-weight-bold">{{ $person->status }}</div>
+                                            <div class="font-weight-bold"><?php echo e($person->status); ?></div>
                                         </td>
                                         <td class="td-actions text-center text-white">
-                                            <a href="/admin/orang/{{ $person->id }}/edit" type="button" rel="tooltip"
+                                            <a href="/admin/orang/<?php echo e($person->id); ?>/edit" type="button" rel="tooltip"
                                                 class="btn btn-warning">
                                                 <i class="material-icons">edit</i>
                                             </a>
-                                            <a href="/admin/orang/{{ $person->id }}/delete" type="button" rel="tooltip"
+                                            <a href="/admin/orang/<?php echo e($person->id); ?>/delete" type="button" rel="tooltip"
                                                 class="btn btn-danger">
                                                 <i class="material-icons">close</i>
                                             </a>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                         </div>
@@ -103,8 +109,8 @@
         </div>
     </div>
 </div>
-@endsection
-@section('js')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
 <script>
     $(document).ready(function () {
         $('#all_table').DataTable({
@@ -130,4 +136,6 @@
         });
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /mnt/e/Web/dinkes-melawi-corona/resources/views/admin/allPeople.blade.php ENDPATH**/ ?>

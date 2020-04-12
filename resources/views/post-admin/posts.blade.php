@@ -34,41 +34,44 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Table Post</h4>
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="text-primary text-center">
-                            <th>#</th>
-                            <th>Judul</th>
-                            <th>Tanggal Dibuat</th>
-                            <th>Terakhir Diubah</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($posts as $key=>$post)
-                        <tr>
-                            <td class="font-weight-bold text-center">{{ ($key+1) }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td class="text-center">{{ $post->created_at }}</td>
-                            <td class="text-center">{{ $post->updated_at }}</td>
-                            <td class="text-center">
-                                <form action="/admin/content/post/{{ $post->id }}/edit" method="GET">
-                                    <button type="submit" class="btn btn-gradient-warning btn-rounded btn-icon">
-                                        <i class="mdi mdi-lead-pencil"></i>
-                                    </button>
-                                </form>
-                                <form action="/admin/content/post/{{ $post->id }}/delete" method="GET">
-                                    <button class="btn btn-gradient-danger btn-rounded btn-icon">
-                                        <i class="mdi mdi-delete-forever"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        @empty
+                <div class="table-responsive">
 
-                        @endforelse
-                    </tbody>
-                </table>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="text-primary text-center">
+                                <th>#</th>
+                                <th>Judul</th>
+                                <th>Tanggal Dibuat</th>
+                                <th>Terakhir Diubah</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($posts as $key=>$post)
+                            <tr>
+                                <td class="font-weight-bold text-center">{{ ($key+1) }}</td>
+                                <td>{{ $post->title }}</td>
+                                <td class="text-center">{{ $post->created_at }}</td>
+                                <td class="text-center">{{ $post->updated_at }}</td>
+                                <td class="text-center">
+                                    <form action="/admin/content/post/{{ $post->id }}/edit" method="GET">
+                                        <button type="submit" class="btn btn-gradient-warning btn-rounded btn-icon">
+                                            <i class="mdi mdi-lead-pencil"></i>
+                                        </button>
+                                    </form>
+                                    <form action="/admin/content/post/{{ $post->id }}/delete" method="GET">
+                                        <button class="btn btn-gradient-danger btn-rounded btn-icon">
+                                            <i class="mdi mdi-delete-forever"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @empty
+
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
