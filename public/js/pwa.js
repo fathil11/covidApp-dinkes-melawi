@@ -17,8 +17,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.style.display = 'block';
 
     addBtn.addEventListener('click', (e) => {
-        // hide our user interface that shows our A2HS button
-        // addBtn.style.display = 'none';
         // Show the prompt
         deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
@@ -34,5 +32,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 window.addEventListener('appinstalled', (event) => {
-    console.log('👍', 'appinstalled', event);
+    import Swal from 'sweetalert2'
+    Swal.fire({
+        icon: 'success',
+        title: 'Aplikasi berhasil di download.',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    // console.log('👍', 'appinstalled', event);
 });
