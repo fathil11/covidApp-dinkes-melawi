@@ -111,6 +111,7 @@
                 mediaEmbed: {
                     providers: [
                         {
+                            name: 'youtube',
                             // A URL regexp or an array of URL regexps:
                             url: /^youtube\.com\/watch?v=\/(\w+)/,
 
