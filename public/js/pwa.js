@@ -15,8 +15,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
 
     var addBtn = butInstall;
-    alert('tes');
-    addBtn.removeAttribute('hidden');
 
     addBtn.addEventListener('click', (e) => {
         // Show the prompt
@@ -40,5 +38,6 @@ window.addEventListener('appinstalled', (event) => {
         showConfirmButton: false,
         timer: 1500
     })
+    butInstall.visibility = "hidden"
     // console.log('👍', 'appinstalled', event);
 });
