@@ -1,4 +1,5 @@
 
+
 // Service Woorker Init
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js');
@@ -13,8 +14,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-
     var addBtn = butInstall;
+    // Update UI to notify the user they can add to home screen
+    addBtn.style.display = 'block';
 
     addBtn.addEventListener('click', (e) => {
         // Show the prompt
@@ -38,6 +40,5 @@ window.addEventListener('appinstalled', (event) => {
         showConfirmButton: false,
         timer: 1500
     })
-    butInstall.visibility = "hidden"
     // console.log('👍', 'appinstalled', event);
 });
