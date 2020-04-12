@@ -79,6 +79,7 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
+                extraPlugins : 'youtube',
                 toolbar: {
 					items: [
 						'heading',
@@ -108,34 +109,9 @@
 						'redo'
 					]
                 },
-                mediaEmbed: {
-                    providers: [
-                        {
-                            name: 'youtube',
-                            url: [
-                                /^(?:m\.)?youtube\.com\/watch\?v=([\w-]+)/,
-                                /^(?:m\.)?youtube\.com\/v\/([\w-]+)/,
-                                /^youtube\.com\/embed\/([\w-]+)/,
-                                /^youtu\.be\/([\w-]+)/
-                            ],
-                            html: match => {
-                                const id = match[ 1 ];
-
-                                return (
-                                    '<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;">' +
-                                        `<iframe src="https://www.youtube.com/embed/${ id }" ` +
-                                            'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
-                                            'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>' +
-                                        '</iframe>' +
-                                    '</div>'
-                                );
-                            }
-                        }
-                    ]
-                },
                 simpleUpload: {
                     // The URL that the images are uploaded to.
-                    uploadUrl: 'http://localhost:8000/api/upload-image',
+                    uploadUrl: 'https://covid.dinkesmelawi.com/api/upload-image',
 
                     // Headers sent along with the XMLHttpRequest to the upload server.
                     headers: {
