@@ -43,7 +43,7 @@ class PublicController extends Controller
 
     public function showAllPost()
     {
-        $posts = Post::all();
+        $posts = Post::all()->latest();
         return view('public.allPost', compact('posts'));
     }
 
