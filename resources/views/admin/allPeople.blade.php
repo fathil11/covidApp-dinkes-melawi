@@ -30,73 +30,71 @@
                         <p class="card-category">Total : {{ $people->count() }} Orang</p>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table" id="all_table">
-                                <thead class=" text-info">
-                                    <th class="text-center">
-                                        ID
-                                    </th>
-                                    <th class="text-center">
-                                        Nama
-                                    </th>
-                                    <th class="text-center">
-                                        Umur
-                                    </th>
-                                    <th class="text-center">
-                                        Jenis Kelamin
-                                    </th>
-                                    <th class="text-center">
-                                        Kecamatan
-                                    </th>
-                                    <th class="text-center">
-                                        Alamat
-                                    </th>
-                                    <th class="text-center">
-                                        Status
-                                    </th>
-                                    <th class="text-center">
-                                        Aksi
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    @foreach ($people as $key=>$person)
-                                    <tr class="{{ $person->getActualAttribute('status') == 6 ? 'bg-danger' : '' }}">
-                                        <td class="text-center">
-                                            {{ $key + 1 }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ $person->name }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ $person->age }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ $person->gender }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ $person->district }}
-                                        </td>
-                                        <td class="text-center">
-                                            {{ Str::limit($person->address, 10)  }}
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="font-weight-bold">{{ $person->status }}</div>
-                                        </td>
-                                        <td class="td-actions text-center text-white">
-                                            <a href="/admin/orang/{{ $person->id }}/edit" type="button" rel="tooltip"
-                                                class="btn btn-warning">
-                                                <i class="material-icons">edit</i>
-                                            </a>
-                                            <a href="/admin/orang/{{ $person->id }}/delete" type="button" rel="tooltip"
-                                                class="btn btn-danger">
-                                                <i class="material-icons">close</i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                        <table class="table table-responsive" id="all_table">
+                            <thead class=" text-info">
+                                <th class="text-center">
+                                    ID
+                                </th>
+                                <th class="text-center">
+                                    Nama
+                                </th>
+                                <th class="text-center">
+                                    Umur
+                                </th>
+                                <th class="text-center">
+                                    Jenis Kelamin
+                                </th>
+                                <th class="text-center">
+                                    Kecamatan
+                                </th>
+                                <th class="text-center">
+                                    Alamat
+                                </th>
+                                <th class="text-center">
+                                    Status
+                                </th>
+                                <th class="text-center">
+                                    Aksi
+                                </th>
+                            </thead>
+                            <tbody>
+                                @foreach ($people as $key=>$person)
+                                <tr class="{{ $person->getActualAttribute('status') == 6 ? 'bg-danger' : '' }}">
+                                    <td class="text-center">
+                                        {{ $key + 1 }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ $person->name }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ $person->age }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ $person->gender }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ $person->district }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{ Str::limit($person->address, 10)  }}
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="font-weight-bold">{{ $person->status }}</div>
+                                    </td>
+                                    <td class="td-actions text-center text-white">
+                                        <a href="/admin/orang/{{ $person->id }}/edit" type="button" rel="tooltip"
+                                            class="btn btn-warning">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a href="/admin/orang/{{ $person->id }}/delete" type="button" rel="tooltip"
+                                            class="btn btn-danger">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
