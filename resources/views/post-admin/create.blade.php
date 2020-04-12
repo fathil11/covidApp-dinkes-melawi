@@ -79,7 +79,8 @@
     // }
     ClassicEditor
 			.create(document.querySelector('#editor'), {
-				toolbar: {
+                plugins: [MediaEmbed],
+                toolbar: {
 					items: [
 						'heading',
 						'|',
