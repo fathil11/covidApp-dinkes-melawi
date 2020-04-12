@@ -91,7 +91,9 @@
             </div>
         </div>
     </footer>
-    <button id="tes">-</button>
+    <button id="butInstall" type="button">
+        Install
+    </button>
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
 
     {{-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
