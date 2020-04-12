@@ -15,6 +15,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
 
     var addBtn = butInstall;
+    alert('tes');
     addBtn.removeAttribute('hidden');
 
     addBtn.addEventListener('click', (e) => {
