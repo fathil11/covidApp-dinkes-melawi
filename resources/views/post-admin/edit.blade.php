@@ -82,7 +82,7 @@
                 plugins: [MediaEmbed],
                 mediaEmbed: {
                     previewsInData: true,
-                    providers: [
+                    providers:
                     {
                         name: 'Youtube',
                         url: /^youtube\.com\/watch?v=\/(\w+)/,
