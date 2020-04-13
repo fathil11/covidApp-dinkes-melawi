@@ -105,9 +105,7 @@
 						'specialCharacters',
 						'blockQuote',
 						'undo',
-                        'redo',
-                        '|',
-                        'codeblock'
+                        'redo'
 					]
                 },
                 simpleUpload: {
