@@ -237,3 +237,6 @@ body { padding-top: 40px; }
     box-shadow: none;
 }
 
+oembed{
+    width: 50%;
+}
