@@ -155,6 +155,10 @@ body {
     right: 0;
 }
 
+figure.image image{
+    max-width: 100%;
+}
+
 oembed {
     width: 50%;
     margin-left: auto;
