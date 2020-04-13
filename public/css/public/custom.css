@@ -156,7 +156,7 @@ body {
 }
 
 figure.image image{
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 oembed {
