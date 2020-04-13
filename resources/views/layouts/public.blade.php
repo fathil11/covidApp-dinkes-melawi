@@ -41,7 +41,7 @@
     <header class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand font-weight-reguler" href="/">
-                <img src="{{ asset('img/icon/apple-icon-180x180-dunplab-manifest-702.png') }}" width="30px"
+                <img src="{{ asset('img/icon/android-icon-192x192-dunplab-manifest-702.png') }}" width="30px"
                     class="mr-lg-2" alt="">
                 DINKES MELAWI
             </a>

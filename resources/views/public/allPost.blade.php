@@ -29,7 +29,7 @@
                             <h6 class="text-center">{{ substr(date('F', strtotime($post->created_at)), 0, 3) }}</h6>
                         </div>
                     </div>
-                    <img src="{{ asset('storage/'.$post->banner)}}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/'.$post->banner)}}" class="lazyload card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-title">{{ $post->title }}</h4>
                         <p class="card-text">
