@@ -44,7 +44,7 @@
             </a>
         </div>
         @if (($key+1) % 3 == 0)
-        <div class="mb-3"></div>
+        <div class="col-md-12 mb-3"></div>
         @endif
         @empty
         <div class="col-md-12 text-center">
