@@ -33,3 +33,6 @@
     </div>
 </div>
 @endsection
+@section('js')
+<script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=3869ef82f1d53f3d7930a9"></script>
+@endsection
