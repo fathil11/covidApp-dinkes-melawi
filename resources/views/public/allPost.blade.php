@@ -18,8 +18,8 @@
     <div class="col-md-12 mt-5">
         <h1 class="display-4 text-center mb-5">Berita</h1>
     </div>
+    @forelse ($posts as $post)
     <div class="row mb-md-3">
-        @forelse ($posts as $post)
         <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
             <a class="no-style" href="{{ url('/berita/lihat') .'/'. $post->slug }}">
                 <div class="card">
@@ -43,11 +43,11 @@
                 </div>
             </a>
         </div>
-        @empty
-        <div class="col-md-12 text-center">
-            <h2 class="mt-5">Mohon maaf, belum ada berita.</h2>
-        </div>
-        @endforelse
     </div>
+    @empty
+    <div class="col-md-12 text-center">
+        <h2 class="mt-5">Mohon maaf, belum ada berita.</h2>
+    </div>
+    @endforelse
 </div>
 @endsection
