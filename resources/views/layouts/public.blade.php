@@ -41,7 +41,8 @@
     <header class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand font-weight-reguler" href="/">
-                <img src="{{ asset('img/logoMelawi.png') }}" width="30px" class="mr-lg-2" alt="">
+                <img src="{{ asset('img/icon/apple-icon-180x180-dunplab-manifest-702.png') }}" width="30px"
+                    class="mr-lg-2" alt="">
                 DINKES MELAWI
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -73,7 +74,8 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="row">
                         <div class="col-md-2 text-center text-md-left">
-                            <img class="" src="{{ asset('img/logoMelawi.png') }}" width="40px" alt="" srcset="">
+                            <img class="" src="{{ asset('img/icon/apple-icon-180x180-dunplab-manifest-702.png') }}"
+                                width="40px" alt="" srcset="">
                         </div>
                         <div class="col-md-6 text-center text-md-left">
                             <h4 class="font-weight-bold">DINKES MELAWI</h4>
