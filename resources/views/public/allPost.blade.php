@@ -43,8 +43,8 @@
                 </div>
             </a>
         </div>
-        @if ($key+1 != 0 && $key+1 % 3 == 0)
-        <div class="mb-3 mb-sm-0"></div>
+        @if (($key+1) % 3 == 0)
+        <div class="mb-3"></div>
         @endif
         @empty
         <div class="col-md-12 text-center">
