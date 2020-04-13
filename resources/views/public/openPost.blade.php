@@ -36,8 +36,14 @@
 @section('js')
 <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=3869ef82f1d53f3d7930a9"></script>
 <script>
-    document.querySelectorAll( 'oembed[url]' ).forEach( element => {
-        iframely.load( element, element.attributes.url.value );
+    document.querySelectorAll( 'div[data-oembed-url]' ).forEach( element => {
+        // Discard the static media preview from the database (empty the <div data-oembed-url="...">).
+        while ( element.firstChild ) {
+            element.removeChild( element.firstChild );
+        }
+
+        // Generate the media preview using Iframely.
+        iframely.load( element, element.dataset.oembedUrl ) ;
     } );
 </script>
 @endsection
