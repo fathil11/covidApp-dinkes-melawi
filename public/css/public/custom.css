@@ -155,7 +155,7 @@ body {
     right: 0;
 }
 
-figure.image image{
+figure.image img{
     max-width: 100% !important;
 }
 
