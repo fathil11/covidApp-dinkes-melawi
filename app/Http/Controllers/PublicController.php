@@ -68,9 +68,19 @@ class PublicController extends Controller
         }
     }
 
-    public static function getDistrictStat($dis, $stat)
+    public static function getDistrictStat($dis)
     {
-        return Person::where([['district', $dis], ['status', $stat]])->get()->count();
+        $stat['positive'] = Person::where([['district', $dis], ['status', '5']])->get()->count();
+        $stat['recovered'] = Person::where([['district', $dis], ['status', '7']])->get()->count();
+        $stat['died+'] = Person::where([['district', $dis], ['status', '6']])->get()->count();
+        $stat['proccess'] = Person::where([['district', $dis], ['status', '0']])->get()->count();
+        $stat['done'] = Person::where([['district', $dis], ['status', '1']])->get()->count();
+        $stat['odp'] = $stat['proccess'] + $stat['done'];
+        $stat['treated'] = Person::where([['district', $dis], ['status', '2']])->get()->count();
+        $stat['died?'] = Person::where([['district', $dis], ['status', '4']])->get()->count();
+        $stat['negative'] = Person::where([['district', $dis], ['status', '3']])->get()->count();
+        $stat['pdp'] = $stat['treated'] + $stat['negative'] + $stat['died?'] + $stat['positive'];
+        return $stat;
     }
 
     public function pushStat()
