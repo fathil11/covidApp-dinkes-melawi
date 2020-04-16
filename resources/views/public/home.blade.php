@@ -142,7 +142,7 @@
                             </thead>
                             <tbody>
                             <tbody>
-                                <tr>
+                                <tr class="text-center">
                                     @php
                                     use \App\Http\Controllers\PublicController;
                                     @endphp
@@ -159,7 +159,7 @@
                                     <td>{{ PublicController::getDistrictStat('0')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('0')['died+'] }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td>2</td>
                                     <td>Tanah Pinoh Barat</td>
                                     <td>{{ PublicController::getDistrictStat('1')['odp'] }}</td>
@@ -173,7 +173,7 @@
                                     <td>{{ PublicController::getDistrictStat('1')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('1')['died+'] }}</td>
                                 </tr>
-                                <tr class="">
+                                <tr class="text-center">
                                     <td>3</td>
                                     <td>Tanah Pinoh</td>
                                     <td>{{ PublicController::getDistrictStat('2')['odp'] }}</td>
@@ -187,7 +187,7 @@
                                     <td>{{ PublicController::getDistrictStat('2')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('2')['died+'] }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td>4</td>
                                     <td>Sayan</td>
                                     <td>{{ PublicController::getDistrictStat('3')['odp'] }}</td>
@@ -201,7 +201,7 @@
                                     <td>{{ PublicController::getDistrictStat('3')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('3')['died+'] }}</td>
                                 </tr>
-                                <tr class="">
+                                <tr class="text-center">
                                     <td>5</td>
                                     <td>Belimbing Hulu</td>
                                     <td>{{ PublicController::getDistrictStat('4')['odp'] }}</td>
@@ -215,7 +215,7 @@
                                     <td>{{ PublicController::getDistrictStat('4')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('4')['died+'] }}</td>
                                 </tr>
-                                <tr class="">
+                                <tr class="text-center">
                                     <td>6</td>
                                     <td>Belimbing</td>
                                     <td>{{ PublicController::getDistrictStat('5')['odp'] }}</td>
@@ -229,7 +229,7 @@
                                     <td>{{ PublicController::getDistrictStat('5')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('5')['died+'] }}</td>
                                 </tr>
-                                <tr class="">
+                                <tr class="text-center">
                                     <td>7</td>
                                     <td>Pinoh Selatan</td>
                                     <td>{{ PublicController::getDistrictStat('6')['odp'] }}</td>
@@ -243,7 +243,7 @@
                                     <td>{{ PublicController::getDistrictStat('6')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('6')['died+'] }}</td>
                                 </tr>
-                                <tr class="">
+                                <tr class="text-center">
                                     <td>8</td>
                                     <td>Nanga Pinoh</td>
                                     <td>{{ PublicController::getDistrictStat('7')['odp'] }}</td>
@@ -257,7 +257,7 @@
                                     <td>{{ PublicController::getDistrictStat('7')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('7')['died+'] }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td>9</td>
                                     <td>Pinoh Utara</td>
                                     <td>{{ PublicController::getDistrictStat('8')['odp'] }}</td>
@@ -271,7 +271,7 @@
                                     <td>{{ PublicController::getDistrictStat('8')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('8')['died+'] }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td>10</td>
                                     <td>Ella Hilir</td>
                                     <td>{{ PublicController::getDistrictStat('9')['odp'] }}</td>
@@ -285,7 +285,7 @@
                                     <td>{{ PublicController::getDistrictStat('9')['recovered'] }}</td>
                                     <td>{{ PublicController::getDistrictStat('9')['died+'] }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="text-center">
                                     <td>11</td>
                                     <td>Menukung</td>
                                     <td>{{ PublicController::getDistrictStat('10')['odp'] }}</td>
