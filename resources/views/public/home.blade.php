@@ -226,7 +226,7 @@
             <h1 class="text-center font-weight-bold mb-4">Tentang COVID-19</h1>
         </div>
         <div class="col-md-6">
-            <video class="img-fluid" controls>
+            <video class="img-fluid" muted autoplay>
                 <source src="{{ asset('video/covid-3.mp4') }}" type="video/mp4">
             </video>
         </div>
