@@ -1,49 +1,49 @@
-@extends('layouts.admin')
-@section('title', 'Tambah Orang')
-@section('content')
+<?php $__env->startSection('title', 'Tambah Orang'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @if ($errors->any())
+                <?php if($errors->any()): ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @elseif (session('success'))
+                <?php elseif(session('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                    <?php echo e(session('success')); ?>
+
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @endif
+                <?php endif; ?>
                 <div class="card">
                     <div class="card-header card-header-info">
                         <h4 class="card-title">Tambah Orang</h4>
                         <p class="card-category">Menambahkan orang baru</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('admin/orang') }}" method="post" autocomplete="off">
-                            @csrf
-                            @method('POST')
+                        <form action="<?php echo e(url('admin/orang')); ?>" method="post" autocomplete="off">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('POST'); ?>
                             <div class="row mb-4 mt-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Nama</label>
-                                        <input name="name" value="{{ old('name') }}" type="text" class="form-control">
+                                        <input name="name" value="<?php echo e(old('name')); ?>" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Umur</label>
-                                        <input name="age" value="{{ old('age') }}" type="number" class="form-control">
+                                        <input name="age" value="<?php echo e(old('age')); ?>" type="number" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-5">
@@ -56,7 +56,8 @@
                                                 <div class="form-check form-check-radio form-check-inline">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="gender"
-                                                            {{ old('gender') == "m" ? 'checked' : '' }}
+                                                            <?php echo e(old('gender') == "m" ? 'checked' : ''); ?>
+
                                                             id="inlineRadio1" value="m">
                                                         Laki-Laki
                                                         <span class="circle">
@@ -67,7 +68,8 @@
                                                 <div class="form-check form-check-radio form-check-inline">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="gender"
-                                                            {{ old('gender') == "f" ? 'checked' : '' }}
+                                                            <?php echo e(old('gender') == "f" ? 'checked' : ''); ?>
+
                                                             id="inlineRadio2" value="f">
                                                         Perempuan
                                                         <span class="circle">
@@ -84,14 +86,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Alamat</label>
-                                        <input name="address" value="{{ old('address') }}" type="text"
+                                        <input name="address" value="<?php echo e(old('address')); ?>" type="text"
                                             class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Kecamatan</label>
-                                        <input name="district" value="{{ old('district') }}" id="district" type="text"
+                                        <input name="district" value="<?php echo e(old('district')); ?>" id="district" type="text"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -108,7 +110,7 @@
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio1" value="0"
-                                                            {{ old('status') == "0" ? 'checked' : '' }} checked>
+                                                            <?php echo e(old('status') == "0" ? 'checked' : ''); ?> checked>
                                                         ODP
                                                         <span class="circle">
                                                             <span class="check"></span>
@@ -119,7 +121,7 @@
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio3" value="11"
-                                                            {{ old('status') == "11" ? 'checked' : '' }}>
+                                                            <?php echo e(old('status') == "11" ? 'checked' : ''); ?>>
                                                         OTG
                                                         <span class="circle">
                                                             <span class="check"></span>
@@ -130,7 +132,7 @@
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio2" value="2"
-                                                            {{ old('status') == "2" ? 'checked' : '' }}>
+                                                            <?php echo e(old('status') == "2" ? 'checked' : ''); ?>>
                                                         PDP
                                                         <span class="circle">
                                                             <span class="check"></span>
@@ -141,7 +143,7 @@
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="status"
                                                             id="inlineRadio2" value="5"
-                                                            {{ old('status') == "5" ? 'checked' : '' }}>
+                                                            <?php echo e(old('status') == "5" ? 'checked' : ''); ?>>
                                                         Terkonfirmasi
                                                         <span class="circle">
                                                             <span class="check"></span>
@@ -162,8 +164,8 @@
         </div>
     </div>
 </div>
-@endsection
-@section('js')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
 <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
@@ -264,4 +266,6 @@
 let districts = ['Sokan', 'Tanah Pinoh Barat', 'Tanah Pinoh', 'Sayan', 'Belimbing Hulu', 'Belimbing', 'Pinoh Selatan', 'Nanga Pinoh', 'Pinoh Utara', 'Ella Hilir', 'Menukung']
 autocomplete(document.getElementById("district"), districts);
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /mnt/e/Web/dinkes-melawi-corona/resources/views/admin/addPerson.blade.php ENDPATH**/ ?>

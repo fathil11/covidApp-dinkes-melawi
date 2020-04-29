@@ -72,7 +72,7 @@
                 <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
                     <div class="card bg-red">
                         <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Positif</h1>
+                            <h2 class="font-weight-normal text-white-sem">Terkonfirmasi</h1>
                                 <h1 class="font-weight-bold text-white">{{ $stat['positive'] }}</h1>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                                     <th scope="col" class="align-middle bg-yellow text-center">Dirawat</th>
                                     <th scope="col" class="align-middle bg-yellow text-center">Meninggal*</th>
                                     <th scope="col" class="align-middle bg-yellow text-center">Negatif</th>
-                                    <th scope="col" class="align-middle bg-red text-center">Positif</th>
+                                    <th scope="col" class="align-middle bg-red text-center">Terkonfirmasi</th>
                                     <th scope="col" class="align-middle bg-green text-center">Sembuh</th>
                                     <th scope="col" class="align-middle bg-gray text-center">Meninggal+</th>
                                 </tr>

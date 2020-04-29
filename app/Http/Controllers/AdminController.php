@@ -34,7 +34,7 @@ class AdminController extends Controller
             'gender' => 'required|alpha|max:2',
             'address' => 'nullable|min:5|max:255',
             'district' => 'required|min:4|max:20',
-            'status' => 'required|numeric|max:8',
+            'status' => 'required|numeric|max:11',
         ]);
 
         if (in_array($data['district'], $this->districts)) {
@@ -72,7 +72,7 @@ class AdminController extends Controller
             'gender' => 'required|alpha|max:2',
             'address' => 'nullable|min:5|max:255',
             'district' => 'required|min:4|max:20',
-            'status' => 'required|numeric|max:8',
+            'status' => 'required|numeric|max:11',
         ]);
 
         if (in_array($data['district'], $this->districts)) {
@@ -103,6 +103,12 @@ class AdminController extends Controller
     {
         $people = Person::where('status', '0')->get();
         return view('admin.odpPeople', compact('people'));
+    }
+
+    public function showOtgPeople()
+    {
+        $people = Person::where('status', '11')->get();
+        return view('admin.otgPeople', compact('people'));
     }
 
     public function showPdpPeople()
@@ -146,6 +152,30 @@ class AdminController extends Controller
         $this->updateLog($person);
 
         return redirect()->back()->with('success', 'Berhasil mengganti status ke Aman');
+    }
+
+    public function reactivePerson($id)
+    {
+        $person = Person::findOrFail($id);
+
+        $log = new Log();
+        $log->person_id = $person->id;
+        $log->status = '9';
+        $log->save();
+
+        return redirect()->back()->with('success', 'Berhasil mengganti status ke reaktif');
+    }
+
+    public function nonReactivePerson($id)
+    {
+        $person = Person::findOrFail($id);
+
+        $log = new Log();
+        $log->person_id = $person->id;
+        $log->status = '10';
+        $log->save();
+
+        return redirect()->back()->with('success', 'Berhasil mengganti status ke non reaktif');
     }
 
     public function positivePerson($id)

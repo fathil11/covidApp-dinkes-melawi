@@ -44,7 +44,10 @@ class Person extends Model
             5 => 'Positif',
             6 => 'Meninggal +',
             7 => 'Sembuh',
-            8 => 'Meninggal -'
+            8 => 'Meninggal -',
+            9 => 'Reaktif',
+            10 => 'Non Reaktif',
+            11 => 'OTG'
         ][$attribute];
     }
     public function getActualAttribute($field)
@@ -53,6 +56,6 @@ class Person extends Model
     }
     public function logs()
     {
-        return $this->hasMany('App\Log', 'person_id', 'id');
+        return $this->hasMany('App\Log', 'person_id');
     }
 }

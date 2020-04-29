@@ -20,7 +20,7 @@ class CreatePeopleTable extends Migration
             $table->enum('gender', ['m', 'f']);
             $table->enum('district', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
             $table->string('address')->nullable();
-            $table->enum('status', [0, 1, 2, 3, 4, 5, 6, 7]);
+            $table->enum('status', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
             $table->timestamps();
         });
     }

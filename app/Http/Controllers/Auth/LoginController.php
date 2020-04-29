@@ -48,8 +48,10 @@ class LoginController extends Controller
     {
         $email = Auth::user()->email;
         switch ($email) {
+            case 'perbatasan@dinkesmelawi.com':
+                return '/admin-perbatasan';
             case 'post@dinkesmelawi.com':
-                    return '/admin/content';
+                return '/admin/content';
                 break;
             default:
                     return '/admin';
