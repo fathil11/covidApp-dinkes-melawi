@@ -41,7 +41,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
+                    <div class="card bg-blue">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Total OTG</h2>
+                            <h1 class="font-weight-bold text-white"><?php echo e($stat['otg']); ?></h1>
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="font-weight-normal text-white-sem">Proses</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otgProc']); ?></h1>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="font-weight-normal text-white-sem">Selesai</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otgDone']); ?></h1>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 mt-0 mt-md-3">
                     <div class="card bg-yellow">
                         <div class="card-body text-center">
                             <h1 class="font-weight-normal text-white-sem">Total PDP</h1>

@@ -19,7 +19,7 @@ Route::get('/berita', 'PublicController@showAllPost');
 Route::get('/berita/lihat/{slug}', 'PublicController@openPost');
 Route::get('/hubungi-kami', 'PublicController@showCotactUs');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
     // Person Index
     Route::get('/orang', 'AdminController@showAllPerson');
@@ -47,6 +47,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::group(['prefix' => '/admin-perbatasan', 'middleware' => 'perbatasanadmin'], function(){
     Route::get('/', 'PerbatasanController@index');
+    Route::post('/store', 'PerbatasanController@store');
+    Route::get('/pelaku-perjalanan', 'PerbatasanController@showPelakuPerjalanan');
+    Route::post('/enter/{id}', 'PerbatasanController@enterOrang');
+    Route::delete('/delete/{id}', 'PerbatasanController@deleteOrang');
+    Route::get('/pelaku-perjalanan', 'PerbatasanController@showPelakuPerjalanan');
 });
 
 Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], function () {

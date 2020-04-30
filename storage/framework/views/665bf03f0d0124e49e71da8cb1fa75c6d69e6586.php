@@ -46,10 +46,16 @@
                                         Jenis Kelamin
                                     </th>
                                     <th class="text-center">
+                                        No Hp
+                                    </th>
+                                    <th class="text-center">
                                         Kecamatan
                                     </th>
                                     <th class="text-center">
-                                        Alamat
+                                        Desa
+                                    </th>
+                                    <th class="text-center">
+                                        Gejala
                                     </th>
                                     <th class="text-center">
                                         Status
@@ -78,11 +84,19 @@
 
                                         </td>
                                         <td class="text-center">
+                                            <?php echo e($person->phone); ?>
+
+                                        </td>
+                                        <td class="text-center">
                                             <?php echo e($person->district); ?>
 
                                         </td>
                                         <td class="text-center">
-                                            <?php echo e(Str::limit($person->address, 10)); ?>
+                                            <?php echo e($person->village); ?>
+
+                                        </td>
+                                        <td class="text-center">
+                                            <?php echo e($person->phenomenon); ?>
 
                                         </td>
                                         <td class="text-center">

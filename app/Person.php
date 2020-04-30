@@ -47,7 +47,8 @@ class Person extends Model
             8 => 'Meninggal -',
             9 => 'Reaktif',
             10 => 'Non Reaktif',
-            11 => 'OTG'
+            11 => 'OTG',
+            12 => 'Pendatang'
         ][$attribute];
     }
     public function getActualAttribute($field)

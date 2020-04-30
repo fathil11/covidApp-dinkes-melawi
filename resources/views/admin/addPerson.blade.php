@@ -81,17 +81,57 @@
                                 </div>
                             </div>
                             <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">No Hp</label>
+                                        <input name="phone" value="{{ old('phone') }}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Alamat</label>
-                                        <input name="address" value="{{ old('address') }}" type="text"
-                                            class="form-control">
+                                        <label class="bmd-label-floating">Datang Dari</label>
+                                        <input name="track" value="{{ old('track') }}" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label class="bmd-label-floating">Kendaraan</label>
+                                        <input name="vehicle" value="{{ old('vehicle') }}" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="bmd-label-floating">Kecamatan</label>
                                         <input name="district" value="{{ old('district') }}" id="district" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Desa</label>
+                                        <input name="village" value="{{ old('village') }}" type="text" id="village"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Dusun</label>
+                                        <input name="sub_village" value="{{ old('sub_village') }}" type="text"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Gejala</label>
+                                        <input name="phenomenon" value="{{ old('phenomenon') }}" type="text"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -99,60 +139,220 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group bmd-form-group">
-                                        <div class="row">
-                                            <div class="col-md-2 position-relative">
-                                                <label class="bmd-label-floating">Status</label>
-                                            </div>
-                                            <div class="col-md-10 position-relative">
-                                                <div class="form-check form-check-radio form-check-inline">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="status"
-                                                            id="inlineRadio1" value="0"
-                                                            {{ old('status') == "0" ? 'checked' : '' }} checked>
-                                                        ODP
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center">
+                                                        <h3>Jenis</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="form-check form-check-radio form-check-inline">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="status"
-                                                            id="inlineRadio3" value="11"
-                                                            {{ old('status') == "11" ? 'checked' : '' }}>
-                                                        OTG
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-radio form-check-inline">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="status"
-                                                            id="inlineRadio2" value="2"
-                                                            {{ old('status') == "2" ? 'checked' : '' }}>
-                                                        PDP
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-radio form-check-inline">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="status"
-                                                            id="inlineRadio2" value="5"
-                                                            {{ old('status') == "5" ? 'checked' : '' }}>
-                                                        Terkonfirmasi
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="transmission"
+                                                                        {{ old('transmission') == "1" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="1">
+                                                                    Transmisi
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="transmission"
+                                                                        {{ old('transmission') == "0" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="0">
+                                                                    Non Transmisi
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="transmission"
+                                                                        {{ old('transmission') == "2" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="2">
+                                                                    Pelaku Perjalanan
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bmd-form-group">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center">
+                                                        <h3>Status</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "0" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="0">
+                                                                    ODP
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "1" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="1">
+                                                                    Selesai Pengawasan (Aman)
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "12" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="12">
+                                                                    Pendatang
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "11" ? 'checked' : '' }}
+                                                                        id="inlineRadio1" value="11">
+                                                                    OTG
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center mb-2">
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "2" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="2">
+                                                                    PDP
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "3" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="3">
+                                                                    Negatif (Pulang)
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "5" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="5">
+                                                                    Terkonfirmasi
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "7" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="7">
+                                                                    Sembuh
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "4" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="4">
+                                                                    Meninggal ?
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "6" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="6">
+                                                                    Meninggal Terkonfirmasi
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-radio form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="status"
+                                                                        {{ old('status') == "8" ? 'checked' : '' }}
+                                                                        id="inlineRadio2" value="8">
+                                                                    Meninggal Negatif
+                                                                    <span class="circle">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn btn-info btn-block mt-4">Tambahkan</button>
                             <div class="clearfix"></div>
                         </form>
@@ -261,7 +461,10 @@
       closeAllLists(e.target);
   });
 }
-let districts = ['Sokan', 'Tanah Pinoh Barat', 'Tanah Pinoh', 'Sayan', 'Belimbing Hulu', 'Belimbing', 'Pinoh Selatan', 'Nanga Pinoh', 'Pinoh Utara', 'Ella Hilir', 'Menukung']
+let districts = ['Sokan', 'Tanah Pinoh Barat', 'Tanah Pinoh', 'Sayan', 'Belimbing Hulu', 'Belimbing', 'Pinoh Selatan', 'Nanga Pinoh', 'Pinoh Utara', 'Ella Hilir', 'Menukung'];
+let villages = ['Balai Agas','Batu Ampar','Batu Buil','Batu Nanta','Belonsat','Guhung','Labang','Laman Bukit','Langan','Nanga Entebah','Nanga Menunuk','Nanga Pau','Nusa Kenyikap','Pemuar','Sepan Tonak','Tekaban','Upit','Beloyang','Junjung Permai','Kayu Bunga','Nanga Keberak','Nanga Raya','Nanga Tikan','Piawas','Tiong Keranjik','Bemban Permai','Domet Permai','Jabai','Kahiya','Kerangan Kora','Lengkong Nyadom','Nanga Ella Hilir','Nanga Kalan','Nanga Kempangai','Nanga Nuak','Nanga Nyuruh','Natai Compa','Nyanggau','Pelempai Jaya','Penyuguk','Perembang Nyuruh','Popai','Sungai Labuk','Sungai Mentoba','Batas Nangka','Batu Badak','Batu Onap','Belaban Ella','Laman Mumbung','Landau Leban','Lihai','Mawang Mentatai','Melona','Menukung Kota','Nanga Ella Hulu','Nanga Keruab','Nanga Siyai','Nusa Poring','Oyah','Pelaik Keruab','Sungai Sampak','Sungai Sampuk','Tanjung Beringin','B A R U','Kelakik','Kenual','Labai Mandiri','Nanga Kayan','Nanga Kebebu','Nusa Pandau','Paal','Poring','Semadin Lengkong','Sido Mulyo','Tanjung Lay','Tanjung Niaga','Tanjung Sari','Tanjung Tengang','Tebing Karangan','Tembawang Panjang','Bayur Raya','Bina Jaya','Landau Garong','Landau Tubun','Mandau Baru','Manggala','Nanga Kelawai','Nanga Pintas','Nyanggai','Pelinggang','Senempak','Sungai Bakah','Engkurai','Kayan Semapau','Kompas Raya','Manding','Melamut Bersatu','Melawi Kiri Hilir','Merah Arai','Merpak','Nanga Belimbing','Nanga Man','Natai Panjang','Senibung','Suka Damai','Sungai Pinang','Sungai Raya','Tanjung Arak','Tanjung Paoh','Tekelak','Tengkajau','Berobai Permai','Bora','Kerangan Purun','Landau Sadak','Lingkar Indah','Madya Raya','Mekar Pelita','Meta Bersatu','Nanga Kasai','Nanga Kompi','Nanga Mancur','Nanga Pak','Nanga Raku','Nanga Sayan','Pekawai','Sayan Jaya','Siling Permai','Tumbak Raya','Gelata','Keluing Taja','Landau Kabu','Melana','Muara Tanjung','Nanga Betangai','Nanga Libas','Nanga Ora','Nanga Potai','Nanga Sokan','Nanga Tangkit','Penyengkuang','Sepakat','Sijau','Tanjung Mahung','Tanjung Sokan','Telaga Raya','Teluk Pongkal','Bata Luar','Batu Begigi','Bina Jaya','Bina Karya','Keranjik','Loka Jaya','Madong Raya','Maris Permai','Pelita Kenaya','Suka Maju','Tanjung Beringin Raya','Tanjung Gunung','Bukit Raya','Durian Jaya','Ganjang','Harapan Jaya','Keluas Hulu','Laja','Lintah Taum','Pelita Jaya','Togan Baru','Ulak Muid'];
 autocomplete(document.getElementById("district"), districts);
+autocomplete(document.getElementById("village"), villages);
+
 </script>
 @endsection

@@ -22,6 +22,9 @@ class PublicController extends Controller
         $stat['proccess'] = Person::where('status', '0')->get()->count();
         $stat['done'] = Person::where('status', '1')->get()->count();
         $stat['odp'] = $stat['proccess'] + $stat['done'];
+        $stat['otg'] = Log::where('status', '11')->get()->count();
+        $stat['otgProc'] = Person::where('status', '11')->get()->count();
+        $stat['otgDone'] = $stat['otg'] - $stat['otgProc'];
         $stat['treated'] = Person::where('status', '2')->get()->count();
         $stat['died?'] = Person::where('status', '4')->get()->count();
         $stat['negative'] = Person::where('status', '3')->get()->count();

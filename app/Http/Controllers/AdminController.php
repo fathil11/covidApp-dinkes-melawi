@@ -31,11 +31,17 @@ class AdminController extends Controller
         $data = $request->validate([
             'name' => 'required|min:2|max:100',
             'age' => 'required|numeric|min:1|max:99',
+            'phone' => 'min:5|max:15',
             'gender' => 'required|alpha|max:2',
-            'address' => 'nullable|min:5|max:255',
+            'track' => 'required|min:1|max:50',
+            'vehicle' => 'required|min:1|max:50',
             'district' => 'required|min:4|max:20',
-            'status' => 'required|numeric|max:11',
+            'village' => 'required|min:2|max:50',
+            'sub_village' => 'nullable|min:3|max:255',
+            'transmission' => 'required|numeric|max:3',
+            'phenomenon' => 'nullable',
         ]);
+
 
         if (in_array($data['district'], $this->districts)) {
             $request->district = array_search($data['district'], $this->districts, true)+1;
@@ -43,13 +49,17 @@ class AdminController extends Controller
             $person = new Person();
             $person->name = $request->name;
             $person->age = $request->age;
+            $person->phone = $request->phone;
             $person->gender = $request->gender;
-            $person->address = $request->address;
+            $person->track = $request->track;
+            $person->vehicle = $request->vehicle;
             $person->district = $request->district;
+            $person->village = $request->village;
+            $person->sub_village = $request->sub_village;
+            $person->transmission = $request->transmission;
             $person->status = $request->status;
-
+            $person->phenomenon = $request->phenomenon;
             $person->save();
-
             $this->updateLog($person);
 
             return redirect()->back()->with('success', 'Berhasil menambahkan data');
@@ -69,10 +79,16 @@ class AdminController extends Controller
         $data = $request->validate([
             'name' => 'required|min:2|max:100',
             'age' => 'required|numeric|min:1|max:99',
+            'phone' => 'min:5|max:15',
             'gender' => 'required|alpha|max:2',
-            'address' => 'nullable|min:5|max:255',
+            'track' => 'required|min:1|max:50',
+            'vehicle' => 'required|min:1|max:50',
             'district' => 'required|min:4|max:20',
-            'status' => 'required|numeric|max:11',
+            'village' => 'required|min:2|max:50',
+            'sub_village' => 'nullable|min:3|max:255',
+            'transmission' => 'required|numeric|max:3',
+            'phenomenon' => 'nullable',
+            'status' => 'required',
         ]);
 
         if (in_array($data['district'], $this->districts)) {
@@ -81,12 +97,22 @@ class AdminController extends Controller
             $person = Person::findOrFail($id);
             $person->name = $request->name;
             $person->age = $request->age;
+            $person->phone = $request->phone;
             $person->gender = $request->gender;
-            $person->address = $request->address;
+            $person->track = $request->track;
+            $person->vehicle = $request->vehicle;
             $person->district = $request->district;
-            $person->status = $request->status;
+            $person->village = $request->village;
+            $person->sub_village = $request->sub_village;
+            $person->transmission = $request->transmission;
+            $person->status = '12';
+            $person->phenomenon = $request->phenomenon;
+            if(isset($request->phenomenon)){
+                $person->status = '0';
+            }
             $person->save();
             $this->updateLog($person);
+
             return redirect()->back()->with('success', 'Berhasil mengubah data');
         } else {
             return redirect()->back()->withErrors(['Format kecamatan tidak sesuai.'])->withInput(request()->except('district'));

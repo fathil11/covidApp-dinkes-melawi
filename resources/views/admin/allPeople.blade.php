@@ -46,10 +46,16 @@
                                         Jenis Kelamin
                                     </th>
                                     <th class="text-center">
+                                        No Hp
+                                    </th>
+                                    <th class="text-center">
                                         Kecamatan
                                     </th>
                                     <th class="text-center">
-                                        Alamat
+                                        Desa
+                                    </th>
+                                    <th class="text-center">
+                                        Gejala
                                     </th>
                                     <th class="text-center">
                                         Status
@@ -74,10 +80,16 @@
                                             {{ $person->gender }}
                                         </td>
                                         <td class="text-center">
+                                            {{ $person->phone }}
+                                        </td>
+                                        <td class="text-center">
                                             {{ $person->district }}
                                         </td>
                                         <td class="text-center">
-                                            {{ Str::limit($person->address, 10)  }}
+                                            {{ $person->village }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $person->phenomenon }}
                                         </td>
                                         <td class="text-center">
                                             <div class="font-weight-bold">{{ $person->status }}</div>
