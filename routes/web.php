@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Maintain App
+// Route::get('/', function(){
+//     return abort(404);
+// });
 
-
-// Route::get('/', 'PublicController@index')->name('home');
-Route::get('/', function(){
-    return abort(404);
-});
+Route::get('/', 'PublicController@index')->name('home');
 Route::get('/berita', 'PublicController@showAllPost');
 Route::get('/berita/lihat/{slug}', 'PublicController@openPost');
 Route::get('/hubungi-kami', 'PublicController@showCotactUs');
