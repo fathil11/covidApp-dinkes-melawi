@@ -60,9 +60,11 @@
                             Data
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://dinkes.kalbarprov.go.id/covid-19/">Data Kalbar</a>
-                            <a class="dropdown-item" href="https://covid19.go.id/peta-sebaran">Data Indonesia</a>
-                            <a class="dropdown-item" href="https://covid19.who.int/">Data Dunia</a>
+                            <a target="_blank" class="dropdown-item"
+                                href="https://dinkes.kalbarprov.go.id/covid-19/">Data Kalbar</a>
+                            <a target="_blank" class="dropdown-item" href="https://covid19.go.id/peta-sebaran">Data
+                                Indonesia</a>
+                            <a target="_blank" class="dropdown-item" href="https://covid19.who.int/">Data Dunia</a>
                         </div>
                     </li>
                     <li class="nav-item {{ Request::is('berita') || Request::is('berita/*') ? 'active' : '' }}">
