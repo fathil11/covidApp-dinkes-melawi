@@ -135,15 +135,213 @@
             </div>
         </div>
     </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 col-sm-12 text-center">
+            <h1>Peta Persebaran</h1>
+            <img class="img-fluid mt-2 rounded" src="{{ asset('img/maps/maps.jpg') }}" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mt-md-0">
+            <div class="card bg-white">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="w-100">
+                                    <th scope="col" class="align-middle">#</th>
+                                    <th scope="col" class="align-middle">Kecamatan</th>
+                                    <th scope="col" class="align-middle bg-blue text-center">ODP</th>
+                                    <th scope="col" class="align-middle bg-blue text-center">OTG</th>
+                                    <th scope="col" class="align-middle bg-warning text-center">PDP</th>
+                                    <th scope="col" class="align-middle bg-success text-center">Negatif</th>
+                                    <th scope="col" class="align-middle bg-danger text-center">Positif</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody>
+                                <tr class="text-center">
+                                    @php
+                                    use \App\Http\Controllers\PublicController;
+                                    @endphp
+                                    <td>1</td>
+                                    <td>Sokan</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('0')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('0')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('0')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('0')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('0')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('0')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>2</td>
+                                    <td>Tanah Pinoh Barat</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('1')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('1')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('1')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('1')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('1')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('1')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>3</td>
+                                    <td>Tanah Pinoh</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('2')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('2')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('2')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('2')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('2')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('2')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>4</td>
+                                    <td>Sayan</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('3')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('3')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('3')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('3')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('3')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('3')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>5</td>
+                                    <td>Belimbing Hulu</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('4')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('4')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('4')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('4')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('4')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('4')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>6</td>
+                                    <td>Belimbing</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('5')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('5')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('5')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('5')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('5')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('5')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>7</td>
+                                    <td>Pinoh Selatan</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('6')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('6')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('6')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('6')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('6')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('6')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>8</td>
+                                    <td>Nanga Pinoh</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('7')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('7')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('7')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('7')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('7')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('7')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>9</td>
+                                    <td>Pinoh Utara</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('8')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('8')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('8')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('8')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('8')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('8')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>10</td>
+                                    <td>Ella Hilir</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('9')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('9')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('9')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('9')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('9')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('9')['died+'] }}</td> --}}
+                                </tr>
+                                <tr class="text-center">
+                                    <td>11</td>
+                                    <td>Menukung</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['odp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('10')['proccess'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('10')['otgProc'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['done'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['pdp'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('10')['treated'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['died?'] }}</td> --}}
+                                    <td>{{ PublicController::getDistrictStat('10')['negative'] }}</td>
+                                    <td>{{ PublicController::getDistrictStat('10')['positive'] }}</td>
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['recovered'] }}</td> --}}
+                                    {{-- <td>{{ PublicController::getDistrictStat('10')['died+'] }}</td> --}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row mt-5">
         <div class="col-md-12">
-            <h1 class="text-center font-weight-bold mb-4">Tabel Kecamatan</h1>
+            <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
         </div>
         <div class="col-md-12">
             <div class="card bg-white">
                 <div class="card-body">
                     <div class="table-responsive">
-
                         <table class="table table-hover">
                             <thead>
                                 <tr class="w-100">
@@ -164,9 +362,6 @@
                             <tbody>
                             <tbody>
                                 <tr class="text-center">
-                                    @php
-                                    use \App\Http\Controllers\PublicController;
-                                    @endphp
                                     <td>1</td>
                                     <td>Sokan</td>
                                     <td>{{ PublicController::getDistrictStat('0')['odp'] }}</td>
@@ -321,7 +516,6 @@
                                     <td>{{ PublicController::getDistrictStat('10')['died+'] }}</td>
                                 </tr>
                             </tbody>
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -329,6 +523,7 @@
 
         </div>
     </div>
+
     <div class="row mt-7">
         <div class="col-md-12 mb-3">
             <h1 class="text-center font-weight-bold mb-4">Tentang COVID-19</h1>

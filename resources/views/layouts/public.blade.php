@@ -54,6 +54,17 @@
                     <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                         <a class="nav-link" href="/">Home</a>
                     </li>
+                    <li class="nav-item dropdown {{ Request::is('/data') ? 'active' : '' }}">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Data
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://dinkes.kalbarprov.go.id/covid-19/">Data Kalbar</a>
+                            <a class="dropdown-item" href="https://covid19.go.id/peta-sebaran">Data Indonesia</a>
+                            <a class="dropdown-item" href="https://covid19.who.int/">Data Dunia</a>
+                        </div>
+                    </li>
                     <li class="nav-item {{ Request::is('berita') || Request::is('berita/*') ? 'active' : '' }}">
                         <a class="nav-link" href="/berita">Berita</a>
                     </li>

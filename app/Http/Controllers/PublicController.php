@@ -83,6 +83,7 @@ class PublicController extends Controller
         $stat['died?'] = Person::where([['district', $dis], ['status', '4']])->get()->count();
         $stat['negative'] = Person::where([['district', $dis], ['status', '3']])->get()->count();
         $stat['pdp'] = $stat['treated'] + $stat['negative'] + $stat['died?'] + $stat['positive'];
+        $stat['otgProc'] = Person::where([['status', '11'], ['district', $dis]])->get()->count();
         return $stat;
     }
 
