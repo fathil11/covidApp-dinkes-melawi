@@ -205,7 +205,7 @@ $('input.village').autocomplete({
 "Sungai Sampak": null,
 "Sungai Sampuk": null,
 "Tanjung Beringin": null,
-"B A R U": null,
+"Baru": null,
 "Kelakik": null,
 "Kenual": null,
 "Labai Mandiri": null,
