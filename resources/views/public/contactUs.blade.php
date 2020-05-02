@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h4 class="mb-3 mt-5 font-weight-bolder">Puspa</h4>
+                                <h4 class="mb-3 mt-5 font-weight-bolder">Puspawati</h4>
                                 <h4 class="mt-n2">082148659000</h4>
                                 <div class="row">
                                     <div class="col-6">

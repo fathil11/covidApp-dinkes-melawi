@@ -613,7 +613,7 @@
                     </a>
                     <h4 class="text-white">atau</h4>
                     <a class="btn btn-rounded btn-warning" href="tel:082148659000">
-                        <h4 class="px-3 mb-0">Hubungi Puspa (082148659000)</h4>
+                        <h4 class="px-3 mb-0">Hubungi Puspawati (082148659000)</h4>
                     </a>
                 </div>
             </div>
