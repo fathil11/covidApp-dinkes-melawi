@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exports\LaporanHarianInternal;
 use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
