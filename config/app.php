@@ -165,10 +165,12 @@ return [
         /*
          * Package Service Providers...
          */
-        // Html2Text\Html2Text::class,
+
         /*
-         * Application Service Providers...
-         */
+        * Application Service Providers...
+        */
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -228,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Carbon' => Carbon\Carbon::class,
         'HtmlToText' => voku\Html2Text\Html2Text::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

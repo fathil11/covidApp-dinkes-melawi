@@ -74,5 +74,7 @@ Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], fun
 Auth::routes();
 Route::get('/logout', 'PublicController@logout');
 
+Route::get('/download/laporan-harian/{pass}', 'LaporanController@downloadHarian');
+
 
 // Route::get('/', 'HomeController@index')->name('home');
