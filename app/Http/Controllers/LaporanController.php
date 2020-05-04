@@ -9,6 +9,6 @@ class LaporanController extends Controller
 {
     public function downloadHarian($pass)
     {
-        return Excel::download(new App\Exports\LaporanHarianInternal, 'laporan.xlsx');
+        return Excel::download(new LaporanHarianInternal, 'laporan.xlsx');
     }
 }
