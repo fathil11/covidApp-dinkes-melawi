@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
 {
-    public function downloadHarian($pass)
+    public function downloadHarian()
     {
         return Excel::download(new LaporanHarianInternal, 'laporan.xlsx');
     }
