@@ -139,7 +139,7 @@
     <div class="row mt-5">
         <div class="col-md-6 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
-            <img class="img-fluid mt-2 rounded" src="{{ asset('img/maps/maps.jpg') . "?dummy=2" }}" alt="">
+            <img class="img-fluid mt-2 rounded" src="{{ asset('img/maps/maps.jpg') . "?dummy=3" }}" alt="">
         </div>
         <div class="col-md-6 col-sm-12 mt-4 mt-md-0">
             <div class="card bg-white">
