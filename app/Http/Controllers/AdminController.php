@@ -119,6 +119,11 @@ class AdminController extends Controller
         }
     }
 
+    public function showRapid()
+    {
+        $people = Person::all();
+        return view('admin.rapid', compact('people'));
+    }
     public function showAllPerson()
     {
         $people = Person::all();
@@ -184,22 +189,44 @@ class AdminController extends Controller
     {
         $person = Person::findOrFail($id);
 
-        $log = new Log();
-        $log->person_id = $person->id;
-        $log->status = '9';
-        $log->save();
+        $foundNonReactive = false;
+        foreach ($person->logs as $log) {
+            if($log->status == 10){
+                $log->status = 9;
+                $log->save();
+                $foundNonReactive = true;
+            }
+        }
+
+        if(!$foundNonReactive){
+            $log = new Log();
+            $log->person_id = $person->id;
+            $log->status = '9';
+            $log->save();
+        }
 
         return redirect()->back()->with('success', 'Berhasil mengganti status ke reaktif');
     }
 
     public function nonReactivePerson($id)
     {
-        $person = Person::findOrFail($id);
 
-        $log = new Log();
-        $log->person_id = $person->id;
-        $log->status = '10';
-        $log->save();
+        $person = Person::findOrFail($id);
+        $foundReactive = false;
+        foreach ($person->logs as $log) {
+            if($log->status == 9){
+                $log->status = 10;
+                $log->save();
+                $foundReactive = true;
+            }
+        }
+
+        if(!$foundReactive){
+            $log = new Log();
+            $log->person_id = $person->id;
+            $log->status = '10';
+            $log->save();
+        }
 
         return redirect()->back()->with('success', 'Berhasil mengganti status ke non reaktif');
     }

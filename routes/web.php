@@ -24,6 +24,10 @@ Route::get('/hubungi-kami', 'PublicController@showCotactUs');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
+
+    // Rapid Test Feautre
+    Route::get('/orang/rapid-test', 'AdminController@showRapid');
+
     // Person Index
     Route::get('/orang', 'AdminController@showAllPerson');
     Route::get('/orang/odp', 'AdminController@showOdpPeople');
