@@ -25,8 +25,7 @@
                     <div class="card bg-blue">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Total ODP</h2>
-                            {{-- <h1 class="font-weight-bold text-white">{{ $stat['odp'] }}</h1> --}}
-                            <h1 class="font-weight-bold text-white">3</h1>
+                            <h1 class="font-weight-bold text-white">{{ $stat['odp'] }}</h1>
                             {{-- <div class="d-none d-md-block"> --}}
                             <hr>
                             <div class="row">
@@ -68,7 +67,8 @@
                     <div class="card bg-yellow">
                         <div class="card-body text-center">
                             <h1 class="font-weight-normal text-white-sem">Total PDP</h1>
-                            <h1 class="font-weight-bold text-white">{{ $stat['pdp'] }}</h1>
+                            {{-- <h1 class="font-weight-bold text-white">{{ $stat['pdp'] }}</h1> --}}
+                            <h1 class="font-weight-bold text-white">3</h1>
                             {{-- <div class="d-none d-md-block"> --}}
                             <hr>
                             <div class="row">
