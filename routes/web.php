@@ -25,6 +25,12 @@ Route::get('/hubungi-kami', 'PublicController@showCotactUs');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
 
+    Route::get('/laporan', 'AdminController@showLaporan');
+
+    Route::get('/download/laporan/harian/internal', 'LaporanController@downloadHarian');
+    Route::get('/download/laporan/harian/provinsi/odp', 'LaporanController@downloadHarianProvinsiODP');
+    Route::get('/download/laporan/harian/provinsi/pdp', 'LaporanController@downloadHarianProvinsiPDP');
+
     // Rapid Test Feautre
     Route::get('/orang/rapid-test', 'AdminController@showRapid');
 
@@ -78,7 +84,6 @@ Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], fun
 Auth::routes();
 Route::get('/logout', 'PublicController@logout');
 
-Route::get('/download/laporan-internal-harian', 'LaporanController@downloadHarian');
 
 
 // Route::get('/', 'HomeController@index')->name('home');

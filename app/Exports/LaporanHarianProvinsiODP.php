@@ -8,13 +8,12 @@ use Carbon\Carbon;
 use App\Person;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class LaporanHarianInternal implements FromView, ShouldAutoSize
+class LaporanHarianProvinsiODP implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
-        return view('exports.laporanHarianInternal', [
-            'people' => Person::whereDate('created_at', Carbon::today())->get()
+        return view('exports.laporanHarianProvinsiODP', [
+            'people' => Person::where('status', '0')->whereDate('created_at', Carbon::today())->get()
         ]);
     }
-
 }

@@ -10,6 +10,11 @@ class LaporanController extends Controller
 {
     public function downloadHarian()
     {
-        return Excel::download(new LaporanHarianInternal, 'laporan.xlsx');
+        return Excel::download(new LaporanHarianInternal, 'laporan-harian-internal.xlsx');
+    }
+
+    public function downloadHarianProvinsiODP()
+    {
+        return Excel::download(new LaporanHarianProvinsiODP, 'laporan-harian-provinsi-odp.xlsx');
     }
 }

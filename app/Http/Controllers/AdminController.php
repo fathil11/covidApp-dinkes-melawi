@@ -278,6 +278,10 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Berhasil mengganti status ke Meninggal ' . $add);
     }
 
+    public function showLaporan()
+    {
+        return view('admin.report');
+    }
 
     public function updateLog($person)
     {
