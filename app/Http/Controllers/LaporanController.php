@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Exports\LaporanHarianInternal;
+use App\Exports\LaporanHarianProvinsiODP;
 use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
