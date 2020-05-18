@@ -87,6 +87,10 @@
             <div class="center">
                 <h5>Gejala</h5>
             </div>
+            <div class="input-field col s12 m12">
+                <input name="temperature" id="temperature" type="number" value="{{ old('temperature') }}">
+                <label for="temperature">Suhu Tubuh</label>
+            </div>
             <p>
                 <label>
                     <input type="checkbox" name="phenomenon[]" value="Demam" class="filled-in" @if(old('phenomenon') &&

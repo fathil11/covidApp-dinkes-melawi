@@ -32,6 +32,7 @@ class PerbatasanController extends Controller
             'village' => 'required|min:2|max:50',
             'sub_village' => 'nullable|min:3|max:255',
             'transmission' => 'required|numeric|max:3',
+            'temperature' => 'nullable|number|min:32|max:41',
             'phenomenon' => 'nullable',
         ]);
 
@@ -49,6 +50,7 @@ class PerbatasanController extends Controller
             $person->district = $request->district;
             $person->village = $request->village;
             $person->sub_village = $request->sub_village;
+            $person->temperature = $request->temperature;
             $person->transmission = $request->transmission;
             $person->status = '12';
             if(isset($request->phenomenon)){
