@@ -24,7 +24,7 @@ class PerbatasanController extends Controller
         $data = $request->validate([
             'name' => 'required|min:2|max:100',
             'age' => 'required|numeric|min:1|max:99',
-            'phone' => 'min:5|max:15',
+            'phone' => 'nullable|min:5|max:15',
             'gender' => 'required|alpha|max:2',
             'track' => 'required|min:1|max:50',
             'vehicle' => 'required|min:1|max:50',
