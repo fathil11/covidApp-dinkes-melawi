@@ -13,7 +13,7 @@ class LaporanHarianProvinsiODP implements FromView, ShouldAutoSize
     public function view(): View
     {
         return view('exports.laporanHarianProvinsiODP', [
-            'people' => Person::where('status', '0')->whereDate('created_at', Carbon::today())->get()
+            'people' => Person::where('status', '11')->whereDate('created_at', Carbon::today())->get()
         ]);
     }
 }
