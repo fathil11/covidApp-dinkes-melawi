@@ -18,4 +18,9 @@ class LaporanController extends Controller
     {
         return Excel::download(new LaporanHarianProvinsiODP, 'laporan-harian-provinsi-odp.xlsx');
     }
+
+    public function downloadHarianProvinsiPDP()
+    {
+        return Excel::download(new LaporanHarianProvinsiPDP, 'laporan-harian-provinsi-pdp.xlsx');
+    }
 }
