@@ -32,7 +32,7 @@ class PerbatasanController extends Controller
             'village' => 'required|min:2|max:50',
             'sub_village' => 'nullable|min:3|max:255',
             'transmission' => 'required|numeric|max:3',
-            'temperature' => 'nullable|number|min:32|max:41',
+            'temperature' => 'nullable|numeric|min:32|max:41',
             'phenomenon' => 'nullable',
         ]);
 
