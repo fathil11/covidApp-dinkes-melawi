@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exports\LaporanHarianInternal;
 use App\Exports\LaporanTotalInternal;
+use App\Exports\LaporanHarianPerjalanan;
 use App\Exports\LaporanHarianProvinsiODP;
+use App\Exports\LaporanHarianProvinsiPDP;
 use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
@@ -18,6 +20,11 @@ class LaporanController extends Controller
     public function downloadTotalInternal()
     {
         return Excel::download(new LaporanTotalInternal, 'laporan-total-internal.xlsx');
+    }
+
+    public function downloadHarianPerjalanan()
+    {
+        return Excel::download(new LaporanHarianPerjalanan, 'laporan-harian-perjalanan.xlsx');
     }
 
     public function downloadHarianProvinsiODP()

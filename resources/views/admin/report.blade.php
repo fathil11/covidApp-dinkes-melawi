@@ -25,6 +25,16 @@
                         </div>
 
                         <div class="mb-4">
+                            <h5 class="mb-0">Laporan Pelaku Perjalanan</h5>
+                        </div>
+                        <div class="mb-4">
+                            <a href="/admin/download/laporan/harian/perjalanan" type="button" rel="tooltip"
+                                class="btn btn-primary">
+                                Harian
+                            </a>
+                        </div>
+
+                        <div class="mb-4">
                             <h5 class="mb-0">Laporan Harian Provinsi</h5>
                             <a href="/admin/download/laporan/harian/provinsi/odp" type="button" rel="tooltip"
                                 class="btn btn-warning">
