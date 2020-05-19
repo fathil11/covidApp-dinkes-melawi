@@ -13,7 +13,9 @@ class LaporanHarianPerjalanan implements FromView, ShouldAutoSize
     public function view(): View
     {
         return view('exports.laporanPerjalanan', [
-            'people' => Person::whereTime('created_at', Carbon::yesterday())->get()
+            'people' => Person::whereTime('created_at', '>', Carbon::yesterday()->hours('7'))
+            ->whereTime('created_at', '<', Carbon::today()->hours('7'))
+            ->get()
         ]);
     }
 }

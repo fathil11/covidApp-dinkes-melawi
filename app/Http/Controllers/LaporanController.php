@@ -25,8 +25,7 @@ class LaporanController extends Controller
 
     public function downloadHarianPerjalanan()
     {
-        dd(Carbon::yesterday()->hours('7'));
-        // return Excel::download(new LaporanHarianPerjalanan, 'laporan-harian-perjalanan.xlsx');
+        return Excel::download(new LaporanHarianPerjalanan, 'laporan-harian-perjalanan.xlsx');
     }
 
     public function downloadHarianProvinsiODP()
