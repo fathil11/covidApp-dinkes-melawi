@@ -11,10 +11,16 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
-                            <h5 class="mb-0">Laporan Harian Internal</h5>
+                            <h5 class="mb-0">Laporan Internal</h5>
+                            <a href="/admin/download/laporan/total/internal" type="button" rel="tooltip"
+                                class="btn btn-info">
+                                Total
+                            </a>
+                        </div>
+                        <div class="mb-4">
                             <a href="/admin/download/laporan/harian/internal" type="button" rel="tooltip"
                                 class="btn btn-info">
-                                Laporan Harian Internal
+                                Harian
                             </a>
                         </div>
 

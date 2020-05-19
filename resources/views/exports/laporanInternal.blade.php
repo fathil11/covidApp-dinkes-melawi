@@ -14,6 +14,7 @@
             <th><b>Waktu Masuk</b></th>
             <th><b>Gejala</b></th>
             <th><b>Status</b></th>
+            <th><b>Waktu</b></th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +33,7 @@
             <td>{{ Carbon::create($person->created_at->toDateTimeString())->locale('id') }}</td>
             <td>{{ $person->phenomenon }}</td>
             <td>{{ $person->status }}</td>
+            <td>{{ Carbon::create($person->created_at->toDateTimeString())->locale('id') }}</td>
         </tr>
         @endforeach
     </tbody>

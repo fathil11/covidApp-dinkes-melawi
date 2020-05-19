@@ -9,9 +9,14 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
 {
-    public function downloadHarian()
+    public function downloadHarianInternal()
     {
         return Excel::download(new LaporanHarianInternal, 'laporan-harian-internal.xlsx');
+    }
+
+    public function downloadTotalInternal()
+    {
+        return Excel::download(new LaporanTotalInternal, 'laporan-total-internal.xlsx');
     }
 
     public function downloadHarianProvinsiODP()
