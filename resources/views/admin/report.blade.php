@@ -16,8 +16,6 @@
                                 class="btn btn-info">
                                 Total
                             </a>
-                        </div>
-                        <div class="mb-4">
                             <a href="/admin/download/laporan/harian/internal" type="button" rel="tooltip"
                                 class="btn btn-info">
                                 Harian
