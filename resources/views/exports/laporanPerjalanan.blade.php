@@ -5,8 +5,8 @@
             <th><b>Nama</b></th>
             <th><b>Umur</b></th>
             <th><b>Jenis Kelamin</b></th>
-            <th><b>Kecamatan</b></th>
             <th><b>Desa</b></th>
+            <th><b>Kecamatan</b></th>
             <th><b>Dusun</b></th>
             <th><b>Nomor HP</b></th>
             <th><b>Berkunjung Dari</b></th>
@@ -21,8 +21,8 @@
             <td>{{ $person->name }}</td>
             <td>{{ $person->age }}</td>
             <td>{{ ($person->gender == 'm') ? 'Laki-Laki' : 'Perempuan' }}</td>
-            <td>{{ $person->district }}</td>
             <td>{{ $person->village }}</td>
+            <td>{{ $person->district }}</td>
             <td>{{ $person->sub_village }}</td>
             <td>{{ $person->phone }}</td>
             <td>{{ $person->track }}</td>
