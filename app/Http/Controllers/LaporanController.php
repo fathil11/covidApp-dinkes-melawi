@@ -42,6 +42,6 @@ class LaporanController extends Controller
 
     public function downloadTotalKecamatan($district)
     {
-        return Excel::download(new LaporanTotalKecamatan($district), 'laporan-total-internal.xlsx');
+        return Excel::download(new LaporanTotalKecamatan($district), 'laporan-total-kecamatan.xlsx');
     }
 }

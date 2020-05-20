@@ -19,7 +19,7 @@ class LaporanTotalKecamatan implements FromView, ShouldAutoSize
 
     public function view(): View
     {
-        return view('exports.laporan-kecamatan', [
+        return view('exports.laporanInternal', [
             'people' => Person::where('district', $this->district)->get()
         ]);
     }
