@@ -34,6 +34,7 @@ class PerbatasanController extends Controller
             'transmission' => 'required|numeric|max:3',
             'temperature' => 'nullable|numeric|min:32|max:41',
             'phenomenon' => 'nullable',
+            'detail' => 'nullable|min:1|max:512',
         ]);
 
 

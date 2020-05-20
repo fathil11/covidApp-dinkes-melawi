@@ -55,7 +55,7 @@
         </div>
         <div class="input-field col s12 m12">
             <input name="sub_village" id="sub_village" type="text" class="" value="{{ old('sub_village') }}">
-            <label for="sub_village">Dusun</label>
+            <label for="sub_village">Alamat Lengkap / Dusun</label>
         </div>
         <div class="col s12 m12">
             <div class="center">
@@ -133,6 +133,10 @@
                     <span>Sakit Tenggorokan</span>
                 </label>
             </p>
+            <div class="input-field col s12 m12">
+                <input name="detail" id="detail" step="any" type="text" value="{{ old('detail') }}">
+                <label for="detail">Keterangan</label>
+            </div>
             <button class="btn waves-effect waves-light" style="width: 100%; margin-top: 5px;" type="submit"
                 name="action">Tambah
                 <i class="material-icons right">add</i>
