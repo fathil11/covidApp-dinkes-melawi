@@ -52,6 +52,7 @@ class PerbatasanController extends Controller
             $person->village = $request->village;
             $person->sub_village = $request->sub_village;
             $person->temperature = $request->temperature;
+            $person->detail = $request->detail;
             $person->transmission = $request->transmission;
             $person->status = '12';
             if(isset($request->phenomenon)){
