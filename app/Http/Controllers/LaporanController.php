@@ -8,6 +8,7 @@ use App\Exports\LaporanTotalInternal;
 use App\Exports\LaporanHarianPerjalanan;
 use App\Exports\LaporanHarianProvinsiODP;
 use App\Exports\LaporanHarianProvinsiPDP;
+use App\Exports\LaporanTotalKecamatan;
 use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 
@@ -41,6 +42,6 @@ class LaporanController extends Controller
 
     public function downloadTotalKecamatan($district)
     {
-        return Excel::download(new LaporanTotalInternal($district), 'laporan-total-internal.xlsx');
+        return Excel::download(new LaporanTotalKecamatan($district), 'laporan-total-internal.xlsx');
     }
 }
