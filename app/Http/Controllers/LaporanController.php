@@ -38,4 +38,9 @@ class LaporanController extends Controller
     {
         return Excel::download(new LaporanHarianProvinsiPDP, 'laporan-harian-provinsi-pdp.xlsx');
     }
+
+    public function downloadTotalKecamatan($district)
+    {
+        return Excel::download(new LaporanTotalInternal($district), 'laporan-total-internal.xlsx');
+    }
 }

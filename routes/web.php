@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/download/laporan/harian/provinsi/odp', 'LaporanController@downloadHarianProvinsiODP');
     Route::get('/download/laporan/harian/provinsi/pdp', 'LaporanController@downloadHarianProvinsiPDP');
 
+    Route::get('/download/laporan/total/kecamatan/{district}', 'LaporanController@downloadTotalKecamatan');
     // Rapid Test Feautre
     Route::get('/orang/rapid-test', 'AdminController@showRapid');
 
