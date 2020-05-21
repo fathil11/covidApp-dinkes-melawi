@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('/download/laporan/harian/internal', 'LaporanController@downloadHarianInternal');
     Route::get('/download/laporan/total/internal', 'LaporanController@downloadTotalInternal');
+    Route::get('/download/laporan/total/reactive', 'LaporanController@downloadTotalReactive');
 
     Route::get('/download/laporan/harian/perjalanan', 'LaporanController@downloadHarianPerjalanan');
 

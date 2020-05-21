@@ -9,6 +9,7 @@ use App\Exports\LaporanHarianPerjalanan;
 use App\Exports\LaporanHarianProvinsiODP;
 use App\Exports\LaporanHarianProvinsiPDP;
 use App\Exports\LaporanTotalKecamatan;
+use App\Exports\LaporanTotalReactive;
 use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 
@@ -24,9 +25,13 @@ class LaporanController extends Controller
         return Excel::download(new LaporanTotalInternal, 'laporan-total-internal.xlsx');
     }
 
+    public function downloadTotalReactive()
+    {
+        return Excel::download(new LaporanTotalReactive, 'laporan-total-reactive.xlsx');
+    }
+
     public function downloadHarianPerjalanan()
     {
-        // dd(Carbon::today()->hour(8));
         return Excel::download(new LaporanHarianPerjalanan, 'laporan-harian-perjalanan.xlsx');
     }
 

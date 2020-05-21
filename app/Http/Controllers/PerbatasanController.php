@@ -37,7 +37,6 @@ class PerbatasanController extends Controller
             'detail' => 'nullable|min:1|max:512',
         ]);
 
-
         if (in_array($data['district'], $this->districts)) {
             $request->district = array_search($data['district'], $this->districts, true)+1;
 
@@ -62,7 +61,6 @@ class PerbatasanController extends Controller
             }
             $person->save();
             $this->updateLog($person);
-
 
             return redirect()->back()->with('success', 'Berhasil menambahkan data');
         } else {

@@ -20,6 +20,10 @@
                                 class="btn btn-info">
                                 Harian
                             </a>
+                            <a href="/admin/download/laporan/total/reactive" type="button" rel="tooltip"
+                                class="btn btn-info">
+                                Reactive
+                            </a>
                         </div>
 
                         <div class="mb-4">
