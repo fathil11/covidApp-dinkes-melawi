@@ -24,8 +24,6 @@
 
                         <div class="mb-4">
                             <h5 class="mb-0">Laporan Pelaku Perjalanan</h5>
-                        </div>
-                        <div class="mb-4">
                             <a href="/admin/download/laporan/harian/perjalanan" type="button" rel="tooltip"
                                 class="btn btn-primary">
                                 Harian
