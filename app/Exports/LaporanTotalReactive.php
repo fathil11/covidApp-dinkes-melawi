@@ -2,9 +2,13 @@
 
 namespace App\Exports;
 
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Contracts\View\View;
+use Carbon\Carbon;
+use App\Person;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class LaporanTotalReactive implements FromCollection
+class LaporanTotalReactive implements FromView, ShouldAutoSize
 {
     public function view(): View
     {
