@@ -23,7 +23,7 @@
             <td>{{ $key+1 }}</td>
             <td>{{ $person->name }}</td>
             <td>{{ $person->age }}</td>
-            <td>{{ ($person->gender == 'm') ? 'Laki-Laki' : 'Perempuan' }}</td>
+            <td>{{ $person->gender }}</td>
             <td>{{ $person->district }}</td>
             <td>{{ $person->village }}</td>
             <td>{{ $person->sub_village }}</td>

@@ -29,7 +29,7 @@
             <td>{{ $person->name }}</td>
             <td>PDP</td>
             <td>{{ $person->age }}</td>
-            <td>{{ ($person->gender == 'm') ? 'L' : 'P' }}</td>
+            <td>{{ ($person->gender == 'Laki-Laki') ? 'L' : 'P' }}</td>
             <td>{{ $person->sub_village }}</td>
             <td>Melawi</td>
             <td>{{ $person->district }}</td>
