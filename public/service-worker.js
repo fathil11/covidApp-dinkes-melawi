@@ -1,19 +1,19 @@
 var cacheName = 'covid-cachev1';
 var assets = [
     './css/bootstrap.min.css',
-    // './css/bootstrap.min.css.map',
-    // './css/public/custom.css',
-    // './js/lazysizes.min.js',
-    // './js/jquery.min.js',
-    // './js/popper.min.js',
-    // './js/bootstrap.min.js',
-    // 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap',
-    // './img/corona.png',
-    // './img/dokter.png',
-    // './img/1.png',
-    // './img/2.png',
-    // './img/3.png',
-    // './video/covid-3.mp4',
+    './css/bootstrap.min.css.map',
+    './css/public/custom.css',
+    './js/lazysizes.min.js',
+    './js/jquery.min.js',
+    './js/popper.min.js',
+    './js/bootstrap.min.js',
+    'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap',
+    './img/corona.png',
+    './img/dokter.png',
+    './img/1.png',
+    './img/2.png',
+    './img/3.png',
+    './video/covid-3.mp4',
 
 ];
 
