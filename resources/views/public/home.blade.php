@@ -165,6 +165,9 @@
                                     @php
                                     use \App\Http\Controllers\PublicController;
                                     @endphp
+                                    @php
+                                    dd('Page temporary disabled.');
+                                    @endphp
                                     <td>1</td>
                                     <td>Sokan</td>
                                     {{-- <td>{{ PublicController::getDistrictStat('0')['odp'] }}</td> --}}
@@ -336,9 +339,7 @@
             </div>
         </div>
     </div>
-    @php
-    dd('Page temporary disabled.');
-    @endphp
+
     <div class="row mt-5">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
