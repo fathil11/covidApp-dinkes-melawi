@@ -136,9 +136,7 @@
             </div>
         </div>
     </div>
-    @php
-    dd('Page temporary disabled.');
-    @endphp
+
     <div class="row mt-5">
         <div class="col-md-6 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
@@ -337,6 +335,9 @@
             </div>
         </div>
     </div>
+    @php
+    dd('Page temporary disabled.');
+    @endphp
     <div class="row mt-5">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
