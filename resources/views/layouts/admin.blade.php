@@ -79,6 +79,12 @@
                             <p>Kelola PDP</p>
                         </a>
                     </li>
+                    <li class="nav-item @if(request()->is('admin/peta')) active @endif">
+                        <a class="nav-link" href="/admin/peta">
+                            <i class="material-icons">map</i>
+                            <p>Peta</p>
+                        </a>
+                    </li>
                     <li class="nav-item @if(request()->is('admin/laporan')) active @endif">
                         <a class="nav-link" href="/admin/laporan">
                             <i class="material-icons">book</i>

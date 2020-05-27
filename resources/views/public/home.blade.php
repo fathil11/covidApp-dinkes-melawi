@@ -68,7 +68,7 @@
                         <div class="card-body text-center">
                             <h1 class="font-weight-normal text-white-sem">Total PDP</h1>
                             {{-- <h1 class="font-weight-bold text-white">{{ $stat['pdp'] }}</h1> --}}
-                            <h1 class="font-weight-bold text-white">3</h1>
+                            <h1 class="font-weight-bold text-white">0</h1>
                             {{-- <div class="d-none d-md-block"> --}}
                             <hr>
                             <div class="row">

@@ -23,7 +23,9 @@ Route::get('/berita/lihat/{slug}', 'PublicController@openPost');
 Route::get('/hubungi-kami', 'PublicController@showCotactUs');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-    Route::get('/', 'AdminController@index');
+    Route::get('admin/peta', 'AdminController@index');
+
+    Route::get('/peta', 'AdminController@index');
 
     Route::get('/laporan', 'AdminController@showLaporan');
 
