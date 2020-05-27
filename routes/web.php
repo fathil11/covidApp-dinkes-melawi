@@ -25,7 +25,9 @@ Route::get('/hubungi-kami', 'PublicController@showCotactUs');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
 
+    // Map
     Route::get('/peta', 'AdminController@showMap');
+    Route::post('/peta', 'AdminController@storeMap');
 
     Route::get('/laporan', 'AdminController@showLaporan');
 

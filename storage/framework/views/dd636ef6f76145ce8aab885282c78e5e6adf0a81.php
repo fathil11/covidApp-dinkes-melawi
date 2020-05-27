@@ -1,39 +1,39 @@
-@extends('layouts.admin')
-@section('title', 'Kelola Peta')
-@section('content')
+<?php $__env->startSection('title', 'Kelola Peta'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @if ($errors->any())
+                <?php if($errors->any()): ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @elseif (session('success'))
+                <?php elseif(session('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                    <?php echo e(session('success')); ?>
+
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                @endif
+                <?php endif; ?>
                 <div class="card">
                     <div class="card-header card-header-info">
                         <h4 class="card-title">Peta</h4>
                         <p class="card-category">Update peta COVID-19 Melawi</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('admin/peta') }}" method="post" autocomplete="off"
+                        <form action="<?php echo e(url('admin/peta')); ?>" method="post" autocomplete="off"
                             enctype="multipart/form-data">
-                            @csrf
-                            @method('POST')
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('POST'); ?>
                             <div class="row mb-4 mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group form-file-upload form-file-multiple">
@@ -61,8 +61,8 @@
         </div>
     </div>
 </div>
-@endsection
-@section('js')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
 <script>
     $('#btnFile').click(function() {
     $('.inputFileHidden').trigger('click');
@@ -77,4 +77,6 @@
     $('.inputFileVisible').val(filename);
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Web\dinkes-melawi-corona\resources\views/admin/map.blade.php ENDPATH**/ ?>

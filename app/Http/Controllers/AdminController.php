@@ -283,6 +283,21 @@ class AdminController extends Controller
         return view('admin.map');
     }
 
+    public function storeMap(request $request)
+    {
+        $request->validate([
+            'map' => 'required|file|image|max:3000',
+        ]);
+
+        $map = $request->map->storeAs('public/map', 'maps.jpg');
+
+        if($map){
+            return redirect('/admin/peta')->with('success', 'Berhasil mengupdate peta');
+        }else{
+            return redirect('/admin/peta')->with('success', 'Gagal mengupdate peta');
+        }
+    }
+
     public function showLaporan()
     {
         return view('admin.report');

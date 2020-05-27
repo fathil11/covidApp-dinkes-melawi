@@ -79,6 +79,12 @@
                             <p>Kelola PDP</p>
                         </a>
                     </li>
+                    <li class="nav-item <?php if(request()->is('admin/peta')): ?> active <?php endif; ?>">
+                        <a class="nav-link" href="/admin/peta">
+                            <i class="material-icons">map</i>
+                            <p>Peta</p>
+                        </a>
+                    </li>
                     <li class="nav-item <?php if(request()->is('admin/laporan')): ?> active <?php endif; ?>">
                         <a class="nav-link" href="/admin/laporan">
                             <i class="material-icons">book</i>
@@ -151,7 +157,8 @@
     <script src="<?php echo e(asset('js/admin/jquery.dataTables.min.js')); ?>"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-    <script src="<?php echo e(asset('js/admin/material-dashboard.js')); ?>"></script>
+    
+    <script src="<?php echo e(asset('js/admin/material-dashboard.js?v=2.1.2')); ?>"></script>
     <?php echo $__env->yieldContent('js'); ?>
 
 </body>

@@ -157,7 +157,8 @@
     <script src="{{ asset('js/admin/jquery.dataTables.min.js') }}"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-    <script src="{{ asset('js/admin/material-dashboard.js') }}"></script>
+    {{-- <script src="{{ asset('js/admin/demo.js') }}"></script> --}}
+    <script src="{{ asset('js/admin/material-dashboard.js?v=2.1.2') }}"></script>
     @yield('js')
 
 </body>

@@ -67,7 +67,7 @@
                         <div class="card-body text-center">
                             <h1 class="font-weight-normal text-white-sem">Total PDP</h1>
                             
-                            <h1 class="font-weight-bold text-white">3</h1>
+                            <h1 class="font-weight-bold text-white">0</h1>
                             
                             <hr>
                             <div class="row">
@@ -140,7 +140,7 @@
     <div class="row mt-5">
         <div class="col-md-6 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
-            <img class="img-fluid mt-2 rounded" src="<?php echo e(asset('img/maps/maps.jpg') . "?dummy=6"); ?>" alt="">
+            <img class="lazyload img-fluid mt-2 rounded" src="<?php echo e(asset('storage/map/maps.jpg')); ?>" alt="">
         </div>
         <div class="col-md-6 col-sm-12 mt-4 mt-md-0">
             <div class="card bg-white">
