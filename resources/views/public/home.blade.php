@@ -16,9 +16,7 @@
         </div>
     </div>
 </div>
-@php
-dd('Page temporary disabled.');
-@endphp
+
 <div class="container">
     <div class="card mt-n6">
         <div class="card-body my-2">
@@ -138,7 +136,9 @@ dd('Page temporary disabled.');
             </div>
         </div>
     </div>
-
+    @php
+    dd('Page temporary disabled.');
+    @endphp
     <div class="row mt-5">
         <div class="col-md-6 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
