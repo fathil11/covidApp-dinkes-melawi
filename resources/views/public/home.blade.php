@@ -152,18 +152,6 @@
                     <h4>Fitur tabel sedang dalam perbaikan. Mohon maaf atas ketidaknyamanannya.</h4>
                 </div>
             </div>
-            <h1>Peta Persebaran</h1>
-            <img class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg?v=2.2')}}" alt="">
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-md-12 col-sm-12 text-center">
-            <div class="card bg-white">
-                <div class="card-body">
-                    <h4>Fitur tabel sedang dalam perbaikan. Mohon maaf atas ketidaknyamanannya.</h4>
-                </div>
-            </div>
         </div>
     </div>
 
