@@ -14,7 +14,7 @@ class PublicController extends Controller
 {
     public function index()
     {
-        dd('Temporary Disabled');
+        // dd('Temporary Disabled');
 
         $this->pushStat();
 
