@@ -37,7 +37,7 @@ class PublicController extends Controller
         } else {
             $stat['updated'] = '-';
         }
-
+        dd('Page temporary disabled.');
         return view('public.home', compact('stat'));
     }
 
