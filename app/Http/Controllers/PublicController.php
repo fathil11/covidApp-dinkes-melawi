@@ -14,7 +14,7 @@ class PublicController extends Controller
 {
     public function index()
     {
-        $this->pushStat();
+        // $this->pushStat();
 
         $stat['positive'] = Person::where('status', '5')->get()->count();
         $stat['recovered'] = Person::where('status', '7')->get()->count();
