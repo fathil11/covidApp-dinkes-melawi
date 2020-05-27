@@ -15,7 +15,9 @@ class PublicController extends Controller
     public function index()
     {
         // dd('Temporary Disabled');
-        dd($this->getUserIpAddr());
+        if($this->getUserIpAddr() != "180.242.213.250"){
+            return abort(404);
+        }
         $this->pushStat();
 
         $stat['positive'] = Person::where('status', '5')->get()->count();
