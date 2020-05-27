@@ -41,7 +41,7 @@
                                             accept="image/*">
                                         <div class=" input-group">
                                             <input type="text" class="form-control inputFileVisible"
-                                                placeholder="Single File">
+                                                placeholder="Upload peta ...">
                                             <span class="input-group-btn">
                                                 <button type="button" class="btn btn-fab btn-round btn-info"
                                                     id="btnFile">
