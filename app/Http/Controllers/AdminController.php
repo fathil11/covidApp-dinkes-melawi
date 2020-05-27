@@ -278,6 +278,11 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Berhasil mengganti status ke Meninggal ' . $add);
     }
 
+    public function showMap()
+    {
+        return view('admin.map');
+    }
+
     public function showLaporan()
     {
         return view('admin.report');
