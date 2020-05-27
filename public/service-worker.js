@@ -13,7 +13,7 @@ var assets = [
     './img/1.png',
     './img/2.png',
     './img/3.png',
-    './video/covid.mp4',
+    './video/covid-3.mp4',
 
 ];
 
