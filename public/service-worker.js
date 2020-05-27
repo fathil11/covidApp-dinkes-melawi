@@ -20,7 +20,6 @@ var assets = [
 self.addEventListener('install', function (event) {
     event.waitUntil(
         caches.open(cacheName).then(function (cache) {
-            console.log('Caching Assets');
             return cache.addAll(assets);
         })
     )
