@@ -7,6 +7,7 @@ var assets = [
     './js/jquery.min.js',
     './js/popper.min.js',
     './js/bootstrap.min.js',
+    './js/sweetalert.js',
     'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap',
     './img/corona.png',
     './img/dokter.png',
