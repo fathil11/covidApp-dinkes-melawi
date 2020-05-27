@@ -142,9 +142,7 @@
             <h1>Peta Persebaran</h1>
             <img class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg?v=2.2')}}" alt="">
         </div>
-        @php
-        dd('Page temporary disabled.');
-        @endphp
+
         <div class="col-md-6 col-sm-12 mt-4 mt-md-0">
             <div class="card bg-white">
                 <div class="card-body">
@@ -338,7 +336,9 @@
             </div>
         </div>
     </div>
-
+    @php
+    dd('Page temporary disabled.');
+    @endphp
     <div class="row mt-5">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
