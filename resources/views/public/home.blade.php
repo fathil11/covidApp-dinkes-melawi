@@ -16,7 +16,9 @@
         </div>
     </div>
 </div>
-
+@php
+dd('Page temporary disabled.');
+@endphp
 <div class="container">
     <div class="card mt-n6">
         <div class="card-body my-2">
