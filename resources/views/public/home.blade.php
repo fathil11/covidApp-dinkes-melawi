@@ -11,7 +11,7 @@
                 <h3 class="font-weight-light">Kabupaten Melawi</h3>
             </div>
             <div class="col-md-6 col-sm-12 d-none d-md-block">
-                <img data-src="{{ asset('img/corona.png') }}" width="130%" class="banner-img" alt="">
+                <img data-src="{{ asset('img/corona.png') }}" width="130%" class="lazyload banner-img" alt="">
             </div>
         </div>
     </div>
