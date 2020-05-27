@@ -16,7 +16,7 @@ class PublicController extends Controller
     {
         // dd('Temporary Disabled');
         if($this->getUserIpAddr() != "180.242.213.250"){
-            return abort(404);
+            return view('errorpage.maintenance');
         }
         $this->pushStat();
 
