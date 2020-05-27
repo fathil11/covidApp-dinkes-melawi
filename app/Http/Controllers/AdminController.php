@@ -105,7 +105,7 @@ class AdminController extends Controller
             $person->village = $request->village;
             $person->sub_village = $request->sub_village;
             $person->transmission = $request->transmission;
-            $person->status = '12';
+            $person->status = $request->status;
             $person->phenomenon = $request->phenomenon;
             if(isset($request->phenomenon)){
                 $person->status = '0';
