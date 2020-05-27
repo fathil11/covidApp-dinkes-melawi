@@ -1,8 +1,6 @@
 @extends('layouts.public')
 @section('manifest')
-@php
-use \App\Http\Controllers\PublicController;
-@endphp
+
 <link rel="manifest" href="{{ asset('manifest.json') }}">
 @endsection
 @section('content')
@@ -145,7 +143,9 @@ use \App\Http\Controllers\PublicController;
             <h1>Peta Persebaran</h1>
             <img class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg?v=2.2')}}" alt="">
         </div>
-
+        @php
+        use \App\Http\Controllers\PublicController;
+        @endphp
         <div class="col-md-6 col-sm-12 mt-4 mt-md-0">
             <div class="card bg-white">
                 <div class="card-body">
@@ -165,8 +165,6 @@ use \App\Http\Controllers\PublicController;
                             <tbody>
                             <tbody>
                                 <tr class="text-center">
-
-
                                     <td>1</td>
                                     <td>Sokan</td>
                                     {{-- <td>{{ PublicController::getDistrictStat('0')['odp'] }}</td> --}}
@@ -181,6 +179,9 @@ use \App\Http\Controllers\PublicController;
                                     {{-- <td>{{ PublicController::getDistrictStat('0')['recovered'] }}</td> --}}
                                     {{-- <td>{{ PublicController::getDistrictStat('0')['died+'] }}</td> --}}
                                 </tr>
+                                @php
+                                dd('Page temporary disabled.');
+                                @endphp
                                 <tr class="text-center">
                                     <td>2</td>
                                     <td>Tanah Pinoh Barat</td>
@@ -339,9 +340,6 @@ use \App\Http\Controllers\PublicController;
         </div>
     </div>
 
-    @php
-    dd('Page temporary disabled.');
-    @endphp
     <div class="row mt-5">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
