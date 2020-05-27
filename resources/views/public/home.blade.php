@@ -1,5 +1,8 @@
 @extends('layouts.public')
 @section('manifest')
+@php
+use \App\Http\Controllers\PublicController;
+@endphp
 <link rel="manifest" href="{{ asset('manifest.json') }}">
 @endsection
 @section('content')
@@ -162,12 +165,8 @@
                             <tbody>
                             <tbody>
                                 <tr class="text-center">
-                                    @php
-                                    use \App\Http\Controllers\PublicController;
-                                    @endphp
-                                    @php
-                                    dd('Page temporary disabled.');
-                                    @endphp
+
+
                                     <td>1</td>
                                     <td>Sokan</td>
                                     {{-- <td>{{ PublicController::getDistrictStat('0')['odp'] }}</td> --}}
@@ -340,6 +339,9 @@
         </div>
     </div>
 
+    @php
+    dd('Page temporary disabled.');
+    @endphp
     <div class="row mt-5">
         <div class="col-md-12">
             <h1 class="text-center font-weight-bold mb-4">Detail Tabel Kecamatan</h1>
