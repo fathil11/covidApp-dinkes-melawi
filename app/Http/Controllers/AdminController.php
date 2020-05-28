@@ -126,7 +126,7 @@ class AdminController extends Controller
     }
     public function showAllPerson()
     {
-        $people = Person::whereNot('status', '12')->get();
+        $people = Person::where('status', '!=', '12')->get();
         return view('admin.allPeople', compact('people'));
     }
 
