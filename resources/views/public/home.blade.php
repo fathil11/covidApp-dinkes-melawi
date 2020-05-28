@@ -141,7 +141,7 @@
     <div class="row mt-5">
         <div class="col-md-12 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
-            <img class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg?v=2.2')}}" alt="">
+            <img id="map" class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg')}}" alt="">
         </div>
     </div>
 
@@ -251,4 +251,12 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script language="javascript" type="text/javascript">
+    var d = new Date();
+    document.getElementById("map").src =
+      "https://covid.dinkesmelawi.com/storage/map/maps.jpg?ver=" +
+       d.getTime();
+</script>
 @endsection
