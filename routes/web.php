@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     // Person Index
     Route::get('/orang', 'AdminController@showAllPerson');
+    Route::get('/orang/pendatang', 'AdminController@showPendatangPerson');
     Route::get('/orang/odp', 'AdminController@showOdpPeople');
     Route::get('/orang/otg', 'AdminController@showOtgPeople');
     Route::get('/orang/pdp', 'AdminController@showPdpPeople');

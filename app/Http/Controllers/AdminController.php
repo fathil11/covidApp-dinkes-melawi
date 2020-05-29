@@ -124,9 +124,16 @@ class AdminController extends Controller
         $people = Person::all();
         return view('admin.rapid', compact('people'));
     }
+
     public function showAllPerson()
     {
         $people = Person::where('status', '!=', '12')->get();
+        return view('admin.allPeople', compact('people'));
+    }
+
+    public function showPendatangPerson()
+    {
+        $people = Person::where('status', '12')->get();
         return view('admin.allPeople', compact('people'));
     }
 
