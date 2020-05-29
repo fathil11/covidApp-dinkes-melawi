@@ -58,7 +58,7 @@
                     <li class="nav-item @if(request()->is('admin/orang/pendatang')) active @endif">
                         <a class="nav-link" href="/admin/orang/pendatang">
                             <i class="material-icons">people</i>
-                            <p>Lihat Seluruh Orang</p>
+                            <p>Lihat Pendatang</p>
                         </a>
                     </li>
                     <li class="nav-item @if(request()->is('admin/orang/rapid-test')) active @endif">
