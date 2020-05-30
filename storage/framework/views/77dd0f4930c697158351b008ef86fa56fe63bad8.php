@@ -55,6 +55,12 @@
                             <p>Lihat Seluruh Orang</p>
                         </a>
                     </li>
+                    <li class="nav-item <?php if(request()->is('admin/orang/pendatang')): ?> active <?php endif; ?>">
+                        <a class="nav-link" href="/admin/orang/pendatang">
+                            <i class="material-icons">people</i>
+                            <p>Lihat Pendatang</p>
+                        </a>
+                    </li>
                     <li class="nav-item <?php if(request()->is('admin/orang/rapid-test')): ?> active <?php endif; ?>">
                         <a class="nav-link" href="/admin/orang/rapid-test">
                             <i class="material-icons">offline_bolt</i>

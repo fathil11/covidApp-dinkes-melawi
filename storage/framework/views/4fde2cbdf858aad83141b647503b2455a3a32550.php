@@ -1,6 +1,5 @@
-@extends('layouts.perbatasan')
-@section('title', 'Kelola Orang')
-@section('content')
+<?php $__env->startSection('title', 'Kelola Orang'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col s12 m12">
         <table class="centered nowrap" id="all_table" width="100%">
@@ -15,22 +14,20 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($people as $key=>$person)
+                <?php $__empty_1 = true; $__currentLoopData = $people; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$person): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <tr>
-                    <td>{{ $key+1 }}</td>
-                    <td>{{ $person->name }}</td>
-                    <td>{{ $person->gender }}</td>
-                    <td>{{ $person->phone }}</td>
-                    <td>{{ $person->district }}</td>
+                    <td><?php echo e($key+1); ?></td>
+                    <td><?php echo e($person->name); ?></td>
+                    <td><?php echo e($person->gender); ?></td>
+                    <td><?php echo e($person->phone); ?></td>
+                    <td><?php echo e($person->district); ?></td>
                     <td>
-                        {{-- <form action="/admin-perbatasan/edit/{{ $person->id }}" method="post">@csrf @method('post')
-                        <button class="btn orange waves-effect" type="submit">Edit</button>
-                        </form> --}}
+                        
                         <div class="row">
                             <div class="flexbox">
                                 <div class="col">
-                                    <form action="/admin-perbatasan/enter/{{ $person->id }}" method="post">@csrf
-                                        @method('post')
+                                    <form action="/admin-perbatasan/enter/<?php echo e($person->id); ?>" method="post"><?php echo csrf_field(); ?>
+                                        <?php echo method_field('post'); ?>
                                         <button class="btn green waves-effect" type="submit">Catat</button>
                                     </form>
                                 </div>
@@ -38,16 +35,16 @@
                         </div>
                     </td>
                 </tr>
-                @empty
-                @endforelse
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
 </div>
 
-@endsection
-@section('js')
-<script src="{{ asset('js/admin/jquery.dataTables.min.js') }}"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+<script src="<?php echo e(asset('js/admin/jquery.dataTables.min.js')); ?>"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -75,14 +72,16 @@
         });
     });
 </script>
-@if (session('msg'))
+<?php if(session('msg')): ?>
 <script>
     M.toast({html: 'Berhasil Hapus Data' })
 </script>
-@endif
-@if (session('enter'))
+<?php endif; ?>
+<?php if(session('enter')): ?>
 <script>
     M.toast({html: 'Berhasil Mencatat Orang' })
 </script>
-@endif
-@endsection
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.perbatasan', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Web\dinkes-melawi-corona\resources\views/perbatasan/kelolaOrang.blade.php ENDPATH**/ ?>

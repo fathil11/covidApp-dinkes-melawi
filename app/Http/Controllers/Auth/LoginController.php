@@ -48,13 +48,21 @@ class LoginController extends Controller
     {
         $email = Auth::user()->email;
         switch ($email) {
-            case 'perbatasan@dinkesmelawi.com':
-                return '/admin-perbatasan';
+            case 'admin1@dinkesmelawi.com':
+                return '/admin';
+
+            case 'admin2@dinkesmelawi.com':
+                return '/admin';
+
+            case 'admin3@dinkesmelawi.com':
+                return '/admin';
+
             case 'post@dinkesmelawi.com':
                 return '/admin/content';
                 break;
+
             default:
-                    return '/admin';
+                    return '/admin-puskesmas';
                 break;
         }
     }

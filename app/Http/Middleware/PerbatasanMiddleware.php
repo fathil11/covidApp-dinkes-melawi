@@ -17,7 +17,7 @@ class PerbatasanMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            if ($request->user()->email == "perbatasan@dinkesmelawi.com") {
+            if ($request->user()->id >= 6 && $request->user()->id <= 16) {
                 return $next($request);
             } else {
                 return redirect('/admin');

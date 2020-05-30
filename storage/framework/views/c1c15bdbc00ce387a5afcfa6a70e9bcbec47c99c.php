@@ -1,21 +1,20 @@
-@extends('layouts.perbatasan')
-@section('title', 'Tambah Orang')
-@section('content')
+<?php $__env->startSection('title', 'Tambah Orang'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <form action="/admin-puskemas/store" method="post" autocomplete="off">
-        @csrf
-        @method('POST')
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('POST'); ?>
 
         <div class="input-field col s9 m9">
-            <input name="name" id="name" type="text" class="validate" value="{{ old('name') }}">
+            <input name="name" id="name" type="text" class="validate" value="<?php echo e(old('name')); ?>">
             <label for="name">Nama</label>
         </div>
         <div class="input-field col s3 m3">
-            <input name="age" id="age" type="number" class="validate" value="{{ old('age') }}">
+            <input name="age" id="age" type="number" class="validate" value="<?php echo e(old('age')); ?>">
             <label for="age">Umur</label>
         </div>
         <div class="input-field col s12 m12">
-            <input name="phone" type="tel" id="phone" class="validate" value="{{ old('phone') }}">
+            <input name="phone" type="tel" id="phone" class="validate" value="<?php echo e(old('phone')); ?>">
             <label for="phone">Nomor Hp</label>
         </div>
         <div class="col s12 m12">
@@ -23,38 +22,38 @@
                 <h5>Jenis Kelamin</h5>
             </div>
             <label>
-                <input name="gender" type="radio" value="m" {{ old('gender') == "m" ? 'checked' : '' }} />
+                <input name="gender" type="radio" value="m" <?php echo e(old('gender') == "m" ? 'checked' : ''); ?> />
                 <span>Laki-Laki</span>
             </label>
             </p>
             <p>
                 <label>
-                    <input name="gender" type="radio" value="f" {{ old('gender') == "f" ? 'checked' : '' }} />
+                    <input name="gender" type="radio" value="f" <?php echo e(old('gender') == "f" ? 'checked' : ''); ?> />
                     <span>Perempuan</span>
                 </label>
             </p>
         </div>
         <div class="input-field col s12 m12">
-            <input name="track" id="track" type="text" class="" value="{{ old('track') }}">
+            <input name="track" id="track" type="text" class="" value="<?php echo e(old('track')); ?>">
             <label for="track">Asal</label>
         </div>
         <div class="input-field col s12 m12">
-            <input name="vehicle" id="vehicle" type="text" class="" value="{{ old('vehicle') }}">
+            <input name="vehicle" id="vehicle" type="text" class="" value="<?php echo e(old('vehicle')); ?>">
             <label for="vehicle">Kendaraan</label>
         </div>
         <div class="center">
             <h5>Alamat</h5>
         </div>
         <div class="input-field col s6 m6">
-            <input name="district" id="district" type="text" class="district" value="{{ old('district') }}">
+            <input name="district" id="district" type="text" class="district" value="<?php echo e(old('district')); ?>">
             <label for="district">Kecamatan</label>
         </div>
         <div class="input-field col s6 m6">
-            <input name="village" id="village" type="text" class="village" value="{{ old('village') }}">
+            <input name="village" id="village" type="text" class="village" value="<?php echo e(old('village')); ?>">
             <label for="village">Desa</label>
         </div>
         <div class="input-field col s12 m12">
-            <input name="sub_village" id="sub_village" type="text" class="" value="{{ old('sub_village') }}">
+            <input name="sub_village" id="sub_village" type="text" class="" value="<?php echo e(old('sub_village')); ?>">
             <label for="sub_village">Alamat Lengkap / Dusun</label>
         </div>
         <div class="col s12 m12">
@@ -64,21 +63,21 @@
             <p>
                 <label>
                     <input name="transmission" type="radio" value="1"
-                        {{ old('transmission') == "1" ? 'checked' : '' }} />
+                        <?php echo e(old('transmission') == "1" ? 'checked' : ''); ?> />
                     <span>Transmisi</span>
                 </label>
             </p>
             <p>
                 <label>
                     <input name="transmission" type="radio" value="0"
-                        {{ old('transmission') == "0" ? 'checked' : '' }} />
+                        <?php echo e(old('transmission') == "0" ? 'checked' : ''); ?> />
                     <span>Non-Transmisi</span>
                 </label>
             </p>
             <p>
                 <label>
                     <input name="transmission" type="radio" value="2"
-                        {{ old('transmission') == "2" ? 'checked' : '' }} />
+                        <?php echo e(old('transmission') == "2" ? 'checked' : ''); ?> />
                     <span>Pelaku Perjalanan</span>
                 </label>
             </p>
@@ -88,53 +87,53 @@
                 <h5>Gejala</h5>
             </div>
             <div class="input-field col s12 m12">
-                <input name="temperature" id="temperature" step="any" type="number" value="{{ old('temperature') }}">
+                <input name="temperature" id="temperature" step="any" type="number" value="<?php echo e(old('temperature')); ?>">
                 <label for="temperature">Suhu Tubuh</label>
             </div>
             <p>
                 <label>
-                    <input type="checkbox" name="phenomenon[]" value="Demam" class="filled-in" @if(old('phenomenon') &&
-                        in_array('Demam', old('phenomenon'))) checked @endif />
+                    <input type="checkbox" name="phenomenon[]" value="Demam" class="filled-in" <?php if(old('phenomenon') &&
+                        in_array('Demam', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Demam</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input type="checkbox" name="phenomenon[]" value="Batuk" class="filled-in" @if(old('phenomenon') &&
-                        in_array('Batuk', old('phenomenon'))) checked @endif />
+                    <input type="checkbox" name="phenomenon[]" value="Batuk" class="filled-in" <?php if(old('phenomenon') &&
+                        in_array('Batuk', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Batuk</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input type="checkbox" name="phenomenon[]" value="Sesak" class="filled-in" @if(old('phenomenon') &&
-                        in_array('Sesak', old('phenomenon'))) checked @endif />
+                    <input type="checkbox" name="phenomenon[]" value="Sesak" class="filled-in" <?php if(old('phenomenon') &&
+                        in_array('Sesak', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Sesak</span>
                 </label>
             </p>
             <p>
                 <label>
                     <input type="checkbox" name="phenomenon[]" value="Nyeri Sendi" class="filled-in"
-                        @if(old('phenomenon') && in_array('Nyeri Sendi', old('phenomenon'))) checked @endif />
+                        <?php if(old('phenomenon') && in_array('Nyeri Sendi', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Nyeri Sendi</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input type="checkbox" name="phenomenon[]" value="Pilek" class="filled-in" @if(old('phenomenon') &&
-                        in_array('Pilek', old('phenomenon'))) checked @endif />
+                    <input type="checkbox" name="phenomenon[]" value="Pilek" class="filled-in" <?php if(old('phenomenon') &&
+                        in_array('Pilek', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Pilek</span>
                 </label>
             </p>
             <p>
                 <label>
                     <input type="checkbox" name="phenomenon[]" value="Sakit Tenggorokan" class="filled-in"
-                        @if(old('phenomenon') && in_array('Sakit Tenggorokan', old('phenomenon'))) checked @endif />
+                        <?php if(old('phenomenon') && in_array('Sakit Tenggorokan', old('phenomenon'))): ?> checked <?php endif; ?> />
                     <span>Sakit Tenggorokan</span>
                 </label>
             </p>
             <div class="input-field col s12 m12">
-                <input name="detail" id="detail" step="any" type="text" value="{{ old('detail') }}">
+                <input name="detail" id="detail" step="any" type="text" value="<?php echo e(old('detail')); ?>">
                 <label for="detail">Keterangan</label>
             </div>
             <button class="btn waves-effect waves-light" style="width: 100%; margin-top: 5px;" type="submit"
@@ -144,8 +143,8 @@
         </div>
     </form>
 </div>
-@endsection
-@section('js')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
 <script>
     $(document).ready(function(){
 $('input.village').autocomplete({
@@ -340,15 +339,15 @@ $('input.district').autocomplete({
 });
 });
 </script>
-@if ($errors->any())
+<?php if($errors->any()): ?>
 <div id="modal" class="modal">
     <div class="modal-content">
         <h4 class="red-text">Ada Kesalahan !</h4>
         <p>Cek beberapa kesalahan berikut : </p>
         <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
+            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li><?php echo e($error); ?></li>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
     </div>
     <div class="modal-footer">
@@ -360,7 +359,7 @@ $('input.district').autocomplete({
     var instance = M.Modal.init(Modalelem);
     instance.open();
 </script>
-@elseif (session('success'))
+<?php elseif(session('success')): ?>
 <div id="modal" class="modal">
     <div class="modal-content">
         <h4 class="green-text">Berhasil</h4>
@@ -375,5 +374,7 @@ $('input.district').autocomplete({
     var instance = M.Modal.init(Modalelem);
     instance.open();
 </script>
-@endif
-@endsection
+<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.perbatasan', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Web\dinkes-melawi-corona\resources\views/perbatasan/index.blade.php ENDPATH**/ ?>

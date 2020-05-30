@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Person;
 use App\Log;
+use Illuminate\Support\Facades\Auth;
 
 class PerbatasanController extends Controller
 {
@@ -14,10 +15,29 @@ class PerbatasanController extends Controller
         return view('perbatasan.index');
     }
 
+    public function showAllOrang(){
+        // dd($this->getDistrict());
+        $people = Person::where([['status', '!=', '12'],
+                                ['district', $this->getDistrict()]])
+                                ->get();
+        return view('perbatasan.lihatOrang', compact('people'));
+    }
+
+    public function showPendatangOrang(){
+        $people = Person::where([['status', '12'],
+                                ['district', $this->getDistrict()]])
+                                ->get();
+        return view('perbatasan.lihatOrang', compact('people'));
+    }
+
     public function showPelakuPerjalanan(){
-        $people = Person::where('transmission', '2')->get();
+        $people = Person::where([['status', '!=', '12'],
+                                ['district', $this->getDistrict()],
+                                ['transmission', '2']])
+                                ->get();
         return view('perbatasan.kelolaOrang', compact('people'));
     }
+
 
     public function store(Request $request)
     {
@@ -90,5 +110,60 @@ class PerbatasanController extends Controller
         $log->person_id = $person->id;
         $log->status = $person->getActualAttribute('status');
         $log->save();
+    }
+
+    public function getDistrict(){
+        $district;
+        switch (Auth::user()->id) {
+            case '6':
+                $district = '0';
+                break;
+
+            case '7':
+                $district = '1';
+                break;
+
+            case '8':
+                $district = '2';
+                break;
+
+            case '9':
+                $district = '3';
+                break;
+
+            case '10':
+                $district = '4';
+                break;
+
+            case '11':
+                $district = '5';
+                break;
+
+            case '12':
+                $district = '6';
+                break;
+
+            case '13':
+                $district = '7';
+                break;
+
+            case '14':
+                $district = '8';
+                break;
+
+            case '15':
+                $district = '9';
+                break;
+
+            case '16':
+                $district = '10';
+                break;
+
+            default:
+                $district = '1';
+                break;
+        }
+
+        return $district;
     }
 }
