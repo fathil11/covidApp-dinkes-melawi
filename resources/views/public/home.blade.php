@@ -96,7 +96,8 @@
                     <div class="card bg-red">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Terkonfirmasi</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['positive'] }}</h1>
+                                <h1 class="font-weight-bold text-white">7</h1>
+                                {{-- <h1 class="font-weight-bold text-white">{{ $stat['positive'] }}</h1> --}}
                         </div>
                     </div>
                 </div>
