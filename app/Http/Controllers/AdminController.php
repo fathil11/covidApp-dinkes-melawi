@@ -219,6 +219,7 @@ class AdminController extends Controller
     {
 
         $person = Person::findOrFail($id);
+
         $foundReactive = false;
         foreach ($person->logs as $log) {
             if($log->status == 9){

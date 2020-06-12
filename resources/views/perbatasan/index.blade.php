@@ -2,7 +2,7 @@
 @section('title', 'Tambah Orang')
 @section('content')
 <div class="row">
-    <form action="/admin-puskemas/store" method="post" autocomplete="off">
+    <form action="/admin-puskesmas/store" method="post" autocomplete="off">
         @csrf
         @method('POST')
 
