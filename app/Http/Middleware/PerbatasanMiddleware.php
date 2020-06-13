@@ -17,7 +17,7 @@ class PerbatasanMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            if ($request->user()->id >= 6 && $request->user()->id <= 16) {
+            if ($request->user()->id >= 6 && $request->user()->id <= 16 || $request->user()->id == 5) {
                 return $next($request);
             } else {
                 return redirect('/admin');

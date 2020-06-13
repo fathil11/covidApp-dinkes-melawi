@@ -11,30 +11,49 @@ class PerbatasanController extends Controller
 {
     public $districts = ['Sokan', 'Tanah Pinoh Barat', 'Tanah Pinoh', 'Sayan', 'Belimbing Hulu', 'Belimbing', 'Pinoh Selatan', 'Nanga Pinoh', 'Pinoh Utara', 'Ella Hilir', 'Menukung'];
 
-    public function index(){
+    public function index()
+    {
         return view('perbatasan.index');
     }
 
-    public function showAllOrang(){
-        // dd($this->getDistrict());
-        $people = Person::where([['status', '!=', '12'],
-                                ['district', $this->getDistrict()]])
-                                ->get();
+    public function showAllOrang()
+    {
+        if (Auth::user()->id == 5) {
+            $people = Person::where([['status', '!=', '12']])
+                                    ->get();
+        } else {
+            $people = Person::where([['status', '!=', '12'],
+                                    ['district', $this->getDistrict()]])
+                                    ->get();
+        }
         return view('perbatasan.lihatOrang', compact('people'));
     }
 
-    public function showPendatangOrang(){
-        $people = Person::where([['status', '12'],
+    public function showPendatangOrang()
+    {
+        if (Auth::user()->id == 5) {
+            $people = Person::where([['status', '12']])
+                                ->get();
+        } else {
+            $people = Person::where([['status', '12'],
                                 ['district', $this->getDistrict()]])
                                 ->get();
+        }
         return view('perbatasan.lihatOrang', compact('people'));
     }
 
-    public function showPelakuPerjalanan(){
-        $people = Person::where([['status', '!=', '12'],
+    public function showPelakuPerjalanan()
+    {
+        if (Auth::user()->id == 5) {
+            $people = Person::where([['status', '!=', '12'],
+                                ['transmission', '2']])
+                                ->get();
+        } else {
+            $people = Person::where([['status', '!=', '12'],
                                 ['district', $this->getDistrict()],
                                 ['transmission', '2']])
                                 ->get();
+        }
         return view('perbatasan.kelolaOrang', compact('people'));
     }
 
@@ -74,7 +93,7 @@ class PerbatasanController extends Controller
             $person->detail = $request->detail;
             $person->transmission = $request->transmission;
             $person->status = '12';
-            if(isset($request->phenomenon)){
+            if (isset($request->phenomenon)) {
                 $phenomenons = implode(',', $request->phenomenon);
                 $person->phenomenon = $phenomenons;
                 $person->status = '0';
@@ -99,7 +118,7 @@ class PerbatasanController extends Controller
     public function deleteOrang($id)
     {
         $person = Person::findOrFail($id);
-        if($person->delete()){
+        if ($person->delete()) {
             return redirect()->back()->with('msg', 'Berhasil menghapus data');
         }
     }
@@ -112,8 +131,8 @@ class PerbatasanController extends Controller
         $log->save();
     }
 
-    public function getDistrict(){
-        $district;
+    public function getDistrict()
+    {
         switch (Auth::user()->id) {
             case '6':
                 $district = '0';

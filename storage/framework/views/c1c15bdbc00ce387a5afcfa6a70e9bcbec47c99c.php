@@ -1,7 +1,7 @@
 <?php $__env->startSection('title', 'Tambah Orang'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="row">
-    <form action="/admin-puskemas/store" method="post" autocomplete="off">
+    <form action="/admin-puskesmas/store" method="post" autocomplete="off">
         <?php echo csrf_field(); ?>
         <?php echo method_field('POST'); ?>
 
