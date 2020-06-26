@@ -158,6 +158,7 @@
             <div class="row mx-0 mx-md-2 mt-3">
                 <div class="col-md-6 col-sm-12 mb-2 mb-md-0">
                     <h4 class="">Keterangan</h4>
+                    <h6 class="font-weight-normal">OTG : Orang tanpa gejala.</h6>
                     <h6 class="font-weight-normal">ODP : Orang dalam pemantauan.</h6>
                     <h6 class="font-weight-normal">PDP : Pasien dalam pengawasan.</h6>
                     <h6 class="font-weight-normal">Meninggal* : Pasien meninggal dan menunggu hasil tes COVID-19.
