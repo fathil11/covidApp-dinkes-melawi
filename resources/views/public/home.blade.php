@@ -54,7 +54,7 @@
                                     <h1 class="font-weight-bold text-white">{{ $stat['pdp_process'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4 class="font-weight-normal text-white-sem">Meinggal*</h4>
+                                    <h4 class="font-weight-normal text-white-sem">Meninggal*</h4>
                                     <h1 class="font-weight-bold text-white">{{ $stat['pdp_died_unknown'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
