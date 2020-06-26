@@ -22,11 +22,10 @@
         <div class="card-body my-2">
             <div class="row mx-0 mx-md-1">
                 <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
-                    <div class="card bg-blue">
+                    <div class="card bg-yellow">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Total ODP</h2>
                             <h1 class="font-weight-bold text-white"><?php echo e($stat['odp']); ?></h1>
-                            
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
@@ -38,51 +37,88 @@
                                     <h1 class="font-weight-bold text-white"><?php echo e($stat['done']); ?></h1>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
-                    <div class="card bg-blue">
+                    <div class="card bg-red">
                         <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Total OTG</h2>
-                            <h1 class="font-weight-bold text-white"><?php echo e($stat['otg']); ?></h1>
-                            
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4 class="font-weight-normal text-white-sem">Proses</h4>
-                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otgProc']); ?></h1>
-                                </div>
-                                <div class="col-md-6">
-                                    <h4 class="font-weight-normal text-white-sem">Selesai</h4>
-                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otgDone']); ?></h1>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-sm-12 mt-0 mt-md-3">
-                    <div class="card bg-yellow">
-                        <div class="card-body text-center">
-                            <h1 class="font-weight-normal text-white-sem">Total PDP</h1>
-                            
-                            <h1 class="font-weight-bold text-white">0</h1>
-                            
+                            <h2 class="font-weight-normal text-white-sem">Total PDP</h2>
+                            <h1 class="font-weight-bold text-white"><?php echo e($stat['pdp_total']); ?></h1>
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Dirawat</h4>
-                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['treated']); ?></h1>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['pdp_process']); ?></h1>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4 class="font-weight-normal text-white-sem">Meninggal*</h4>
-                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['died?']); ?></h1>
+                                    <h4 class="font-weight-normal text-white-sem">Meinggal*</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['pdp_died_unknown']); ?></h1>
                                 </div>
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Negatif</h4>
-                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['negative']); ?></h1>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['pdp_negative']); ?></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-0 mx-md-1 mt-4">
+                <div class="col-12 mb-3 mb-md-0">
+                    <div class="card bg-blue">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Total Reaktif</h2>
+                            <h1 class="font-weight-bold text-white"><?php echo e($stat['reactive_total']); ?></h1>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Belum Tes</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['reactive_pre']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Menunggu Hasil</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['reactive_waiting']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Positif</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['reactive_positive']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Negatif</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['reactive_negative']); ?></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-0 mx-md-1 mt-4">
+                <div class="col-12 mb-3 mb-md-0">
+                    <div class="card bg-blue">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Total OTG</h2>
+                            <h1 class="font-weight-bold text-white"><?php echo e($stat['otg_total']); ?></h1>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Belum Tes</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otg_pre']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Menunggu Hasil</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otg_waiting']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Positif</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otg_positive']); ?></h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="font-weight-normal text-white-sem">Negatif</h4>
+                                    <h1 class="font-weight-bold text-white"><?php echo e($stat['otg_negative']); ?></h1>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +132,7 @@
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Terkonfirmasi</h1>
                                 
-                                <h1 class="font-weight-bold text-white"><?php echo e($stat['positive']); ?></h1>
+                                <h1 class="font-weight-bold text-white"><?php echo e($stat['positive_total']); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -104,7 +140,7 @@
                     <div class="card bg-green">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Sembuh</h1>
-                                <h1 class="font-weight-bold text-white"><?php echo e($stat['recovered']); ?></h1>
+                                <h1 class="font-weight-bold text-white"><?php echo e($stat['healed']); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -112,7 +148,7 @@
                     <div class="card bg-gray">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Meninggal</h1>
-                                <h1 class="font-weight-bold text-white"><?php echo e($stat['died+']); ?></h1>
+                                <h1 class="font-weight-bold text-white"><?php echo e($stat['died_positive']); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -129,9 +165,7 @@
                 <div class="col-md-6 col-sm-12 align-self-end">
                     <div class="card bg-dark w-100 w-md-50 float-right">
                         <div class="card-body m-n2 text-center">
-                            <p class="text-white-sem d-inline">Diupdate <?php echo e($stat['updated']); ?>
-
-                            </p>
+                            <p class="text-white-sem d-inline">Diupdate <?php echo e($stat['updated']); ?></p>
                         </div>
                     </div>
                 </div>
@@ -147,16 +181,6 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-12 col-sm-12 text-center">
-            <div class="card bg-white">
-                <div class="card-body">
-                    <h4>Fitur tabel sedang dalam perbaikan. Mohon maaf atas ketidaknyamanannya.</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-7">
         <div class="col-md-12 mb-3">
             <h1 class="text-center font-weight-bold mb-4">Tentang COVID-19</h1>
         </div>

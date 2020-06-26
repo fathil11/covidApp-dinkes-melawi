@@ -8,6 +8,7 @@ use App\Statistic;
 use App\Person;
 use App\Post;
 use App\Log;
+use App\Manual;
 use Carbon\Carbon;
 
 class PublicController extends Controller
@@ -16,25 +17,42 @@ class PublicController extends Controller
     {
         $this->pushStat();
 
-        $stat['positive'] = Person::where('status', '5')->get()->count();
-        $stat['recovered'] = Person::where('status', '7')->get()->count();
-        $stat['died+'] = Person::where('status', '6')->get()->count();
+        // ODP Section
         $stat['proccess'] = Person::where('status', '0')->get()->count();
         $stat['done'] = Person::where('status', '1')->get()->count();
         $stat['odp'] = $stat['proccess'] + $stat['done'];
-        $stat['otg'] = Log::where('status', '11')->get()->count();
-        $stat['otgProc'] = Person::where('status', '11')->get()->count();
-        $stat['otgDone'] = $stat['otg'] - $stat['otgProc'];
-        $stat['treated'] = Person::where('status', '2')->get()->count();
-        $stat['died?'] = Person::where('status', '4')->get()->count();
-        $stat['negative'] = Person::where('status', '3')->get()->count();
-        $stat['pdp'] = $stat['treated'] + $stat['negative'] + $stat['died?'] + $stat['positive'];
-        if (Log::all()->count() != 0) {
-            $stat['updated'] = Log::latest()->first()->created_at->toDateTimeString();
-            $stat['updated'] = Carbon::create($stat['updated'])->locale('id')->diffForHumans();
-        } else {
-            $stat['updated'] = '-';
-        }
+
+        $manual = Manual::findOrFail(1);
+
+        // OTG Section
+        $stat['otg_pre'] = $manual->otg_pre;
+        $stat['otg_waiting'] = $manual->otg_waiting;
+        $stat['otg_negative'] = $manual->otg_negative;
+        $stat['otg_positive'] = $manual->otg_positive;
+        $stat['otg_total'] = $stat['otg_pre'] + $stat['otg_waiting'] +$stat['otg_negative']
+            + $stat['otg_positive'];
+
+        // Reactive Section
+        $stat['reactive_pre'] = $manual->reactive_pre;
+        $stat['reactive_waiting'] = $manual->reactive_waiting;
+        $stat['reactive_negative'] = $manual->reactive_negative;
+        $stat['reactive_positive'] = $manual->reactive_positive;
+        $stat['reactive_total'] = $stat['reactive_pre'] + $stat['reactive_waiting'] +$stat['reactive_negative']
+            + $stat['reactive_positive'];
+
+        // PDP Section
+        $stat['pdp_process'] = $manual->pdp_process;
+        $stat['pdp_negative'] = $manual->pdp_negative;
+        $stat['pdp_positive'] = $manual->pdp_positive;
+        $stat['pdp_died_unknown'] = $manual->pdp_died_unknown;
+        $stat['pdp_total'] = $stat['pdp_process'] + $stat['pdp_died_unknown'] +$stat['pdp_negative'] + $stat['pdp_positive'];
+
+        // Other Section
+        $stat['healed'] = $manual->healed;
+        $stat['died_positive'] = $manual->died_positive;
+        $stat['positive_total'] = $stat['otg_positive'] + $stat['reactive_positive'] +  $stat['pdp_positive'] + $stat['died_positive'];
+
+        $stat['updated'] = Carbon::make($manual->updated_at)->locale('id')->diffForHumans();
 
         return view('public.home', compact('stat'));
     }

@@ -91,6 +91,12 @@
                             <p>Peta</p>
                         </a>
                     </li>
+                    <li class="nav-item @if(request()->is('admin/manual')) active @endif">
+                        <a class="nav-link" href="/admin/manual">
+                            <i class="material-icons">trip_origin</i>
+                            <p>Manual</p>
+                        </a>
+                    </li>
                     <li class="nav-item @if(request()->is('admin/laporan')) active @endif">
                         <a class="nav-link" href="/admin/laporan">
                             <i class="material-icons">book</i>

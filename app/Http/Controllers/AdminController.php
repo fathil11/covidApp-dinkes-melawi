@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Person;
 use App\Log;
+use App\Manual;
 
 class AdminController extends Controller
 {
@@ -107,7 +108,7 @@ class AdminController extends Controller
             $person->transmission = $request->transmission;
             $person->status = $request->status;
             $person->phenomenon = $request->phenomenon;
-            if(isset($request->phenomenon)){
+            if (isset($request->phenomenon)) {
                 $person->status = '0';
             }
             $person->save();
@@ -198,14 +199,14 @@ class AdminController extends Controller
 
         $foundNonReactive = false;
         foreach ($person->logs as $log) {
-            if($log->status == 10){
+            if ($log->status == 10) {
                 $log->status = 9;
                 $log->save();
                 $foundNonReactive = true;
             }
         }
 
-        if(!$foundNonReactive){
+        if (!$foundNonReactive) {
             $log = new Log();
             $log->person_id = $person->id;
             $log->status = '9';
@@ -217,19 +218,18 @@ class AdminController extends Controller
 
     public function nonReactivePerson($id)
     {
-
         $person = Person::findOrFail($id);
 
         $foundReactive = false;
         foreach ($person->logs as $log) {
-            if($log->status == 9){
+            if ($log->status == 9) {
                 $log->status = 10;
                 $log->save();
                 $foundReactive = true;
             }
         }
 
-        if(!$foundReactive){
+        if (!$foundReactive) {
             $log = new Log();
             $log->person_id = $person->id;
             $log->status = '10';
@@ -299,9 +299,9 @@ class AdminController extends Controller
 
         $map = $request->map->storeAs('public/map', 'maps.jpg');
 
-        if($map){
+        if ($map) {
             return redirect('/admin/peta')->with('success', 'Berhasil mengupdate peta');
-        }else{
+        } else {
             return redirect('/admin/peta')->with('success', 'Gagal mengupdate peta');
         }
     }
@@ -322,5 +322,36 @@ class AdminController extends Controller
     public static function getDistrictStat($dis, $stat)
     {
         return Person::where([['district', $dis], ['status', $stat]])->get()->count();
+    }
+
+    public function showManual()
+    {
+        $manual = Manual::all()->first();
+        return view('admin.manual', compact('manual'));
+    }
+
+    public function updateManual(Request $request)
+    {
+        $request->validate([
+            'otg_pre' => 'required|numeric|min:0|max:9000',
+            'otg_waiting' => 'required|numeric|min:0|max:9000',
+            'otg_positive' => 'required|numeric|min:0|max:9000',
+            'otg_negative' => 'required|numeric|min:0|max:9000',
+            'reactive_pre' => 'required|numeric|min:0|max:9000',
+            'reactive_waiting' => 'required|numeric|min:0|max:9000',
+            'reactive_positive' => 'required|numeric|min:0|max:9000',
+            'reactive_negative' => 'required|numeric|min:0|max:9000',
+            'pdp_process' => 'required|numeric|min:0|max:9000',
+            'pdp_negative' => 'required|numeric|min:0|max:9000',
+            'pdp_positive' => 'required|numeric|min:0|max:9000',
+            'pdp_died_unknown' => 'required|numeric|min:0|max:9000',
+            'healed' => 'required|numeric|min:0|max:9000',
+            'died_positive' => 'required|numeric|min:0|max:9000',
+        ]);
+
+        $manual = Manual::findOrFail(1);
+        $manual->update($request->all());
+        $manual->touch();
+        return redirect('/admin/manual')->with('success', 'Berhasil mengubah status');
     }
 }

@@ -67,9 +67,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/orang/{id}/positif', 'AdminController@positivePerson');
     Route::get('/orang/{id}/negatif', 'AdminController@negativePerson');
     Route::get('/orang/{id}/meninggal', 'AdminController@diedPerson');
+
+    /// Manual Section
+    Route::get('/manual', 'AdminController@showManual');
+    Route::post('/manual', 'AdminController@updateManual');
 });
 
-Route::group(['prefix' => '/admin-puskesmas', 'middleware' => 'perbatasanadmin'], function(){
+Route::group(['prefix' => '/admin-puskesmas', 'middleware' => 'perbatasanadmin'], function () {
     Route::get('/', 'PerbatasanController@index');
     Route::get('/orang', 'PerbatasanController@showAllOrang');
     Route::get('/pendatang', 'PerbatasanController@showPendatangOrang');
