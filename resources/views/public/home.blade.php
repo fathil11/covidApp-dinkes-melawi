@@ -22,44 +22,50 @@
     <div class="card mt-n6">
         <div class="card-body my-2">
             <div class="row mx-0 mx-md-1">
-                <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
-                    <div class="card bg-yellow">
-                        <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Total ODP</h2>
-                            <h1 class="font-weight-bold text-white">{{ $stat['odp'] }}</h1>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4 class="font-weight-normal text-white-sem">Proses</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['proccess'] }}</h1>
-                                </div>
-                                <div class="col-md-6">
-                                    <h4 class="font-weight-normal text-white-sem">Selesai</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['done'] }}</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
+                <div class="col-md-12 col-sm-12 mb-3 mb-md-0">
                     <div class="card bg-red">
                         <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Total PDP</h2>
-                            <h1 class="font-weight-bold text-white">{{ $stat['pdp_total'] }}</h1>
+                            <h2 class="font-weight-normal text-white-sem">Total Konfirmasi</h2>
+                            <h1 class="font-weight-bold text-white">{{ $data[0]['value'] }}</h1>
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h4 class="font-weight-normal text-white-sem">Dirawat</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['pdp_process'] }}</h1>
+                                    <h4 class="font-weight-normal text-white-sem">Konfirmasi Isolasi</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[1]['value'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4 class="font-weight-normal text-white-sem">Meninggal*</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['pdp_died_unknown'] }}</h1>
+                                    <h4 class="font-weight-normal text-white-sem">Konfirmasi Sembuh</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[2]['value'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
-                                    <h4 class="font-weight-normal text-white-sem">Negatif</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['pdp_negative'] }}</h1>
+                                    <h4 class="font-weight-normal text-white-sem">Konfirmasi Meninggal</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[3]['value'] }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mx-0 mx-md-1 mt-4">
+                <div class="col-12 mb-3 mb-md-0">
+                    <div class="card bg-yellow">
+                        <div class="card-body text-center">
+                            <h2 class="font-weight-normal text-white-sem">Total Suspek</h2>
+                            <h1 class="font-weight-bold text-white">{{ $data[4]['value'] }}</h1>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4">
+                                <h4 class="font-weight-normal text-white-sem">Suspek Dirawat</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[5]['value'] }}</h1>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="font-weight-normal text-white-sem">Discarded</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[6]['value'] }}</h1>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="font-weight-normal text-white-sem">Probable</h4>
+                                    <h1 class="font-weight-bold text-white">{{ $data[7]['value'] }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -71,57 +77,8 @@
                 <div class="col-12 mb-3 mb-md-0">
                     <div class="card bg-blue">
                         <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Total Reaktif</h2>
-                            <h1 class="font-weight-bold text-white">{{ $stat['reactive_total'] }}</h1>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Belum Tes</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['reactive_pre'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Menunggu Hasil</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['reactive_waiting'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Positif</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['reactive_positive'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Negatif</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['reactive_negative'] }}</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mx-0 mx-md-1 mt-4">
-                <div class="col-12 mb-3 mb-md-0">
-                    <div class="card bg-blue">
-                        <div class="card-body text-center">
-                            <h2 class="font-weight-normal text-white-sem">Total OTG</h2>
-                            <h1 class="font-weight-bold text-white">{{ $stat['otg_total'] }}</h1>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Belum Tes</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['otg_pre'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Menunggu Hasil</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['otg_waiting'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Positif</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['otg_positive'] }}</h1>
-                                </div>
-                                <div class="col-md-3">
-                                    <h4 class="font-weight-normal text-white-sem">Negatif</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $stat['otg_negative'] }}</h1>
-                                </div>
-                            </div>
+                            <h2 class="font-weight-normal text-white-sem">Kontak Erat</h2>
+                            <h1 class="font-weight-bold text-white">{{ $data[8]['value'] }}</h1>
                         </div>
                     </div>
                 </div>
@@ -133,7 +90,7 @@
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Terkonfirmasi</h1>
                                 {{-- <h1 class="font-weight-bold text-white">7</h1> --}}
-                                <h1 class="font-weight-bold text-white">{{ $stat['positive_total'] }}</h1>
+                                <h1 class="font-weight-bold text-white">{{ 0 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -141,7 +98,7 @@
                     <div class="card bg-green">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Sembuh</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['healed'] }}</h1>
+                                <h1 class="font-weight-bold text-white">{{ 0 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -149,7 +106,7 @@
                     <div class="card bg-gray">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Meninggal</h1>
-                                <h1 class="font-weight-bold text-white">{{ $stat['died_positive'] }}</h1>
+                                <h1 class="font-weight-bold text-white">{{ 0 }}</h1>
                         </div>
                     </div>
                 </div>
@@ -167,7 +124,7 @@
                 <div class="col-md-6 col-sm-12 align-self-end">
                     <div class="card bg-dark w-100 w-md-50 float-right">
                         <div class="card-body m-n2 text-center">
-                            <p class="text-white-sem d-inline">Diupdate {{ $stat['updated'] }}</p>
+                            <p class="text-white-sem d-inline">Diupdate {{ 0 }}</p>
                         </div>
                     </div>
                 </div>

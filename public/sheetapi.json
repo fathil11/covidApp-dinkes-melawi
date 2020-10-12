@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dinkesmelawi-covid19",
+  "private_key_id": "6a261af765ee2bad777292dde41ace715ab7bac6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsNbEcrhrHBgIc\nGl6+L35UFJW074Zh7RzdONnOVl9Aq0PEhnXvsQhIOXH9nBglwP/7uLi/IxUMrUwt\n9bGU9cONNgQ0qoPNzwmnQf70uXHTRs7mMaBDvmkqNI87RcqOFi+fVvZdwnTtaav6\n/7+aOEuvxF2/rWm09jv/5Kw2Y5/i1xBeSEmUvkqSMbFptL8AtOY6jLdIbqLAn7sj\n4VM12OVgT34cyYW83w9zjws388VIrEqlmkjDf8vYYUT/ZOglpnC6+XE4pBlxAi6T\neyA67pWGTCaKcCZMh7KZjH0/N5Bj3ZBVLszs4eTlndeZ9HvX8eiKs/7nxpi/puPC\nyvkLwxlJAgMBAAECggEADCAZsOnHY+UV5/GpYx3H+NacNem5nhKKej8jAubM/Sox\n8tf+3NoruZ4l2xQPFTVyMMCwbXDkbgiTuRa4IsNtOfeoMycgcbDWvqqkb4nRLG2r\nasTqwmpZUEn0HdnLqdaBEuiWH0LuZbsPi3RPguXc2mrqqPDmZQIDdoCc6ZV5MAkU\nAev4wUH4ggoPywNMP1GqEt5+pmG8bjm0rcIDqVxFFQtvJsOifsaB80Dh9aNR8chF\nHI1trlaPKfzekMHwJkO+prLjRYUnzukDZn+Hmnne1h3QHz/mgC6dMQeGyXYnTIcH\n7v0PRWOaOOr8R6X7WnQ1MWpMR1ZXLYoQ/H9FptQ2+wKBgQDTGKK03121RqTDx7E1\nZL0OnyTzsmiu7lQ3/Dn3l7TF9nz4iVxnPDdcYtNaPlQ8iTqFW+qND6l9jzGaGR45\nySR73KzQrFxPFmma82Rr3WrLdU8K/GYlFnpbiyFCuFpNXGBHl0Dnmfw27Qakm8oN\nHetB+JjgDnM+0iR8RrADHqhd+wKBgQDQ13hUUHqywMUp7rvfyWiwYfuG2GFjsY5I\n2atwn3LZIkiRDHY7FA7f7pieKsnNpRvJZyug+bKM8eQMj20asoDaBT4CsUKVyRbF\nMZTwAMkzqwp25Q3Rm2cb/ibkCdJfs3NiNHT394+Sl4WEyWRvF0CPkY05/2BcIDO8\nasEbXiWWiwKBgE9BqqU6UBalpWsUaMZhQlJhEiClVYSIWvqCKsl5HhhNiXJPMHBa\nPXbka/IwALSR2XUEo7W+saZAwyDWWXDcwmP24LOgYzAWfCP/Si7tfRFSxBCd30QB\ngoMoY56HVPBCxKtccLQELpv4tkvLajsuhovIaK2G/2IQyD4Y1DD3q8NNAoGAaF11\nfbUmTBQ3s6fhbYlqbtLYbt/Nc5O0xkU4/rRAIbCXUR1ILGfuswu6azh41vMO+sw7\nKlv+VZ9AVuKKJJBWAh4iihfpbY8reOo5QuMxqUdtmFMJX9loYr3U05rw7fBw1f/f\nAFhQAHMGP4ChVz7ofZbAW956Wi+hiyRSUonvANcCgYEAn2RMhOZ2gFWArCbMuS54\nFv9/br5iC+00wli9TZjalSIOr2TLO08JeyuulN2azhpEHl8QcIXVcNOwzX8qHrMR\nreLY3MJ0xs4rs6wyENv7ayqZCHcyj0chj4I08Z5kHRC8roUsw73P/FvJwwekE87v\nftYV1slIE1yevdKKmc4xHsw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dinkesmelawicovid19@dinkesmelawi-covid19.iam.gserviceaccount.com",
+  "client_id": "105578163956492007252",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dinkesmelawicovid19%40dinkesmelawi-covid19.iam.gserviceaccount.com"
+}

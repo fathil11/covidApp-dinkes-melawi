@@ -60,11 +60,13 @@
                             Data
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a target="_blank" class="dropdown-item"
+                            <a rel="noopener" arget="_blank" class="dropdown-item"
                                 href="https://dinkes.kalbarprov.go.id/covid-19/">Data Kalbar</a>
-                            <a target="_blank" class="dropdown-item" href="https://covid19.go.id/peta-sebaran">Data
+                            <a rel="noopener" arget="_blank" class="dropdown-item"
+                                href="https://covid19.go.id/peta-sebaran">Data
                                 Indonesia</a>
-                            <a target="_blank" class="dropdown-item" href="https://covid19.who.int/">Data Dunia</a>
+                            <a rel="noopener" arget="_blank" class="dropdown-item" href="https://covid19.who.int/">Data
+                                Dunia</a>
                         </div>
                     </li>
                     <li class="nav-item <?php echo e(Request::is('berita') || Request::is('berita/*') ? 'active' : ''); ?>">
@@ -117,10 +119,10 @@
     </script>
     <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="<?php echo e(asset('js/sweetalert.js')); ?>"></script>
     <script src="<?php echo e(asset('js/pwa.js')); ?>"></script>
     <?php echo $__env->yieldContent('js'); ?>
 </body>
 
 </html>
-<?php /**PATH /mnt/e/Web/dinkes-melawi-corona/resources/views/layouts/public.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/fatdev/Developments/Web/App/covidApp-dinkes-melawi/resources/views/layouts/public.blade.php ENDPATH**/ ?>
