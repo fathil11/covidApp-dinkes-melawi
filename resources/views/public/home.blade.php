@@ -114,16 +114,14 @@
             <div class="row mx-0 mx-md-2 mt-3">
                 <div class="col-md-6 col-sm-12 mb-2 mb-md-0">
                     <h4 class="">Keterangan</h4>
-                    <h6 class="font-weight-normal">ODP : Orang dalam pemantauan.</h6>
-                    <h6 class="font-weight-normal">PDP : Pasien dalam pengawasan.</h6>
-                    <h6 class="font-weight-normal">OTG : Orang tanpa gejala.</h6>
-                    <h6 class="font-weight-normal">Meninggal* : Pasien meninggal dan menunggu hasil tes COVID-19.
+                    <h6 class="font-weight-normal"><b>Discarded</b> : Suspek yang sudah sembuh.</h6>
+                    <h6 class="font-weight-normal"><b>Probable</b> : Orang yang diyakini sebagai suspek dengan ISPA Berat atau gagal nafas akibat aveoli paru-paru penuh cairan (ARDS) atau meninggal dengan gambaran klinis yang meyakinkan COVID-19 DAN belum ada hasil pemeriksaan laboratorium RT-PCR.</h6>
                     </h6>
                 </div>
                 <div class="col-md-6 col-sm-12 align-self-end">
                     <div class="card bg-dark w-100 w-md-50 float-right">
                         <div class="card-body m-n2 text-center">
-                            <p class="text-white-sem d-inline">Diupdate {{ 0 }}</p>
+                            <p class="text-white-sem d-inline">Diupdate {{ $last_updated }}</p>
                         </div>
                     </div>
                 </div>

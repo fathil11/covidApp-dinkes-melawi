@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "896cf0d67affc046e6507cfe26554943",
+    "content-hash": "02268cff6dd06b51a552097528f1f82b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -471,6 +471,39 @@
                 "validator"
             ],
             "time": "2020-09-26T15:48:38+00:00"
+        },
+        {
+            "name": "fathilarhm/laravel-google-sheets-collection",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fathil11/laravel-google-sheets-collection.git",
+                "reference": "ecb4be4a85cd6de25ea0881edf438b1696b1a74f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fathil11/laravel-google-sheets-collection/zipball/ecb4be4a85cd6de25ea0881edf438b1696b1a74f",
+                "reference": "ecb4be4a85cd6de25ea0881edf438b1696b1a74f",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fathilarham\\SpreadsheetCollection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fathil Arham",
+                    "email": "fathil.arham@gmail.com"
+                }
+            ],
+            "description": "A simple Laravel package to make collection from Google Spreadsheet URL.",
+            "time": "2020-10-02T07:25:36+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -8023,7 +8056,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "fathilarhm/laravel-google-sheets-collection": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -16,8 +16,12 @@ class PublicController extends Controller
 {
     public function index()
     {
-        $data = SpreadsheetCollection::get('https://docs.google.com/spreadsheets/d/1CPNkgbLJaE5m3Rbe8dCg4twdUohF2wIX2WW_mvjXhRQ/edit#gid=0');
-        return view('public.home', compact('data'));
+        $data = SpreadsheetCollection::get('https://docs.google.com/spreadsheets/d/1CPNkgbLJaE5m3Rbe8dCg4twdUohF2wIX2WW_mvjXhRQ/edit#gid=0')->getContent(1);
+        $last_updated = SpreadsheetCollection::get('https://docs.google.com/spreadsheets/d/1CPNkgbLJaE5m3Rbe8dCg4twdUohF2wIX2WW_mvjXhRQ/edit#gid=0')->getContent(2);
+        $last_updated = $last_updated->first()['val'];
+        $last_updated = Carbon::make($last_updated)->setTimezone('Asia/Jakarta')->locale('id')->diffForHumans();
+
+        return view('public.home', compact(['data', 'last_updated']));
     }
 
     // public function index()
