@@ -6,14 +6,11 @@ body {
 
 body {
     background: #edeef3;
-}
-
-* {
-    font-family: 'Product Sans';
+    font-family: 'Open Sans';
 }
 
 .navbar .navbar-brand {
-    font-family: 'Product Sans';
+    font-family: 'Open Sans';
     font-weight: 800;
     font-size: 24px;
 }
@@ -28,7 +25,7 @@ body {
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Open Sans', sans-serif;
     color: #00989b;
-    padding-left:  25px;
+    padding-left: 25px;
     padding-right: 25px;
 }
 
@@ -37,13 +34,17 @@ body {
     color: #00c5c9;
 }
 
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
     background: #00989b !important;
     color: white !important;
     border-radius: 50px;
-    padding-left:  25px;
+    padding-left: 25px;
     padding-right: 25px;
 }
+
 .text-main {
     color: #00989b !important;
 }
@@ -155,7 +156,7 @@ body {
     right: 0;
 }
 
-figure.image img{
+figure.image img {
     max-width: 100% !important;
 }
 
@@ -200,7 +201,7 @@ oembed {
     padding: 0.75em;
 }
 
-.tgl{
+.tgl {
     background-color: #00c5c9;
     color: white;
     border-radius: 10px;
@@ -208,33 +209,38 @@ oembed {
     left: 10px;
 }
 
-.no-style{
+.no-style {
     text-decoration: none;
     color: #212529;
 }
 
-.no-style:hover{
+.no-style:hover {
     text-decoration: none;
     color: #212529;
 }
-.no-style:visited{
+
+.no-style:visited {
     text-decoration: none;
     color: #212529;
 }
-.no-style:active{
+
+.no-style:active {
     text-decoration: none;
     color: #212529;
 }
 
 
 
-body { padding-top: 40px; }
+body {
+    padding-top: 40px;
+}
 
 @media (max-width: 767px) {
     .navbar-fixed-top {
         position: relative;
         top: auto;
     }
+
     .navbar-collapse {
         max-height: none;
     }
@@ -255,5 +261,3 @@ body { padding-top: 40px; }
     outline: none;
     box-shadow: none;
 }
-
-

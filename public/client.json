@@ -1,0 +1,12 @@
+{
+    "web": {
+        "client_id": "542554703031-nj74od3m3rsoc6s47uqrbuj7goggss5d.apps.googleusercontent.com",
+        "project_id": "dinkesmelawi-covid19",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "AO0InJM4825aW619ZPo8EDzR",
+        "redirect_uris": ["http://localhost:8000"],
+        "javascript_origins": ["http://localhost:8000"]
+    }
+}

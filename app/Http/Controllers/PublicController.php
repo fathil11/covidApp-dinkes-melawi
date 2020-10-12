@@ -10,52 +10,59 @@ use App\Post;
 use App\Log;
 use App\Manual;
 use Carbon\Carbon;
+use Fathilarham\SpreadsheetCollection\SpreadsheetCollection;
 
 class PublicController extends Controller
 {
     public function index()
     {
-        $this->pushStat();
-
-        // ODP Section
-        $stat['proccess'] = Person::where('status', '0')->get()->count();
-        $stat['done'] = Person::where('status', '1')->get()->count();
-        $stat['odp'] = $stat['proccess'] + $stat['done'];
-
-        $manual = Manual::findOrFail(1);
-
-        // OTG Section
-        $stat['otg_pre'] = $manual->otg_pre;
-        $stat['otg_waiting'] = $manual->otg_waiting;
-        $stat['otg_negative'] = $manual->otg_negative;
-        $stat['otg_positive'] = $manual->otg_positive;
-        $stat['otg_total'] = $stat['otg_pre'] + $stat['otg_waiting'] +$stat['otg_negative']
-            + $stat['otg_positive'];
-
-        // Reactive Section
-        $stat['reactive_pre'] = $manual->reactive_pre;
-        $stat['reactive_waiting'] = $manual->reactive_waiting;
-        $stat['reactive_negative'] = $manual->reactive_negative;
-        $stat['reactive_positive'] = $manual->reactive_positive;
-        $stat['reactive_total'] = $stat['reactive_pre'] + $stat['reactive_waiting'] +$stat['reactive_negative']
-            + $stat['reactive_positive'];
-
-        // PDP Section
-        $stat['pdp_process'] = $manual->pdp_process;
-        $stat['pdp_negative'] = $manual->pdp_negative;
-        $stat['pdp_positive'] = $manual->pdp_positive;
-        $stat['pdp_died_unknown'] = $manual->pdp_died_unknown;
-        $stat['pdp_total'] = $stat['pdp_process'] + $stat['pdp_died_unknown'] +$stat['pdp_negative'] + $stat['pdp_positive'];
-
-        // Other Section
-        $stat['healed'] = $manual->healed;
-        $stat['died_positive'] = $manual->died_positive;
-        $stat['positive_total'] = $stat['otg_positive'] + $stat['reactive_positive'] +  $stat['pdp_positive'] + $stat['died_positive'];
-
-        $stat['updated'] = Carbon::make($manual->updated_at)->locale('id')->diffForHumans();
-
-        return view('public.home', compact('stat'));
+        $data = SpreadsheetCollection::get('https://docs.google.com/spreadsheets/d/1CPNkgbLJaE5m3Rbe8dCg4twdUohF2wIX2WW_mvjXhRQ/edit#gid=0');
+        return view('public.home', compact('data'));
     }
+
+    // public function index()
+    // {
+    //     $this->pushStat();
+
+    //     // ODP Section
+    //     $stat['proccess'] = Person::where('status', '0')->get()->count();
+    //     $stat['done'] = Person::where('status', '1')->get()->count();
+    //     $stat['odp'] = $stat['proccess'] + $stat['done'];
+
+    //     $manual = Manual::findOrFail(1);
+
+    //     // OTG Section
+    //     $stat['otg_pre'] = $manual->otg_pre;
+    //     $stat['otg_waiting'] = $manual->otg_waiting;
+    //     $stat['otg_negative'] = $manual->otg_negative;
+    //     $stat['otg_positive'] = $manual->otg_positive;
+    //     $stat['otg_total'] = $stat['otg_pre'] + $stat['otg_waiting'] +$stat['otg_negative']
+    //         + $stat['otg_positive'];
+
+    //     // Reactive Section
+    //     $stat['reactive_pre'] = $manual->reactive_pre;
+    //     $stat['reactive_waiting'] = $manual->reactive_waiting;
+    //     $stat['reactive_negative'] = $manual->reactive_negative;
+    //     $stat['reactive_positive'] = $manual->reactive_positive;
+    //     $stat['reactive_total'] = $stat['reactive_pre'] + $stat['reactive_waiting'] +$stat['reactive_negative']
+    //         + $stat['reactive_positive'];
+
+    //     // PDP Section
+    //     $stat['pdp_process'] = $manual->pdp_process;
+    //     $stat['pdp_negative'] = $manual->pdp_negative;
+    //     $stat['pdp_positive'] = $manual->pdp_positive;
+    //     $stat['pdp_died_unknown'] = $manual->pdp_died_unknown;
+    //     $stat['pdp_total'] = $stat['pdp_process'] + $stat['pdp_died_unknown'] +$stat['pdp_negative'] + $stat['pdp_positive'];
+
+    //     // Other Section
+    //     $stat['healed'] = $manual->healed;
+    //     $stat['died_positive'] = $manual->died_positive;
+    //     $stat['positive_total'] = $stat['otg_positive'] + $stat['reactive_positive'] +  $stat['pdp_positive'] + $stat['died_positive'];
+
+    //     $stat['updated'] = Carbon::make($manual->updated_at)->locale('id')->diffForHumans();
+
+    //     return view('public.home', compact('stat'));
+    // }
 
     public function showLogin()
     {

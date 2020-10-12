@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return abort(404);
 // });
 
+// Route::get('testing', 'TestingController@index');
+
 Route::get('/', 'PublicController@index')->name('home');
 Route::get('/berita', 'PublicController@showAllPost');
 Route::get('/berita/lihat/{slug}', 'PublicController@openPost');
@@ -101,7 +103,5 @@ Route::group(['prefix' => '/admin/content', 'middleware' => 'contentadmin'], fun
 
 Auth::routes();
 Route::get('/logout', 'PublicController@logout');
-
-
 
 // Route::get('/', 'HomeController@index')->name('home');
