@@ -26,20 +26,20 @@
                     <div class="card bg-red">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Total Konfirmasi</h2>
-                            <h1 class="font-weight-bold text-white">{{ $data[0]['value'] }}</h1>
+                            <h1 class="font-weight-bold text-white">{{ $data['Total Konfirmasi'] }}</h1>
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Konfirmasi Isolasi</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[1]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Konfirmasi Isolasi'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Konfirmasi Sembuh</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[2]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Konfirmasi Sembuh'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Konfirmasi Meninggal</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[3]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Konfirmasi Meninggal'] }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -52,20 +52,20 @@
                     <div class="card bg-yellow">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Total Suspek</h2>
-                            <h1 class="font-weight-bold text-white">{{ $data[4]['value'] }}</h1>
+                            <h1 class="font-weight-bold text-white">{{ $data['Total Suspek'] }}</h1>
                             <hr>
                             <div class="row">
                                 <div class="col-md-4">
                                 <h4 class="font-weight-normal text-white-sem">Suspek Dirawat</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[5]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Suspek Dirawat'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Discarded</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[6]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Discarded'] }}</h1>
                                 </div>
                                 <div class="col-md-4">
                                     <h4 class="font-weight-normal text-white-sem">Probable</h4>
-                                    <h1 class="font-weight-bold text-white">{{ $data[7]['value'] }}</h1>
+                                    <h1 class="font-weight-bold text-white">{{ $data['Probable'] }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                     <div class="card bg-blue">
                         <div class="card-body text-center">
                             <h2 class="font-weight-normal text-white-sem">Kontak Erat</h2>
-                            <h1 class="font-weight-bold text-white">{{ $data[8]['value'] }}</h1>
+                            <h1 class="font-weight-bold text-white">{{ $data['Kontak Erat'] }}</h1>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 <div class="col-md-6 col-sm-12 align-self-end">
                     <div class="card bg-dark w-100 w-md-50 float-right">
                         <div class="card-body m-n2 text-center">
-                            <p class="text-white-sem d-inline">Diupdate {{ $last_updated }}</p>
+                            <p class="text-white-sem d-inline">Diupdate {{ $data['Update'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -129,12 +129,12 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    {{-- <div class="row mt-5">
         <div class="col-md-12 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
             <img id="map" class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg')}}" alt="">
         </div>
-    </div>
+    </div> --}}
 
     <div class="row mt-5">
         <div class="col-md-12 mb-3">
