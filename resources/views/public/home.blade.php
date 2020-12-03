@@ -129,12 +129,12 @@
         </div>
     </div>
 
-    {{-- <div class="row mt-5">
+    <div class="row mt-5">
         <div class="col-md-12 col-sm-12 text-center">
             <h1>Peta Persebaran</h1>
             <img id="map" class="img-fluid mt-2 rounded" src="{{ asset('storage/map/maps.jpg')}}" alt="">
         </div>
-    </div> --}}
+    </div>
 
     <div class="row mt-5">
         <div class="col-md-12 mb-3">
